@@ -149,6 +149,23 @@ h1{font-size:var(--text-xl);line-height:1.15;font-weight:700;letter-spacing:-.01
 .pick:has(input:checked) .badge{background:var(--surface)}
 .pick:has(input:checked) .dot::after{transform:scale(1)}
 .pick:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.picker + .picker{margin-top:calc(-1 * var(--space-3))}
+.pick.mode{padding:var(--space-5) var(--space-4)}
+.pick.mode b{font-size:var(--text-base)}
+.seg{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--space-2)}
+.seg-opt{position:relative;cursor:pointer}
+.seg-opt input{position:absolute;opacity:0;pointer-events:none}
+.seg-opt span{display:grid;place-items:center;height:48px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);font-weight:700;font-variant-numeric:tabular-nums;transition:border-color .15s,background .15s}
+.seg-opt:hover span{border-color:var(--accent)}
+.seg-opt input:checked + span{border-color:var(--accent);background:var(--accent);color:var(--accent-text)}
+.seg-opt input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+.opt-row.info{align-items:center}
+.opt-row.info > span:last-child b{display:block;font-weight:600;font-size:var(--text-sm)}
+.opt-row.info > span:last-child span{font-size:var(--text-xs);color:var(--text-muted)}
+.info-icon{flex:0 0 42px;height:24px;display:grid;place-items:center;font-weight:700;color:var(--accent)}
+.time-note{font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-3)}
+.timer small{font-weight:500;color:var(--text-muted);margin-right:var(--space-1)}
+.expl p{white-space:pre-line}
 .load-note{font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-3);text-align:center}
 .load-note.err{color:var(--bad)}
 
@@ -261,8 +278,11 @@ footer{max-width:1100px;margin:0 auto;padding:var(--space-6) var(--space-5);font
   .topic-row{grid-template-columns:1fr 60px}.topic-row .bar{grid-column:1/-1}
 }
 @media (max-width:520px){
-  .facts{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:repeat(3,1fr);gap:var(--space-2)}
+  .fact{padding:var(--space-3)}
+  .fact b{font-size:var(--text-base)}
   .picker-grid{grid-template-columns:1fr}
+  .seg{grid-template-columns:repeat(3,1fr)}
   .grid{grid-template-columns:repeat(10,1fr);gap:4px}
   .cell{border-radius:4px}
   .logo span small{display:none}
@@ -290,378 +310,6 @@ footer{max-width:1100px;margin:0 auto;padding:var(--space-6) var(--space-5);font
 
 <footer><span id="footSource"></span> PRINCE2® ist eine eingetragene Marke von PeopleCert. Diese interaktive Umsetzung dient ausschließlich dem persönlichen Lernen.</footer>
 
-<script>
-/* ---------- Prüfungskatalog ----------
-   Jede Prüfung liegt als eigene JSON-Datei in data/ und wird erst bei Auswahl geladen. */
-const EXAMS = [
-  { id: 'muster-1', title: 'Musterprüfung 1', sub: 'Offizielle PeopleCert-Musterprüfung, v7.2', official: true,
-    source: 'Fragen, Lösungen und Begründungen: PRINCE2® Musterprüfung 1 Foundation, Version 7.2 (PeopleCert, offizielle Schulungsunterlagen).' },
-  { id: 'muster-2', title: 'Musterprüfung 2', sub: 'Offizielle PeopleCert-Musterprüfung, v7.2', official: true,
-    source: 'Fragen, Lösungen und Begründungen: PRINCE2® Musterprüfung 2 Foundation, Version 7.2 (PeopleCert, offizielle Schulungsunterlagen).' },
-  { id: 'mock-a', title: 'Mock-Prüfung 1', sub: 'Mock Exam A', official: false,
-    source: 'Fragen und Lösungen: PRINCE2® Foundation Mock Exam A.' },
-  { id: 'mock-b', title: 'Mock-Prüfung 2', sub: 'Mock Exam B', official: false,
-    source: 'Fragen und Lösungen: PRINCE2® Foundation Mock Exam B.' },
-];
-const PASS = 36, EXAM_MIN = 60;
-let QUESTIONS = [], TOTAL = 60;
-const cache = {};
-
-function loadExam(id){
-  if(!cache[id]) cache[id] = fetch(`data/${id}.json`).then(r => {
-    if(!r.ok) throw new Error(`HTTP ${r.status}`);
-    return r.json();
-  }).catch(err => { delete cache[id]; throw err; });
-  return cache[id];
-}
-function currentExam(){ return EXAMS.find(e => e.id === state.examId); }
-function selectExam(id){
-  if(!EXAMS.some(e => e.id === id)) id = EXAMS[0].id;
-  state.examId = id; state.loading = true; state.loadError = null;
-  try { localStorage.setItem('p2-exam', id); } catch(e) {}
-  const ex = currentExam();
-  examLabel.textContent = `${ex.title} · ${ex.sub}`;
-  footSource.textContent = ex.source;
-  render();
-  loadExam(id).then(qs => {
-    if(state.examId !== id) return;
-    QUESTIONS = qs; TOTAL = qs.length; state.loading = false; render();
-  }).catch(err => {
-    if(state.examId !== id) return;
-    state.loading = false;
-    state.loadError = location.protocol === 'file:'
-      ? 'Die Fragen können nicht direkt aus dem Dateisystem geladen werden. Bitte die App über einen Webserver öffnen (siehe README).'
-      : `Fragenkatalog konnte nicht geladen werden (${err.message}).`;
-    render();
-  });
-}
-
-/* ---------- Theme ---------- */
-let theme = document.documentElement.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-function applyTheme(){
-  document.documentElement.dataset.theme = theme;
-  iconSun.hidden = theme === 'dark'; iconMoon.hidden = theme !== 'dark';
-}
-themeBtn.onclick = () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(); };
-applyTheme();
-
-/* ---------- State ---------- */
-const state = {
-  view: 'start',
-  examId: null,
-  loading: true,
-  loadError: null,
-  order: [],          // indices into QUESTIONS
-  pos: 0,
-  answers: {},        // n -> chosen letter
-  flags: new Set(),
-  useTimer: true,
-  shuffle: false,
-  realExam: false,    // Reale Prüfungssimulation: Feedback erst nach Abgabe
-  secondsLeft: EXAM_MIN * 60,
-  timerId: null,
-  modal: null,
-};
-
-const app = document.getElementById('app');
-const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-
-/* ---------- Timer ---------- */
-function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0'); }
-function startTimer(){
-  stopTimer();
-  if(!state.useTimer){ timer.hidden = true; return; }
-  timer.hidden = false; timer.textContent = fmt(state.secondsLeft);
-  state.timerId = setInterval(() => {
-    state.secondsLeft--;
-    timer.textContent = fmt(state.secondsLeft);
-    timer.classList.toggle('warn', state.secondsLeft <= 300);
-    if(state.secondsLeft <= 0){ stopTimer(); finish(true); }
-  }, 1000);
-}
-function stopTimer(){ if(state.timerId){ clearInterval(state.timerId); state.timerId = null; } }
-
-/* ---------- Actions ---------- */
-function startExam(){
-  if(state.loading || state.loadError || !QUESTIONS.length) return;
-  state.order = QUESTIONS.map((_, i) => i);
-  if(state.shuffle){ for(let i = state.order.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [state.order[i], state.order[j]] = [state.order[j], state.order[i]]; } }
-  state.pos = 0; state.answers = {}; state.flags = new Set(); state.secondsLeft = EXAM_MIN * 60; state.reviewMode = false;
-  state.view = 'exam'; startTimer(); render(); window.scrollTo(0, 0);
-}
-function choose(n, letter){
-  if(state.reviewMode) return;
-  if(state.answers[n] && !state.realExam) return;   // im Übungsmodus bleibt die erste Antwort stehen
-  state.answers[n] = letter; render();
-}
-function go(pos){ state.pos = Math.max(0, Math.min(state.order.length - 1, pos)); render(); window.scrollTo({top: 0, behavior: 'smooth'}); }
-function toggleFlag(n){ state.flags.has(n) ? state.flags.delete(n) : state.flags.add(n); render(); }
-function askFinish(){
-  const open = TOTAL - Object.keys(state.answers).length;
-  if(open === 0) return finish(false);
-  state.modal = { open }; render();
-}
-function finish(timeout){
-  stopTimer(); timer.hidden = true; state.modal = null; state.timeout = timeout; state.view = 'result'; render(); window.scrollTo(0, 0);
-}
-function reviewQuestion(n){
-  state.view = 'exam'; state.reviewMode = true;
-  state.pos = state.order.findIndex(i => QUESTIONS[i].n === n); render(); window.scrollTo(0, 0);
-}
-/* answer ist ein Buchstabe ("A") oder – bei mehreren richtigen Antworten – eine Liste (["B","C"]) */
-const rightOf = q => Array.isArray(q.answer) ? q.answer : [q.answer];
-const isRight = (q, L) => rightOf(q).includes(L);
-const rightLabel = q => rightOf(q).join(' oder ');
-const rightText = q => rightOf(q).map(L => `${L} – ${esc(q.opts[L])}`).join(' / ');
-function score(){ return QUESTIONS.filter(q => isRight(q, state.answers[q.n])).length; }
-
-/* ---------- Views ---------- */
-function render(){
-  if(state.view === 'start') app.innerHTML = viewStart();
-  else if(state.view === 'exam') app.innerHTML = viewExam();
-  else app.innerHTML = viewResult();
-  if(state.modal) app.insertAdjacentHTML('beforeend', viewModal());
-  bind();
-}
-
-function viewStart(){
-  const ex = currentExam();
-  const topics = {}; QUESTIONS.forEach(q => { if(q.topic) topics[q.topic] = (topics[q.topic] || 0) + 1; });
-  const ready = !state.loading && !state.loadError;
-  const picker = EXAMS.map(e => `
-        <label class="pick">
-          <input type="radio" name="exam" value="${e.id}" ${e.id === state.examId ? 'checked' : ''}>
-          <span class="dot" aria-hidden="true"></span>
-          <span><b>${esc(e.title)}</b><small>${esc(e.sub)}</small>
-            <span class="badge ${e.official ? 'official' : ''}">${e.official ? 'mit Begründungen' : 'nur Lösungen'}</span></span>
-        </label>`).join('');
-  return `
-  <section class="hero">
-    <div>
-      <div class="eyebrow">PRINCE2® 7 · Foundation</div>
-      <h1>${esc(ex.title)} – interaktiv üben wie in der echten Prüfung</h1>
-      <fieldset class="picker">
-        <legend>Welche Prüfung möchtest du simulieren?</legend>
-        <div class="picker-grid">${picker}</div>
-      </fieldset>
-      <p class="lead">${TOTAL} Multiple-Choice-Fragen, eine richtige Antwort pro Frage. ${state.realExam
-        ? 'Wie in der echten Prüfung siehst du erst nach der Abgabe, welche Antworten richtig waren'
-        : 'Nach jedem Klick siehst du sofort, ob du richtig lagst'}${ex.official
-        ? ' – inklusive der offiziellen Begründung zu jeder Antwortoption und der Referenz ins PRINCE2-Handbuch.'
-        : '. Für diese Prüfung liegen nur die Lösungen vor, keine Begründungen.'}</p>
-      <div class="facts">
-        <div class="fact"><b>${TOTAL}</b><span>Fragen</span></div>
-        <div class="fact"><b>36</b><span>richtig zum Bestehen (60&nbsp;%)</span></div>
-        <div class="fact"><b>60 min</b><span>Prüfungszeit</span></div>
-      </div>
-      ${ready ? `<div class="topics">${Object.entries(topics).map(([t, c]) => `<span class="chip"><b>${c}</b> ${esc(t)}</span>`).join('')}</div>` : ''}
-    </div>
-    <div class="card">
-      <h2>Einstellungen</h2>
-      <div class="opt-row">
-        <label class="switch"><input type="checkbox" id="optTimer" ${state.useTimer ? 'checked' : ''}><i></i></label>
-        <label for="optTimer"><b>Zeitlimit 60 Minuten</b><span>Wie in der echten Prüfung. Bei Ablauf wird automatisch ausgewertet.</span></label>
-      </div>
-      <div class="opt-row">
-        <label class="switch"><input type="checkbox" id="optShuffle" ${state.shuffle ? 'checked' : ''}><i></i></label>
-        <label for="optShuffle"><b>Fragen mischen</b><span>Zufällige Reihenfolge statt Originalreihenfolge 1–60.</span></label>
-      </div>
-      <div class="opt-row">
-        <label class="switch"><input type="checkbox" id="optReal" ${state.realExam ? 'checked' : ''}><i></i></label>
-        <label for="optReal"><b>Reale Prüfungssimulation</b><span>Kein Feedback während der Prüfung. Rückmeldungen (korrekte Antworten und ggf. Begründungen) werden erst nach Abgabe der Prüfung angezeigt.</span></label>
-      </div>
-      <div class="nav" style="margin-top:var(--space-5)">
-        <button class="btn primary" id="startBtn" style="width:100%;justify-content:center" ${ready ? '' : 'disabled'}>${esc(ex.title)} starten</button>
-      </div>
-      ${state.loading ? '<p class="load-note">Fragen werden geladen …</p>' : ''}
-      ${state.loadError ? `<p class="load-note err">${esc(state.loadError)}</p>` : ''}
-    </div>
-  </section>`;
-}
-
-function viewExam(){
-  const q = QUESTIONS[state.order[state.pos]];
-  const chosen = state.answers[q.n];
-  const answered = Object.keys(state.answers).length;
-  const letters = ['A', 'B', 'C', 'D'];
-  // Simulation: während der Prüfung keine Lösung zeigen; in der Durchsicht nach Abgabe immer
-  const hidden = state.realExam && !state.reviewMode;
-  const reveal = !hidden && (chosen || state.reviewMode);
-  const locked = state.reviewMode || (chosen && !state.realExam);
-
-  const options = letters.map(L => {
-    let cls = 'opt', tag = '';
-    if(hidden){
-      if(L === chosen){ cls += ' selected'; tag = 'Deine Antwort'; }
-    } else if(reveal){
-      if(isRight(q, L)){ cls += ' correct'; tag = 'Richtige Antwort'; }
-      else if(L === chosen){ cls += ' wrong'; tag = 'Deine Antwort'; }
-    }
-    return `<button class="${cls}" data-choose="${L}" ${locked ? 'disabled' : ''} aria-pressed="${chosen === L}">
-      <span class="letter">${L}</span><span>${esc(q.opts[L])}</span>${tag ? `<span class="tag">${tag}</span>` : ''}
-    </button>`;
-  }).join('');
-
-  let feedback = '';
-  if(reveal){
-    const ok = isRight(q, chosen);
-    const sorted = [...rightOf(q), ...letters.filter(l => !isRight(q, l))];
-    const body = Object.keys(q.expl).length === 4
-      ? sorted.map(L => `<div class="expl ${isRight(q, L) ? 'right' : 'other'}"><span class="letter">${L}</span><div><span class="verdict">${isRight(q, L) ? 'Richtig' : 'Falsch'}${L === chosen && !ok ? ' – deine Auswahl' : ''}</span><p>${esc(q.expl[L])}</p></div></div>`).join('')
-      : rightOf(q).map((L, i, all) => `<div class="expl right"><span class="letter">${L}</span><div><span class="verdict">Richtig ist ${L} (${esc(q.opts[L])})</span>${q.rationale && i === all.length - 1 ? `<p>${esc(q.rationale)}</p>` : ''}</div></div>`).join('');
-    feedback = `
-    <div class="feedback">
-      <div class="fb-head ${ok ? 'ok' : 'bad'}">
-        ${ok ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Richtig – gut gemacht.</span>'
-             : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg><span>${chosen ? 'Leider falsch.' : 'Nicht beantwortet.'} Richtig ist <strong>${rightLabel(q)}</strong>.</span>`}
-      </div>
-      <div class="fb-body">
-        <h3>${Object.keys(q.expl).length === 4 || q.rationale ? 'Begründung' : 'Lösung'}</h3>
-        ${body}
-        ${q.ref ? `<div class="ref"><span>Lehrplan-Referenz: <code>${esc(q.ref)}</code></span><span>„Siehe x.y“ = Abschnitt im PRINCE2 7 Handbuch</span></div>` : ''}
-      </div>
-    </div>`;
-  }
-
-  const cells = state.order.map((qi, i) => {
-    const qq = QUESTIONS[qi]; const a = state.answers[qq.n];
-    let cls = 'cell';
-    if(a) cls += hidden ? ' done' : (isRight(qq, a) ? ' ok' : ' bad');
-    if(i === state.pos) cls += ' cur';
-    if(state.flags.has(qq.n)) cls += ' flag';
-    return `<button class="${cls}" data-go="${i}" aria-label="Frage ${i + 1}">${i + 1}</button>`;
-  }).join('');
-
-  return `
-  <div class="exam">
-    <section>
-      <div class="progress" role="progressbar" aria-valuenow="${answered}" aria-valuemax="${TOTAL}"><i style="width:${answered / TOTAL * 100}%"></i></div>
-      <div class="qmeta">
-        <span class="qnum">Frage ${state.pos + 1} von ${TOTAL}</span>
-        ${hidden ? '<span class="mode-badge">Prüfungssimulation</span>' : ''}
-        <span class="qtopic">${q.topic ? `· ${esc(q.topic)}` : ''}${state.shuffle ? ` · Original-Nr. ${q.n}` : ''}</span>
-      </div>
-      ${q.scenario ? `<div class="scenario">${esc(q.scenario)}</div>` : ''}
-      <p class="qtext">${esc(q.question)}</p>
-      ${q.items.length ? `<ol class="items">${q.items.map((it, i) => `<li><b>${i + 1}.</b><span>${esc(it)}</span></li>`).join('')}</ol>` : ''}
-      <div class="options">${options}</div>
-      ${feedback}
-      <div class="nav">
-        <button class="btn" data-nav="-1" ${state.pos === 0 ? 'disabled' : ''}>← Zurück</button>
-        <button class="btn ${state.flags.has(q.n) ? 'flagged' : ''}" data-flag="${q.n}">${state.flags.has(q.n) ? '⚑ Markiert' : '⚐ Markieren'}</button>
-        <span class="spacer"></span>
-        ${state.reviewMode ? `<button class="btn" id="backToResult">Zur Auswertung</button>` : ''}
-        ${state.pos < TOTAL - 1
-          ? `<button class="btn primary" data-nav="1">Weiter →</button>`
-          : (state.reviewMode ? '' : `<button class="btn primary" id="finishBtn">Prüfung abgeben</button>`)}
-      </div>
-    </section>
-    <aside class="side">
-      <h2>Übersicht <span>${answered}/${TOTAL} beantwortet</span></h2>
-      <div class="grid">${cells}</div>
-      <div class="legend">
-        ${hidden
-          ? `<span><i style="background:var(--accent);border-color:var(--accent)"></i> beantwortet</span>`
-          : `<span><i style="background:var(--ok);border-color:var(--ok)"></i> richtig</span>
-        <span><i style="background:var(--bad);border-color:var(--bad)"></i> falsch</span>`}
-        <span><i></i> offen</span>
-        <span><i style="background:var(--flag);border-color:var(--flag);border-radius:999px"></i> markiert</span>
-      </div>
-      ${state.reviewMode ? `<button class="btn" id="backToResult2">Zur Auswertung</button>` : `<button class="btn" id="finishBtn2">Prüfung abgeben</button>`}
-    </aside>
-  </div>`;
-}
-
-function viewResult(){
-  const s = score(); const passed = s >= PASS; const pct = Math.round(s / TOTAL * 100);
-  const r = 74, circ = 2 * Math.PI * r;
-  const topics = {};
-  QUESTIONS.forEach(q => { if(!q.topic) return; const t = topics[q.topic] ||= {c: 0, n: 0}; t.n++; if(isRight(q, state.answers[q.n])) t.c++; });
-  const wrong = QUESTIONS.filter(q => state.answers[q.n] && !isRight(q, state.answers[q.n]));
-  const open = QUESTIONS.filter(q => !state.answers[q.n]);
-  const used = EXAM_MIN * 60 - state.secondsLeft;
-  return `
-  <section class="result-head">
-    <div class="ring ${passed ? '' : 'fail'}">
-      <svg viewBox="0 0 170 170"><circle class="track" cx="85" cy="85" r="${r}"/><circle class="val" cx="85" cy="85" r="${r}" stroke-dasharray="${circ}" stroke-dashoffset="${circ * (1 - s / TOTAL)}"/></svg>
-      <div class="num"><div><b>${s}/${TOTAL}</b><br><span>${pct} % richtig</span></div></div>
-    </div>
-    <div>
-      <div class="eyebrow">Auswertung · ${esc(currentExam().title)}</div>
-      <div class="verdict-big ${passed ? 'ok' : 'bad'}">${passed ? 'Bestanden' : 'Nicht bestanden'}</div>
-      <p class="lead" style="margin-bottom:var(--space-4)">${passed
-        ? `Du hast ${s} von ${TOTAL} Fragen richtig beantwortet – die Bestehensgrenze liegt bei ${PASS} (60 %).`
-        : `Du hast ${s} von ${TOTAL} Fragen richtig beantwortet. Für das Bestehen fehlen dir noch ${PASS - s} richtige Antwort${PASS - s === 1 ? '' : 'en'} (Grenze: ${PASS}).`}
-        ${state.timeout ? ' Die Zeit ist abgelaufen – die Prüfung wurde automatisch abgegeben.' : ''}
-        ${state.useTimer ? ` Benötigte Zeit: ${fmt(used)} Minuten.` : ''}
-      </p>
-      <div class="nav" style="margin-top:0">
-        <button class="btn primary" id="restartBtn">Neue Prüfung starten</button>
-        <button class="btn" id="reviewAllBtn">Alle Fragen durchsehen</button>
-      </div>
-    </div>
-  </section>
-
-  ${Object.keys(topics).length ? `<h2 class="section-title">Ergebnis nach Themenbereich</h2>
-  <div class="topic-list">
-    ${Object.entries(topics).map(([t, v]) => `<div class="topic-row"><span>${esc(t)} <span style="color:var(--text-muted)">(${v.c}/${v.n})</span></span><div class="bar"><i style="width:${v.c / v.n * 100}%"></i></div><span class="pct">${Math.round(v.c / v.n * 100)} %</span></div>`).join('')}
-  </div>` : ''}
-
-  ${wrong.length ? `<h2 class="section-title">Falsch beantwortet (${wrong.length})</h2>
-  <div class="review">${wrong.map(q => `<button class="rv" data-review="${q.n}"><span class="n bad">${q.n}</span><span>${esc(q.question)}<small>Deine Antwort: ${state.answers[q.n]} · Richtig: ${rightText(q)}</small></span></button>`).join('')}</div>` : ''}
-
-  ${open.length ? `<h2 class="section-title">Nicht beantwortet (${open.length})</h2>
-  <div class="review">${open.map(q => `<button class="rv" data-review="${q.n}"><span class="n skip">${q.n}</span><span>${esc(q.question)}<small>Richtig: ${rightText(q)}</small></span></button>`).join('')}</div>` : ''}
-
-  ${!wrong.length && !open.length ? `<p class="lead" style="margin-top:var(--space-6)">Alle ${TOTAL} Fragen richtig – volle Punktzahl.</p>` : ''}`;
-}
-
-function viewModal(){
-  return `<div class="modal" id="modal"><div class="card">
-    <h2>Prüfung wirklich abgeben?</h2>
-    <p>Du hast noch <strong>${state.modal.open}</strong> ${state.modal.open === 1 ? 'Frage' : 'Fragen'} nicht beantwortet. Unbeantwortete Fragen zählen als falsch.</p>
-    <div class="nav"><button class="btn" id="modalCancel">Weiter bearbeiten</button><span class="spacer"></span><button class="btn primary" id="modalOk">Jetzt abgeben</button></div>
-  </div></div>`;
-}
-
-/* ---------- Bindings ---------- */
-function bind(){
-  const $ = id => document.getElementById(id);
-  $('startBtn') && ($('startBtn').onclick = startExam);
-  document.querySelectorAll('input[name="exam"]').forEach(r => r.onchange = () => selectExam(r.value));
-  $('optTimer') && ($('optTimer').onchange = e => state.useTimer = e.target.checked);
-  $('optShuffle') && ($('optShuffle').onchange = e => state.shuffle = e.target.checked);
-  $('optReal') && ($('optReal').onchange = e => {
-    state.realExam = e.target.checked;
-    try { localStorage.setItem('p2-real', state.realExam ? '1' : '0'); } catch(err) {}
-    render(); $('optReal') && $('optReal').focus();
-  });
-  document.querySelectorAll('[data-choose]').forEach(b => b.onclick = () => choose(QUESTIONS[state.order[state.pos]].n, b.dataset.choose));
-  document.querySelectorAll('[data-nav]').forEach(b => b.onclick = () => go(state.pos + Number(b.dataset.nav)));
-  document.querySelectorAll('[data-go]').forEach(b => b.onclick = () => go(Number(b.dataset.go)));
-  document.querySelectorAll('[data-flag]').forEach(b => b.onclick = () => toggleFlag(Number(b.dataset.flag)));
-  document.querySelectorAll('[data-review]').forEach(b => b.onclick = () => reviewQuestion(Number(b.dataset.review)));
-  ['finishBtn', 'finishBtn2'].forEach(id => $(id) && ($(id).onclick = askFinish));
-  ['backToResult', 'backToResult2'].forEach(id => $(id) && ($(id).onclick = () => { state.view = 'result'; render(); window.scrollTo(0, 0); }));
-  $('restartBtn') && ($('restartBtn').onclick = () => { state.reviewMode = false; state.timeout = false; state.view = 'start'; render(); });
-  $('reviewAllBtn') && ($('reviewAllBtn').onclick = () => { state.reviewMode = true; state.view = 'exam'; state.pos = 0; render(); window.scrollTo(0, 0); });
-  $('modalCancel') && ($('modalCancel').onclick = () => { state.modal = null; render(); });
-  $('modalOk') && ($('modalOk').onclick = () => finish(false));
-}
-
-/* Keyboard: A–D wählen, Pfeile navigieren */
-document.addEventListener('keydown', e => {
-  if(state.view !== 'exam' || state.modal) return;
-  const k = e.key.toUpperCase();
-  if(['A', 'B', 'C', 'D'].includes(k)) choose(QUESTIONS[state.order[state.pos]].n, k);
-  else if(e.key === 'ArrowRight') go(state.pos + 1);
-  else if(e.key === 'ArrowLeft') go(state.pos - 1);
-});
-
-try { state.realExam = localStorage.getItem('p2-real') === '1'; } catch(e) {}
-let savedExam = null;
-try { savedExam = localStorage.getItem('p2-exam'); } catch(e) {}
-selectExam(savedExam);
-</script>
+<script src="app.js"></script>
 </body>
 </html>
