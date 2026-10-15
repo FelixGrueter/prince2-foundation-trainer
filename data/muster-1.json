@@ -1,0 +1,1382 @@
+[
+  {
+    "n": 1,
+    "q": "Welche Aussage beschreibt den Projektkontext?",
+    "scenario": "",
+    "question": "Welche Aussage beschreibt den Projektkontext?",
+    "items": [],
+    "opts": {
+      "A": "Er sollte von Stakeholdern verstanden werden, damit die Grundprinzipien angemessen angewendet werden können",
+      "B": "Er erklärt, wie die einzelnen Aspekte des Projektmanagements angewendet werden sollte, damit die Prozesse effektiv sind",
+      "C": "Er beschreibt den gesamten Projektlebenszyklus, von den im Vorlauf eines Projekts durchgeführten Vorbereitungsaktivitäten über die Phasen",
+      "D": "Er stellt ein Verständnis der Bedürfnisse der beteiligten Personen und der Beziehungen zwischen ihnen sicher"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Der Projektkontext ist eines der fünf integrierten Elemente von PRINCE2 Projektmanagement. Er beeinflusst wie „die Grundprinzipien, Practices und Prozesse von den beteiligten Personen angewendet werden, damit sichergestellt werden kann, dass die Methode für den Projektkontext geeignet ist“. Siehe 1.2",
+      "B": "Die PRINCE2 Projektmanagement-Practices „beschreiben essenzielle Aspekte des Projektmanagements, die konsequent und über den gesamten Projektlebenszyklus hinweg angewendet werden müssen. Die sieben Practices erklären die besondere Behandlung des jeweiligen Aspekts des Projektmanagements im Sinne der effektiven Anwendung der PRINCE2 Projektmanagement-Prozesse und erläutern, warum sie wichtig sind“. Siehe 1.2",
+      "C": "„Die sieben Prozesse beschreiben den gesamten Projektlebenszyklus, von den im Vorlauf eines Projekts durchgeführten Vorbereitungsaktivitäten über die Phasen der Projektlieferung bis hin zum endgültigen Projektabschluss. Zu jedem Prozess gehören Checklisten empfohlener Aktivitäten und dazugehörige Verantwortlichkeiten“. Siehe 1.2",
+      "D": "Das Element „Menschen“ umfasst „die am Projekt mitarbeiten, und solche, die vom Projekt betroffen sind. Ein Verständnis der Bedürfnisse, Fähigkeiten und Motivationen der beteiligten Personen und der Beziehungen zwischen ihnen ist entscheidend für das Aufsetzen und Management des Projekts“. Siehe 1.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_1.1.a",
+    "topic": "Grundlagen"
+  },
+  {
+    "n": 2,
+    "q": "Was ist ein Merkmal eines Projekts, das sich vom Business as Usual (BAU) unterscheidet?",
+    "scenario": "",
+    "question": "Was ist ein Merkmal eines Projekts, das sich vom Business as Usual (BAU) unterscheidet?",
+    "items": [],
+    "opts": {
+      "A": "Projekte laufen weiter, nachdem das Business as Usual (BAU) wieder aufgenommen wurde",
+      "B": "Projekte umfassen den laufenden Geschäftsbetrieb",
+      "C": "Jedes Projekt unterscheidet sich von früheren Projekten",
+      "D": "Projektarbeit ist in der Regel weniger riskant als das Business as Usual (BAU)"
+    },
+    "answer": "C",
+    "expl": {
+      "A": "„Befristet: Projekte sind zeitlich begrenzt. Wenn die gewünschte Veränderung realisiert wurde, wird BAU (in der neuen Form) wieder aufgenommen und das Projekt wird nicht mehr benötigt“. Siehe 1.3",
+      "B": "„Projekte sind zeitlich begrenzt. Wenn die gewünschte Veränderung realisiert wurde, wird BAU (in der neuen Form) wieder aufgenommen und das Projekt wird nicht mehr benötigt“. Siehe 1.3",
+      "C": "„Jedes Projekt ist einzigartig [...], aber jedes Projekt unterscheidet sich auf eine bestimmte Weise. Dies kann ein anderes Team, ein anderer Kunde, Lieferant, ein anderes Produkt, ein anderer Standort oder ein anderer Zeitrahmen bedeuten. Alle diese Faktoren gemeinsam machen jedes Projekt einzigartig“. Siehe 1.3",
+      "D": "Die mit Projekten verbundene Unsicherheit macht sie risikoreicher als das Business as Usual (BAU). „Ein Projekt bringt aufgrund der bereits aufgeführten Merkmale mehr und andere Bedrohungen und Chancen mit sich, als die, die den Beteiligten im BAU begegnen. Projekte sind riskanter als alle betrieblichen Aspekte einer Organisation“. Siehe 1.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_1.2.c",
+    "topic": "Grundlagen"
+  },
+  {
+    "n": 3,
+    "q": "Der Lenkungsausschuss hat beschlossen, das Projekt vorzeitig zu beenden, da sich das externe Umfeld geändert hat. Welches Grundprinzip wird hier angewendet?",
+    "scenario": "Der Lenkungsausschuss hat beschlossen, das Projekt vorzeitig zu beenden, da sich das externe Umfeld geändert hat.",
+    "question": "Welches Grundprinzip wird hier angewendet?",
+    "items": [],
+    "opts": {
+      "A": "Lernen aus Erfahrung",
+      "B": "Anpassen an das Projekt",
+      "C": "Steuern nach dem Ausnahmeprinzip",
+      "D": "Fortlaufende geschäftliche Rechtfertigung sicherstellen"
+    },
+    "answer": "D",
+    "expl": {
+      "A": "Die Einbindung von Erfahrungen in das Projekt entspricht dem Grundprinzip „Lernen aus Erfahrung“. „Ein PRINCE2 Projektmanagement-Projektteam sucht, erfasst und implementiert aktiv Verbesserungen infolge von relevanten Lessons Learned aus früheren Projekten und während der gesamten Projektlaufzeit. Es wendet diese in zukünftigen Projekten an und gibt sie an andere weiter“. Siehe 2.2",
+      "B": "Die Anpassung von PRINCE2 Projektmanagement an ein bestimmtes Projekt entspricht dem Grundprinzip des „Anpassen an das Projekt“. PRINCE2 Projektmanagement lässt sich an die speziellen Anforderungen eines Projekts hinsichtlich seiner Umgebung, des Umfangs, der Komplexität, der Wichtigkeit, der Liefermethode, der Teamfähigkeiten und des Risikos anpassen. Siehe 2.7",
+      "C": "Das Definieren von Toleranzen für die Projektleistung bezieht sich auf das Grundprinzip des „Steuern nach dem Ausnahmeprinzip“. „Ein PRINCE2 Projektmanagement-Projekt legt Grenzen für delegierte Befugnisse fest, indem es Toleranzen für die Leistung im Vergleich zu den betreffenden Plänen definiert“. Siehe 2.5",
+      "D": "Wenn Organisationen bei der Entwicklung der geschäftlichen Rechtfertigung nicht mit der nötigen Sorgfalt vorgehen, besteht die Gefahr, dass Projekte auch dann umgesetzt werden, wenn sie nur einen geringen Nutzen versprechen oder die Geschäftsstrategie nicht wirklich unterstützen. „Die geschäftliche Rechtfertigung dient als Grundlage für die Entscheidungsfindung, um sicherzustellen, dass das Projekt auf die angestrebten Nutzen, die zu den Business-Zielen beitragen, ausgerichtet ist und bleibt“. Dies entspricht dem Grundprinzip „Fortlaufende geschäftliche Rechtfertigung sicherstellen“. Siehe 2.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_2.1",
+    "topic": "Grundprinzipien"
+  },
+  {
+    "n": 4,
+    "q": "Welche Aussage über das Grundprinzip „Rollen, Verantwortlichkeiten und Beziehungen definieren“ ist RICHTIG?",
+    "scenario": "",
+    "question": "Welche Aussage über das Grundprinzip „Rollen, Verantwortlichkeiten und Beziehungen definieren“ ist RICHTIG?",
+    "items": [],
+    "opts": {
+      "A": "Das Projektmanagement-Team sollte ausschließlich aus internen Stakeholdern bestehen",
+      "B": "Die Management-Strukturen für das Tagesgeschäft einer Organisation sind in der Regel geeignet, die Projektarbeit zu steuern",
+      "C": "Im Lenkungsausschuss sollten keine Vertreter externer Lieferanten zugelassen sein",
+      "D": "Lieferanten können Stakeholder außerhalb des Business sein"
+    },
+    "answer": "D",
+    "expl": {
+      "A": "Das Projektmanagement-Team kann sich aus internen und externen Stakeholdern zusammensetzen. „Alle Projekte haben die folgenden primären Stakeholder: das Business, die Benutzer und die Lieferanten. Alle drei Stakeholder-Interessen müssen im Projektmanagement-Team effektiv vertreten werden. Dies spiegelt sich in der Gestaltung eines PRINCE2 Projektmanagement-Lenkungsausschusses wider“. Zudem können die Lieferanten „[...] entweder aus der Organisation kommen, oder es können externe Lieferanten aufgrund ihrer Fähigkeiten und Kenntnisse eingesetzt werden“. Siehe 2.3, Tabelle 6.1",
+      "B": "Die alltäglichen Linienmanagementstrukturen einer Organisation sind für die Projektarbeit kaum geeignet. „Die Linienmanagement-Strukturen des Business sind vielleicht nicht auf Projektarbeit ausgerichtet oder für sie geeignet“. Siehe 2.3",
+      "C": "Die Interessen aller drei Stakeholder, zu denen auch externe Stakeholder gehören können, sollten bei der Gestaltung des Lenkungsausschusses vertreten werden. „Alle drei Stakeholder-Interessen müssen im Projektmanagement-Team effektiv vertreten werden. Dies spiegelt sich in der Gestaltung eines PRINCE2 Projektmanagement-Lenkungsausschusses wider“. Siehe 2.3",
+      "D": "Lieferanten-Stakeholder können auch organisationsextern sein. „Stakeholder können Einzelpersonen oder Gruppen innerhalb oder außerhalb des Business sein [...] Stakeholder außerhalb des Business können Gewerkschaften, Kunden, Lieferanten, Communities, Interessengruppen, Banken oder die Medien sein“. Siehe 2.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_2.1",
+    "topic": "Grundprinzipien"
+  },
+  {
+    "n": 5,
+    "q": "Welches Grundprinzip wird bei der Festlegung von Grenzwerten für die sieben Leistungsaspekte angewendet, damit der Projektmanager effektiv arbeiten kann?",
+    "scenario": "",
+    "question": "Welches Grundprinzip wird bei der Festlegung von Grenzwerten für die sieben Leistungsaspekte angewendet, damit der Projektmanager effektiv arbeiten kann?",
+    "items": [],
+    "opts": {
+      "A": "Steuern nach dem Ausnahmeprinzip",
+      "B": "Lernen aus Erfahrung",
+      "C": "Anpassen an das Projekt",
+      "D": "Rollen, Verantwortlichkeiten und Beziehungen definieren"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Die Festlegung von Toleranzen für die sieben Leistungsaspekte entspricht dem Grundprinzip „Steuern nach dem Ausnahmeprinzip“: „Delegation von Befugnissen von einer Managementebene zur nächsten durch Festlegung von Toleranzen gegenüber den sieben Leistungsaspekten (Nutzen, Kosten, Zeit, Qualität, Umfang, Nachhaltigkeit und Risiko) für die jeweilige Ebene (Projekt, Phase, Team)“. Siehe 2.5",
+      "B": "Die Einbindung von Lessons Learned während der Laufzeit des Projekts entspricht dem Grundprinzip „Lernen aus Erfahrung“. „Ein PRINCE2 Projektmanagement-Projektteam sucht, erfasst und implementiert aktiv Verbesserungen infolge von relevanten Lessons Learned aus früheren Projekten und während der gesamten Projektlaufzeit. Es wendet diese in zukünftigen Projekten an und gibt sie an andere weiter“. Siehe 2.2",
+      "C": "Das Grundprinzip „Anpassen an das Projekt“ bezieht sich auf das Anpassen der Steuerung des Projekts an den Projektumfang und die Komplexität des Projekts. „PRINCE2 Projektmanagement lässt sich an die speziellen Anforderungen eines Projekts hinsichtlich seiner Umgebung, des Umfangs, der Komplexität, der Wichtigkeit, der Liefermethode, der Teamfähigkeiten und des Risikos anpassen“. Siehe 2.7",
+      "D": "Das Grundprinzip „Rollen, Verantwortlichkeiten und Beziehungen definieren“ bezieht sich auf die klare Definition von Projektrollen. „Ein PRINCE2 Projektmanagement-Projekt hat definierte und vereinbarte Rollen und Verantwortungsbereiche innerhalb einer Organisationsstruktur, die die Interessen von Business, Benutzern und Lieferanten als Stakeholder einbeziehen“. Siehe 2.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_2.1",
+    "topic": "Grundprinzipien"
+  },
+  {
+    "n": 6,
+    "q": "Was wird durch das Grundprinzip „Fortlaufende geschäftliche Rechtfertigung sicherstellen“ gefördert?",
+    "scenario": "",
+    "question": "Was wird durch das Grundprinzip „Fortlaufende geschäftliche Rechtfertigung sicherstellen“ gefördert?",
+    "items": [],
+    "opts": {
+      "A": "Dass das Projekt einen Stakeholder aus dem Business hat, um die fortlaufende Rechtfertigung der Investition sicherzustellen",
+      "B": "Dass das Projekt im Projektverlauf wünschenswert, machbar und erreichbar bleibt",
+      "C": "Dass die vom Projekt gelieferten Produkte die Qualitätsanforderungen erfüllen",
+      "D": "Dass die PRINCE2 Projektmanagement-Methode an den Umfang der Investition angepasst ist"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Das Vereinbaren von Rollen und Verantwortlichkeiten ist ein Schwerpunkt des Grundprinzips „Rollen, Verantwortlichkeiten und Beziehungen definieren“. „Ein PRINCE2 Projektmanagement-Projekt hat definierte und vereinbarte Rollen und Verantwortungsbereiche innerhalb einer Organisationsstruktur, die die Interessen von Business, Benutzern und Lieferanten als Stakeholder einbeziehen“. Alle Projekte haben die folgenden primären Stakeholder: das Business, die Benutzer und die Lieferanten. Siehe 2.3",
+      "B": "PRINCE2 Projektmanagement verlangt, dass „es einen berechtigten Grund für den Start eines Projekts geben muss und diese Rechtfertigung muss während des gesamten Projektlebenszyklus gültig bleiben und regelmäßig überprüft werden“. Dies entspricht dem Grundprinzip „Fortlaufende geschäftliche Rechtfertigung sicherstellen“. Siehe 2.1",
+      "C": "Das Grundprinzip „Produktorientierung“ ist auf die „Definition und Lieferung von Produkten ausgerichtet, wobei der Schwerpunkt auf deren Benutzerqualitätserwartungen und -anforderungen liegt“. Siehe 2.6",
+      "D": "Das Grundprinzip „Anpassen an das Projekt“ konzentriert sich auf die Anpassung der Steuerung an das jeweilige Projekt. „Durch Anpassung soll Folgendes bezweckt werden: [...]Die Projektsteuerungsmittel werden dem Umfang, der Komplexität, der Bedeutung, der Liefermethode, der Teamfähigkeit und den Risiken eines Projekts gerecht“. Siehe 2.7"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_2.1",
+    "topic": "Grundprinzipien"
+  },
+  {
+    "n": 7,
+    "q": "Welche Aussage beschreibt, wie die Grundprinzipien ein effektives Projektmanagement unterstützen?",
+    "scenario": "",
+    "question": "Welche Aussage beschreibt, wie die Grundprinzipien ein effektives Projektmanagement unterstützen?",
+    "items": [],
+    "opts": {
+      "A": "Sie geben dem Projektteam die Möglichkeit zu entscheiden, wie die Methode auf das Projekt angewendet werden soll",
+      "B": "Sie berücksichtigen die branchenspezifischen Modelle, da PRINCE2 Projektmanagement generisch ist",
+      "C": "Sie stützen sich auf ein gemeinsames Vokabular, das wie in PRINCE2 Projektmanagement definiert angewendet werden sollte",
+      "D": "Sie sollten bei allen Projekten innerhalb einer Organisation auf die gleiche Weise angewendet werden"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Die Grundprinzipien sind richtungsweisend für die Anpassung von PRINCE2 Projektmanagement an ein Projekt und seinen Kontext. „Um PRINCE2 Projektmanagement für eine so breite Palette von Projekten nutzbar zu machen, ist die Methode flexibel anwendbar und kann an die spezifischen Anforderungen jedes Projekts angepasst werden. Anstatt vorzuschreiben, was zu tun ist, um die Methode an ein spezifisches Projekt anzupassen, bietet PRINCE2 Projektmanagement Orientierung anhand von Grundprinzipien“. Siehe 2",
+      "B": "„Die Stärke von PRINCE2 Projektmanagement ist seine Flexibilität und die Tatsache, dass es nicht spezifisch für eine bestimmte Branche, eine bestimmte Art von Projekt, ein bestimmtes Geschäftsmodell, einen bestimmten Projektlebenszyklus, eine bestimmte Liefermethode, für die Produktentwicklung oder die Ingenieurpraxis konzipiert wurde“. Darüber hinaus „hängt es von der Art des Projekts sowie von internen und externen Faktoren des Business ab, wie die Methode angewendet und angepasst wird“. Dazu gehören auch branchenspezifische Modelle. Siehe 1.1.1.1.2",
+      "C": "Es stimmt, dass PRINCE2 Projektmanagement „weithin anerkannt ist und ein gemeinsames Vokabular für alle Beteiligten bietet, das die Konsistenz und die Fähigkeit zur Wiederverwendung von Projektressourcen fördert, die Mobilität der Mitarbeiter erleichtert und die Auswirkungen von Personalwechseln oder Übergaben verringert“. Es kann jedoch sein, dass die PRINCE2 Projektmanagement-Terminologie an das jeweilige Projekt angepasst werden muss. Im Allgemeinen kann es erforderlich sein, die Terminologie von PRINCE2 Projektmanagement an die im Unternehmen oder in der Branche, in der das Projekt durchgeführt wird, üblichen Begriffe anzupassen. „Es kann auch bedeuten, die Terminologie an die von den beteiligten Organisationen verwendeten Begriffe anzupassen“. Siehe 1.6, 2.7",
+      "D": "„Um PRINCE2 Projektmanagement für eine so breite Palette von Projekten nutzbar zu machen, ist die Methode flexibel anwendbar und kann an die spezifischen Anforderungen jedes Projekts angepasst werden. Anstatt vorzuschreiben, was zu tun ist, um die Methode an ein spezifisches Projekt anzupassen, bietet PRINCE2 Projektmanagement Orientierung anhand von Grundprinzipien“. Das bedeutet, dass sie bei verschiedenen Projekten innerhalb einer Organisation unterschiedlich angewendet werden können. Siehe 2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_2.2",
+    "topic": "Grundprinzipien"
+  },
+  {
+    "n": 8,
+    "q": "Welche Aussage beschreibt Leadership in einem Projekt?",
+    "scenario": "",
+    "question": "Welche Aussage beschreibt Leadership in einem Projekt?",
+    "items": [],
+    "opts": {
+      "A": "Es erfolgt am besten durch Zusammenarbeit innerhalb des Projektökosystems",
+      "B": "Es ist die Gesamtheit gemeinsamer Einstellungen, Werte und Ziele für das Projekt",
+      "C": "Es ist ein Steuerungsmittel, das angewendet wird, wenn ein bestimmtes Ereignis eintritt",
+      "D": "Es bedeutet, Anweisungen zur Ausführung von Aufgaben im Einklang mit vereinbarten Arbeitsweisen zu geben"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Leadership bedeutet, „Menschen motivieren, die Projektziele zu erreichen. Bei Projekten erfolgt das am besten durch Zusammenarbeit im gesamten Projektökosystem [...]“. Siehe 3.3",
+      "B": "„Die Gesamtheit der gemeinsamen Einstellungen, Werte und Ziele“ ist die Definition von Kultur, nicht von Leadership. Siehe 3.2.3",
+      "C": "„Ein Steuerungsmittel, das aufgrund eines bestimmten Ereignisses zum Einsatz kommt“, ist die Definition eines ereignisbasierten Steuerungsmittels, nicht von Leadership. Siehe 11.2.2",
+      "D": "„Anweisung zur Ausführung von Aufgaben im Einklang mit vereinbarten Arbeitsweisen“ ist die Definition von Management, nicht von Leadership. Siehe 3.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.1",
+    "topic": "Menschen"
+  },
+  {
+    "n": 9,
+    "q": "Was ist eine Definition von Ko-Kreation?",
+    "scenario": "",
+    "question": "Was ist eine Definition von Ko-Kreation?",
+    "items": [],
+    "opts": {
+      "A": "Zusammenarbeit mit wichtigen Einflussnehmern, um sicherzustellen, dass die vereinbarten Arbeitsweisen von allen Bereichen des Projektökosystems umgesetzt werden",
+      "B": "Änderung eines der genehmigten Managementprodukte, die Teil der Projekt-Baseline sind",
+      "C": "Sicherstellen, dass Entscheidungen, die an den Phasenübergängen getroffen werden, auf der fortlaufenden geschäftliche Rechtfertigung basieren",
+      "D": "Anwendung von Management-Steuerung, wenn ein bestimmtes Ereignis eintritt"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Die Definition von Ko-Kreation ist „eine spezifische Form der Zusammenarbeit, bei der Benutzer und wichtige Einflussnehmer bei der Gestaltung von Produkten und vereinbarten Arbeitsweisen einbezogen werden, um sicherzustellen, dass sie von den Projekt- und Organisationsökosystemen übernommen werden“. Siehe 3.3",
+      "B": "Die Definition von Änderung ist „eine Modifikation an einem der genehmigten Managementprodukte, die die Projekt-Baseline bilden“. Siehe 10.1",
+      "C": "„Sicherstellen, dass Entscheidungen, die an Phasenübergängen getroffen werden, auf geschäftliche Rechtfertigung überprüft werden“, beschreibt die Beziehung zwischen der Business Case Practice und dem Grundprinzip Steuern über Managementphasen. Siehe Tabelle 5.2",
+      "D": "Die Definition von einem ereignisbasierten Steuerungsmittel ist „ein Steuerungsmittel, das aufgrund eines bestimmten Ereignisses zum Einsatz kommt. Derartige Ereignisse sind beispielsweise das Ende einer Phase, die Vervollständigung der Projektleitdokumentation oder auch die Erstellung eines Ausnahmeberichts“. Siehe 11.2.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.1",
+    "topic": "Menschen"
+  },
+  {
+    "n": 10,
+    "q": "Welcher Aspekt ist KEIN Aspekt von Leadership?",
+    "scenario": "",
+    "question": "Welcher Aspekt ist KEIN Aspekt von Leadership?",
+    "items": [],
+    "opts": {
+      "A": "Anweisung zur Ausführung von Aufgaben im Einklang mit vereinbarten Arbeitsweisen",
+      "B": "Menschen motivieren, die Projektziele zu erreichen",
+      "C": "Überzeugen und Beeinflussen von und Ko-Kreation mit Stakeholdern",
+      "D": "Regelmäßiges Feedback einholen, um auf die Ziele des Projekts ausgerichtet zu bleiben"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Dies ist kein Aspekt von Leadership. Die Definition von Management ist „die Anweisung zur Ausführung von Aufgaben im Einklang mit vereinbarten Arbeitsweisen“. Siehe 3.3",
+      "B": "Dies ist ein Aspekt von Leadership. Die Definition von Leadership beinhaltet „Menschen motivieren, die Projektziele zu erreichen“. Siehe 3.3",
+      "C": "Dies ist ein Aspekt von Leadership. Die Definition von Leadership lautet „Überzeugung, Beeinflussung und gemeinsames Erstellen, wobei der Schwerpunkt auf der Pflege wichtiger Beziehungen liegt“. Siehe 3.3",
+      "D": "Dies ist ein Aspekt von Leadership. Die Definition von Leadership beinhaltet „die Einholung von regelmäßigem Feedback, um sicherzustellen, dass sich die Teammitglieder an den Projektzielen ausrichten“. Siehe 3.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.1",
+    "topic": "Menschen"
+  },
+  {
+    "n": 11,
+    "q": "Welche Aktivität sollte im Rahmen von „Führen über Organisationsgrenzen“ sorgfältig gemanagt werden, da sie häufig von Personen außerhalb des Projektteams durchgeführt wird?",
+    "scenario": "",
+    "question": "Welche Aktivität sollte im Rahmen von „Führen über Organisationsgrenzen“ sorgfältig gemanagt werden, da sie häufig von Personen außerhalb des Projektteams durchgeführt wird?",
+    "items": [],
+    "opts": {
+      "A": "Sicherstellung der Finanzierung des Business Case durch die Business-Ebene",
+      "B": "Integration neuer Produkte in den betroffenen Bereich der Organisation",
+      "C": "Engagement für die Realisierung des Nutzens nach dem Projekt gewinnen",
+      "D": "Lieferung der Produkte gemäß den vereinbarten Qualitätsspezifikationen"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "„Der Projektauftraggeber stellt die Finanzierung des Projekts sicher“ und gehört zum Projektmanagement-Team, er ist nicht außerhalb davon. „Personen innerhalb des Business, die von dem Projekt betroffen sind, aber nicht innerhalb des definierten Projektteams arbeiten“, können einen Beitrag leisten, indem sie „neue Produkte in ihren Organisationsbereich integrieren“. Siehe 6.2.4.1, 3.3.1",
+      "B": "„[...] Personen innerhalb des Business, die von dem Projekt betroffen sind, aber nicht innerhalb des definierten Projektteams arbeiten“, können einen Beitrag leisten, indem sie „neue Produkte in ihren Bereich der Organisation integrieren“. Siehe 3.3.1",
+      "C": "„Der Benutzervertreter ist verantwortlich für: die erfolgreiche Übergabe und Umsetzung von Produkten in das Business und die weitere Realisierung von Nutzen nach Abschluss des Projekts [...] Der Benutzervertreter muss sicherstellen, dass sich die Menschen in den Benutzer-Communitys fortlaufend ausreichend engagieren, um diese Aktivitäten zu unterstützen, insbesondere wenn ein langfristiges Engagement über die Lebensspanne des Projekts hinausgeht, z.B. die Realisierung von Nutzen“. Der Benutzervertreter befindet sich innerhalb des Projektteams, nicht außerhalb. Siehe 6.2.4.2",
+      "D": "Der Teammanager ist für die „Lieferung der Produkte nach den vereinbarten Spezifikationen“ verantwortlich und befindet sich innerhalb des Projektmanagement-Teams, nicht außerhalb. „Personen innerhalb des Business, die von dem Projekt betroffen sind, aber nicht innerhalb des definierten Projektteams arbeiten“, können einen Beitrag leisten, indem sie „neue Produkte in ihren Bereich der Organisation integrieren“. Siehe 6.2.4.6, 3.3.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.2",
+    "topic": "Menschen"
+  },
+  {
+    "n": 12,
+    "q": "Warum ist Change Management in einem Projekt wichtig?",
+    "scenario": "",
+    "question": "Warum ist Change Management in einem Projekt wichtig?",
+    "items": [],
+    "opts": {
+      "A": "Weil die Stakeholder verstehen sollten, welche organisatorischen Bereiche von dem Projekt betroffen sind",
+      "B": "Weil die Projektprodukte beschrieben und der Änderungssteuerung unterliegen sollten",
+      "C": "Weil man darauf vertrauen muss, dass das Projekt seine Umfangsziele erreichen kann und weiterhin gerechtfertigt bleibt",
+      "D": "Weil die Qualitätserwartungen der Benutzer an die Projektprodukte bekannt sein sollten"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Bei der Bestimmung der Detailebene, die für den Change-Management-Ansatz gelten soll, ist Folgendes zu berücksichtigen: welche Kompetenzen und Fähigkeiten während und nach der Überführung vom Ist- in den Zielzustand erforderlich sind; welche Bereiche des organisatorischen Ökosystems wahrscheinlich von dem Projekt betroffen sein werden; welche wichtigen Beziehungen es zu berücksichtigen gilt; die sich weiterentwickelnde Kultur und, wie die Überführung am ehesten gelingt“. Siehe 3.2.1",
+      "B": "„Die aktuellen genehmigten Versionen der Managementprodukte und Spezialistenprodukte, die der Änderungssteuerung unterliegen“, lautet die Definition von Projekt-Baseline. Change Management fördert das Verständnis, „welche Bereiche des organisatorischen Ökosystems wahrscheinlich von dem Projekt beeinflusst sein werden“. Siehe 10.1, 3.2.1",
+      "C": "Zweck der Practice „Business Case“ ist die Etablierung geeigneter Mechanismen für die Beurteilung, ob ein Projekt wünschenswert, machbar und erreichbar ist (und bleibt), (.....) Change Management fördert das Verständnis, „welche Bereiche des organisatorischen Ökosystems wahrscheinlich von dem Projekt beeinflusst sein werden“. Siehe 6.1, 3.2.1",
+      "D": "Der Zweck der Practice „Qualität“ besteht darin, die „Anforderungen der Benutzer an die Projektprodukte zu dokumentieren und die Art und Weise zu etablieren, mit denen sie erfüllt werden“. Change Management fördert das Verständnis, „welche Bereiche des organisatorischen Ökosystems wahrscheinlich von dem Projekt beeinflusst sein werden“. Siehe 8.1, 3.2.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.3",
+    "topic": "Menschen"
+  },
+  {
+    "n": 13,
+    "q": "Welche Aussage über Fähigkeiten und Kompetenzen in einem Projekt ist RICHTIG?",
+    "scenario": "",
+    "question": "Welche Aussage über Fähigkeiten und Kompetenzen in einem Projekt ist RICHTIG?",
+    "items": [],
+    "opts": {
+      "A": "Teams sollten aus Mitgliedern mit ähnlichen Fähigkeiten und Kompetenzen bestehen",
+      "B": "Je nach Struktur des Teams werden die Teammitglieder wahrscheinlich unterschiedliche Leistungen erbringen",
+      "C": "Es sollten Standard-Rollen und -Verantwortlichkeiten verwendet werden, die sich an den Bedürfnissen des Projekts orientieren",
+      "D": "Der Projektmanager ist häufig für die Karriereentwicklung von Mitgliedern des Projektteams verantwortlich"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Der Aufbau „eines effektiven Teams erfordert eine Vielzahl von Fähigkeiten, Kompetenzen und Perspektiven, die den Anforderungen des Projekts entsprechen“. Siehe 3.3.2",
+      "B": "„Selbst wenn Menschen technisch gesehen über die gleichen Fähigkeiten und Kompetenzen verfügen, werden sie die gleiche Rolle wahrscheinlich unterschiedlich ausfüllen. Manchmal kann ein und dieselbe Person unterschiedliche Leistungen erbringen, je nachdem, mit wem sie zusammenarbeitet“. Siehe 3.3.2",
+      "C": "„Rollen und Verantwortlichkeiten sollten die Fähigkeiten, Befugnisse und Verfügbarkeit der Person, die die Arbeit ausführt, widerspiegeln und unter Berücksichtigung ihrer wichtigen Beziehungen betrachtet werden. Sie sollten im Falle von Verschiebungen in diesen wichtigen Beziehungen überprüft und entsprechend aktualisiert werden“. Daher ist die Verwendung von Standardrollen und -verantwortlichkeiten wahrscheinlich nicht effektiv. Siehe 3.3.2",
+      "D": "Es ist stimmt, „einige Motivationsfaktoren können außerhalb des Zuständigkeitsbereichs eines Projektmanagers liegen. Zum Beispiel die Vergütung und die berufliche Entwicklung von Projektteammitgliedern“. Dies wirkt sich auf die Art und Weise aus, wie der Projektmanager das Team leitet. Es geht aber nicht auf die Fähigkeit und Kompetenz der Teammitglieder ein, die vereinbarte Projektarbeit zu erledigen. Siehe 3.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.3",
+    "topic": "Menschen"
+  },
+  {
+    "n": 14,
+    "q": "Was ist eine Beschreibung eines Zwecks des Change-Management-Ansatzes?",
+    "scenario": "",
+    "question": "Was ist eine Beschreibung eines Zwecks des Change-Management-Ansatzes?",
+    "items": [],
+    "opts": {
+      "A": "Beschreiben, wie Änderungsvorschläge für die Projekt-Baseline erfasst und genehmigt werden sollten",
+      "B": "Beschreiben der erforderlichen Standards für die Lieferung von Produkten, die den Erwartungen des Benutzers entsprechen",
+      "C": "Definieren, wie das Business in Zukunft arbeiten muss, um die Projektziele zu erreichen",
+      "D": "Beschreiben der Prozesse und Verfahren, die für das Management von Unsicherheiten erforderlich sind"
+    },
+    "answer": "C",
+    "expl": {
+      "A": "Es stimmt, dass der Issuemanagement-Ansatz dazu verwendet wird, „zu beschreiben, wie Issues erfasst und gemeldet werden und wie Änderungen an der Projekt-Baseline bewertet und gesteuert werden“. Ein Änderungsantrag ist eine Art eines Issue: „Ein Vorschlag zur Änderung einer Baseline“. Siehe 10.5, 10.2.3",
+      "B": "Der Zweck des Qualitätsmanagement-Ansatzes ist die „Beschreibung der anzuwendenden Qualitätstechniken und -standards sowie der Rollen und Verantwortlichkeiten für das Erreichen der erforderlichen Qualitätskriterien und (Projekt-)Akzeptanzkriterien während eines Projekts“. Siehe 8.5",
+      "C": "Zweck des Change-Management-Ansatzes: „legt den Zielzustand der Organisation fest, der erforderlich ist, damit das Projekt seine Ziele erreicht, sowie die Art und Weise, in der das Unternehmen vom aktuellen Zustand über etwaige Zwischenzustände zum Zielzustand übergehen wird“. Siehe 3.2.1",
+      "D": "Ein Risiko ist „ein unsicheres Ereignis bzw. eine Gruppe von Ereignissen mit Auswirkungen auf die Erreichung der Ziele für den Fall des Eintretens“. Daher beschreibt der Risikomanagement-Ansatz, „wie Risiken im Rahmen des Projekts gehandhabt werden (dazu gehören die spezifischen Verfahren, Techniken, Standards und Verantwortlichkeiten, die angewendet werden sollen)“. Siehe 9.1, 9.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.4",
+    "topic": "Menschen"
+  },
+  {
+    "n": 15,
+    "q": "Ein Projekt veranstaltet einen Workshop, in dem sich die Mitglieder des Projektteams über ihre Erfahrungen mit neuen Arbeitsweisen austauschen. Welches Grundprinzip wird bei dem Element „Menschen“ angewendet?",
+    "scenario": "Ein Projekt veranstaltet einen Workshop, in dem sich die Mitglieder des Projektteams über ihre Erfahrungen mit neuen Arbeitsweisen austauschen.",
+    "question": "Welches Grundprinzip wird bei dem Element „Menschen“ angewendet?",
+    "items": [],
+    "opts": {
+      "A": "Lernen aus Erfahrung",
+      "B": "Steuern nach dem Ausnahmeprinzip",
+      "C": "Rollen, Verantwortlichkeiten und Beziehungen definieren",
+      "D": "Produktorientierung"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Das Grundprinzip „Lernen aus Erfahrung“ wird durch das Element „Menschen“ angewandt, indem erkannt wird, dass auch im Projekt-Ökosystem bedeutendes Wissen schlummert . Dies erfordert eine kollaborative Umgebung, die den Wissensaustausch während der gesamten Laufzeit eines Projekts fördert“. „Insbesondere menschliche Faktoren wie Verhalten, Kultur und Beziehungen sind schwer zu dokumentieren und werden am besten durch soziales Lernen identifiziert“. Siehe 3.5.1",
+      "B": "Das Grundprinzip „Lernen aus Erfahrung“ konzentriert sich auf das Lernen und den Wissensaustausch, während das Grundprinzip „Steuern nach dem Ausnahmeprinzip“ dadurch angewendet wird, dass -soweit möglich- „Entscheidungen auf der jeweils niedrigsten Ebene getroffen werden, auf der das erforderliche Wissen vorhanden ist, um diese Entscheidungen zu verantworten. Entscheidungen sollten nach oben getragen werden, wenn sie potenziell Auswirkungen auf andere Bereiche des Projekts haben könnten“. Siehe 3.5.1",
+      "C": "Das Grundprinzip „Lernen aus Erfahrung“ konzentriert sich auf das Lernen und den Wissensaustausch, während das Grundprinzip „Rollen, Verantwortlichkeiten und Beziehungen definieren“ dafür sorgt, dass „die menschlichen Faktoren während des gesamten Projektlebenszyklus kontinuierlich berücksichtigt werden“. Siehe 3.5.1",
+      "D": "Das Grundprinzip „Lernen aus Erfahrung“ konzentriert sich auf das Lernen und den Wissensaustausch, während das Grundprinzip „Produktorientierung“ dadurch angewendet wird, dass erkannt wird, dass „die Ko-Kreation von Produkten mit vereinbarten Produktbeschreibungen mit den Business-, Benutzer- und Lieferantengemeinschaften deren unterschiedliche Perspektiven vereint“. Dies verbessert die Entwicklung und Umsetzung der Produkte im Business“. Siehe 3.5.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_3.5",
+    "topic": "Menschen"
+  },
+  {
+    "n": 16,
+    "q": "Welches Managementprodukt sollte der Lenkungsausschuss genehmigen, um den Umfang und den Zeitdauer des Projekts festzulegen?",
+    "scenario": "",
+    "question": "Welches Managementprodukt sollte der Lenkungsausschuss genehmigen, um den Umfang und den Zeitdauer des Projekts festzulegen?",
+    "items": [],
+    "opts": {
+      "A": "Projektmandat",
+      "B": "Nutzenmanagement-Ansatz",
+      "C": "Projektleitdokumentation",
+      "D": "Business Case"
+    },
+    "answer": "C",
+    "expl": {
+      "A": "In PRINCE2 Projektmanagement wird der Auslöser für das Projekt als Projektmandat bezeichnet. Dieses wird von der verantwortlichen Instanz des Business zur Verfügung gestellt, das das Projekt in Auftrag gibt“. Siehe. 13.3",
+      "B": "„Zweck des Nutzenmanagement-Ansatzes ist es, die Nutzenmanagementmaßnahmen und Nutzenrevisionen, die eingesetzt werden, zu definieren, damit gewährleistet ist, dass die Projektergebnisse erzielt werden, und damit verifiziert werden kann, dass die Projektnutzen realisiert werden.“ Siehe 5.5",
+      "C": "„Die Projektleitdokumentation gibt die Richtung und den Umfang des Projekts vor und bildet (zusammen mit dem Phasenplan) den „Vertrag“, der zwischen dem Projektmanager und dem Lenkungsausschuss geschlossen wird.“ Siehe 4.3.1",
+      "D": "Der Business Case wird verwendet, „die geschäftliche Rechtfertigung eines Projekts zu dokumentieren“. Siehe 5.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.1",
+    "topic": "Practice: Business Case"
+  },
+  {
+    "n": 17,
+    "q": "Was ist ein Zweck der Practice „Business Case“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck der Practice „Business Case“?",
+    "items": [],
+    "opts": {
+      "A": "Den Projektauftraggeber in die Lage versetzen, zu entscheiden, ob das Projekt fortgeführt werden soll",
+      "B": "Identifizieren der Qualitätserwartungen des Benutzers, um den Bedürfnissen des Business gerecht zu werden",
+      "C": "Vermeiden, dass die geplanten Ergebnisse negative Nebeneffekte für das Business verursachen",
+      "D": "Definieren der Produkte und der Art wie sie geliefert werden sollen, um den Business Case zu erfüllen"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Der Zweck der Practice „Business Case“ ist die Etablierung geeigneter Mechanismen für die Beurteilung, ob ein Projekt wünschenswert, machbar und erreichbar ist (und bleibt), um auf dieser Grundlage über weitere Investitionen entscheiden zu können.“ Siehe 5.1",
+      "B": "„Der Zweck der Practice „Qualität“ besteht darin, die Anforderungen der Benutzer an die Projektprodukte zu dokumentieren und die Art und Weise zu etablieren, mit denen sie erfüllt werden.“ „Der Zweck der Practice „Business Case“ ist die Etablierung geeigneter Mechanismen für die Beurteilung, ob ein Projekt wünschenswert, machbar und erreichbar ist (und bleibt), um auf dieser Grundlage über weitere Investitionen entscheiden zu können.“ Siehe 8.1, 5.1",
+      "C": "„PRINCE2 Projektmanagement-Projekte liefern Outputs in Form von Produkten, die dazu dienen, Veränderungen in einer Organisation oder für Organisationen zu ermöglichen. Diese Änderungen erstellen Fähigkeiten, die zu Ergebnissen führen. Mithilfe der Ergebnisse kann die Organisation den Nutzen realisieren, der im Business Case für das Projekt dargelegt ist. Ergebnisse, die von einem oder mehreren Stakeholdern als negativ betrachtet werden, heißen negative Nebeneffekte“. Es ist nicht der Zweck der Business Case Practice, negative Nebeneffekte zu verhindern, sondern sie zu identifizieren und zu managen. Siehe 5.1",
+      "D": "„Der Zweck der Practice „Pläne“ besteht darin, die Kommunikation und Steuerung zu erleichtern, indem die zu liefernden Produkte selbst (das „Was“) und die Art und Weise ihrer Lieferung definiert werden (das „Wer“, das „Wie“, das „Wo“ und die Schätzungen des „Wann“ und des „Wie viel“), um den Business Case des Projekts (das „Warum“) zu erfüllen“. Es ist die Business Case Practice, die die Investition in ein Projekt rechtfertigt. Siehe 7.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.1.1",
+    "topic": "Practice: Business Case"
+  },
+  {
+    "n": 18,
+    "q": "Womit sollte begründet werden, ob das Projekt fortgeführt werden soll?",
+    "scenario": "",
+    "question": "Womit sollte begründet werden, ob das Projekt fortgeführt werden soll?",
+    "items": [],
+    "opts": {
+      "A": "Projektkurzbeschreibung und Nutzenmanagement-Ansatz",
+      "B": "Projektstatusbericht und Nutzenmanagement-Ansatz",
+      "C": "Business Case und Projektstatusbericht",
+      "D": "Projektkurzbeschreibung und Business Case"
+    },
+    "answer": "D",
+    "expl": {
+      "A": "„Ziel der Projektkurzbeschreibung ist es, eine umfassende Grundlage für die Initiierung des Projekts zu liefern“. Der Nutzenmanagement-Ansatz „definiert die Maßnahmen zum Nutzenmanagement und die Nutzenrevisionen, die eingesetzt werden“. Es ist der Business Case, der die Fortführung eines Projekts zusammen mit der Projektkurzbeschreibung rechtfertigt. Siehe 5.5, 5.3.1.4",
+      "B": "Projektstatusberichte „informieren den Lenkungsausschuss (und möglicherweise sonstige Stakeholder) in von ihm definierten regelmäßigen Abständen über die in einer Phase erzielten Fortschritte zu unterrichten“. Der Nutzenmanagement-Ansatz „definiert die zu etablierenden Nutzenmanagement-Maßnahmen und Nutzenrevisionen“. Es ist die Projektkurzbeschreibung, die die Fortschritt eines Projekts zusammen mit dem Business Case rechtfertigt. Siehe 11.5, 5.5",
+      "C": "Der Business Case wird verwendet, „die geschäftliche Rechtfertigung eines Projekts zu dokumentieren“. Projektstatusberichte „informieren den Lenkungsausschuss (und möglicherweise sonstige Stakeholder) in von ihm definierten regelmäßigen Abständen über die in einer Phase erzielten Fortschritte zu unterrichten“. Es ist die Projektkurzbeschreibung, die die Fortschritt eines Projekts zusammen mit dem Business Case rechtfertigt. Siehe 5.5, 11.5",
+      "D": "„Ziel der Projektkurzbeschreibung ist es, eine umfassende Grundlage für die Initiierung des Projekts zu liefern“, und der Business Case wird „zum Dokumentieren der geschäftlichen Rechtfertigung für ein Projekt verwendet“ und dient somit der Bestimmung, ob es gerechtfertigt ist. Siehe 5.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.1.3",
+    "topic": "Practice: Business Case"
+  },
+  {
+    "n": 19,
+    "q": "Identifizieren Sie das fehlende Wort/die fehlenden Wörter im folgenden Satz: Ein Business-Ziel sind die messbaren Ergebnisse, die Fortschritte in Bezug auf die/den [?]aufzeigen und zu denen das Projekt beitragen sollte",
+    "scenario": "",
+    "question": "Identifizieren Sie das fehlende Wort/die fehlenden Wörter im folgenden Satz: Ein Business-Ziel sind die messbaren Ergebnisse, die Fortschritte in Bezug auf die/den [?]aufzeigen und zu denen das Projekt beitragen sollte",
+    "items": [],
+    "opts": {
+      "A": "Strategie der Organisation",
+      "B": "vom Business gewünschten Outputs",
+      "C": "vom Business gewünschten Nutzen",
+      "D": "geschäftliche Rechtfertigung"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Ein Business-Ziel sind „die messbaren Ergebnisse, die Fortschritte in Bezug auf die Strategie der Organisation aufzeigen und zu denen das Projekt beitragen sollte“. Siehe 5.1",
+      "B": "Es geht um die Strategie der Organisation, nicht um die Ergebnisse. Ein Output ist „der materielle oder immaterielle Liefergegenstand einer Aktivität“. Siehe 5.1",
+      "C": "Es geht um die Strategie der Organisation, nicht um den Nutzen. Ein Nutzen ist „die messbare Verbesserung eines Ergebnisses, die von der investierenden Organisation als vorteilhaft betrachtet wird und zu einem oder mehreren Business-Ziel(en) beiträgt“. Siehe 5.1",
+      "D": "Es handelt sich um die Strategie der Organisation, nicht die geschäftliche Rechtfertigung. „Eines der Grundprinzipien von PRINCE2 Projektmanagement lautet, dass Projekte eine fortlaufende geschäftliche Rechtfertigung sicherstellen müssen. Das erfordert nicht nur, dass die geschäftliche Rechtfertigung zu Beginn des Projekts durch die Erstellung eines Business Case erstellt wird, sondern sie muss auch regelmäßig überprüft und bei Entscheidungen und Ereignissen, die sich auf die Wünschbarkeit, Wirtschaftlichkeit oder Erreichbarkeit auswirken könnten, entsprechend aktualisiert werden“. Siehe 5.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.1.4",
+    "topic": "Practice: Business Case"
+  },
+  {
+    "n": 20,
+    "q": "Eine Abteilung der Regierung hat das Ziel, ihren CO2-Fußabdruck um 8-12 % zu reduzieren. Wie sollte diese Anforderung erfasst werden?",
+    "scenario": "Eine Abteilung der Regierung hat das Ziel, ihren CO2-Fußabdruck um 8-12 % zu reduzieren.",
+    "question": "Wie sollte diese Anforderung erfasst werden?",
+    "items": [],
+    "opts": {
+      "A": "Als eine Nutzentoleranz",
+      "B": "Als eine Nachhaltigkeitstoleranz",
+      "C": "Als zu erreichende Ergebnisse",
+      "D": "Als eine Qualitätstoleranz"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Nutzentoleranz ist „die zulässige Abweichung von Leistungszielen für Nutzen, die noch akzeptiert wird, ohne dass an die nächsthöhere Managementebene eskaliert werden muss. Die Nutzentoleranz ist im Business Case dokumentiert“. Siehe 5.2.2",
+      "B": "Im Rahmen der „Ausrichtung der Produkte auf Business-Ziele und Toleranzen“ sollten Nachhaltigkeits-ziele festgelegt werden. „Letztendlich müssen die Ergebnisse und Nutzen, die aus dem Projekt erzielt werden sollen, sich an den Business-Zielen ausrichten und zu diesen beitragen. Dazu können Umwelt-, Sozial- und Governance-Ziele (ESG) gehören, die von der Organisation festgelegt wurden. Die im Business Case dokumentierten Nachhaltigkeits-Performanceziele und -toleranzen für das Projekt sollten sich auf die ESG-Ziele der Organisation beziehen und zu diesen beitragen“. Siehe 5.2.2",
+      "C": "„Ergebnis: das Resultat einer Veränderung, das in der Regel das Verhalten und die Umstände in der realen Welt beeinflusst. Veränderungen werden implementiert, um Ergebnisse zu erzielen, die durch die im Rahmen der Veränderung durchgeführten Aktivitäten erreicht werden“. Siehe 5.1",
+      "D": "Die Qualitätstoleranz ist definiert als „die zulässige Abweichung von der Produktqualität, die akzeptiert wird, ohne dass an die nächsthöhere Managementebene eskaliert werden muss“. Siehe 8.2.1.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.1.5",
+    "topic": "Practice: Business Case"
+  },
+  {
+    "n": 21,
+    "q": "Am Ende einer Phase hat der Projektmanager die Auswirkungen von Risiken und Issues auf die geschäftliche Rechtfertigung festgestellt. In welchem Schritt des Verfahrens für das Business Case-Management sollte dies geschehen?",
+    "scenario": "Am Ende einer Phase hat der Projektmanager die Auswirkungen von Risiken und Issues auf die geschäftliche Rechtfertigung festgestellt.",
+    "question": "In welchem Schritt des Verfahrens für das Business Case-Management sollte dies geschehen?",
+    "items": [],
+    "opts": {
+      "A": "Entwickeln",
+      "B": "Prüfen",
+      "C": "Pflegen",
+      "D": "Bestätigen"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Im Schritt „Entwickeln“ des „Verfahrens für das Business Case Management“, „mit der Erteilung eines Projektmandats wird der Prozess „Vorbereiten eines Projekts“ ausgelöst. Das Projektmandat wird dann als Input verwendet, um die erste geschäftliche Rechtfertigung für die Projektdokumentation zu entwickeln, die im Business-Case-Entwurf dokumentiert ist“. Siehe 5.3.1.1",
+      "B": "Während des Schritts „Prüfen“ im Rahmen des Verfahrens für das Business Case Management „kann der Business Case weiter verfeinert werden und wird über die Phasen hinweg aktualisiert, sobald die Projektkosten, der Zeitrahmen, die Produkte und die Risiken besser bekannt sind [...] Der Projektmanager prüft den Business Case außerdem: bei der Bewertung von Fortschritt, Risiken und Issues, um deren Auswirkungen auf die geschäftliche Rechtfertigung zu bestimmen“. Siehe 5.3.1.2",
+      "C": "„Der Projektmanager aktualisiert den Business Case mit den Fortschrittsdaten (z. B. gelieferte Produkte, Projektkosten, realisierte Nutzen) und den neuesten prognostizierten Nutzen und Leistungszielen“. Dies ist Teil des Schrittes „Pflegen“ im Rahmen des „Verfahrens für Business Case-Management“. Siehe 5.3.1.3",
+      "D": "Der Schritt „Bestätigen“ bedeutet, „das Business wird den Business Case im Rahmen einer Projektnutzen-Review nach dem Projekt überprüfen, um die Projektergebnisse in Bezug auf die Realisierung der Nutzen zu bestimmen. Es wird auch bewerten, ob die beabsichtigten Nutzen in der Praxis realisiert wurden“. Siehe 5.3.1.4"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.1.6",
+    "topic": "Practice: Business Case"
+  },
+  {
+    "n": 22,
+    "q": "Aufgrund des Feedbacks von Stakeholdern hat der Projektmanager festgestellt, dass die Struktur des Projektmanagement-Teams geändert werden muss. Welches Grundprinzip wird von der Practice „Organisation“ bei der Umsetzung dieses Feedbacks angewendet?",
+    "scenario": "Aufgrund des Feedbacks von Stakeholdern hat der Projektmanager festgestellt, dass die Struktur des Projektmanagement-Teams geändert werden muss.",
+    "question": "Welches Grundprinzip wird von der Practice „Organisation“ bei der Umsetzung dieses Feedbacks angewendet?",
+    "items": [],
+    "opts": {
+      "A": "Lernen aus Erfahrung",
+      "B": "Rollen, Verantwortlichkeiten und Beziehungen definieren",
+      "C": "Steuern über Managementphasen",
+      "D": "Anpassen an das Projekt"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Das Grundprinzip „Lernen aus Erfahrung“ wird im Rahmen der Practice „Organisation“ angewendet, indem „die Verwendung von Erfahrungen zur Information über die Struktur des Projektmanagement-Teams, den Projektstrukturplan und ein gesundes Projekt-Ökosystem angewendet wird“. Das führt zu dem Ergebnis, dass „die richtigen Menschen zur richtigen Zeit in den richtigen Rollen, um das Projekt erfolgreich zu liefern“. Siehe Tabelle 6.5",
+      "B": "Das Grundprinzip „Rollen, Verantwortlichkeiten und Beziehungen definieren“ wird im Rahmen der Practice „Organisation“ angewendet, indem „eine explizite Struktur des Projektmanagement-Teams entwickelt wird, die sicherstellt, dass sich alle Beteiligten ihrer Verantwortlichkeiten und Beziehungen voll bewusst sind“. Siehe Tabelle 6.5",
+      "C": "Das Grundprinzip „Steuern über Managementphasen“ wird im Rahmen der Practice „Organisation“ angewendet, indem „die Struktur des Projektmanagement-Teams, die Rollenbeschreibungen, der kommerzielle Management-Ansatz, der Kommunikationsmanagement-Ansatz und der Change-Management-Ansatz an den Phasenübergängen angepasst wird“. Siehe Tabelle 6.5",
+      "D": "Das Grundprinzip „Anpassen an das Projekt“ wird ihm Rahmen der Practice „Organisation“ angewendet, indem „ein Projektmanagement-Team geschaffen wird, das den Anforderungen des Projekts und den Fähigkeiten der beteiligten Organisationen und Mitarbeiter entspricht“. Siehe Tabelle 6.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.2.2",
+    "topic": "Practice: Organisation"
+  },
+  {
+    "n": 23,
+    "q": "Was sollte eine individuelle Rechenschaftspflicht für Nachhaltigkeitsziele festlegen?",
+    "scenario": "",
+    "question": "Was sollte eine individuelle Rechenschaftspflicht für Nachhaltigkeitsziele festlegen?",
+    "items": [],
+    "opts": {
+      "A": "Rollenbeschreibungen",
+      "B": "Struktur des Projektmanagement-Teams",
+      "C": "Produktbeschreibung",
+      "D": "Business Case"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Rollenbeschreibungen beschreiben „die Rollen der Mitglieder des Projektmanagement-Teams und ihre spezifischen Verantwortlichkeiten“. Dies sollte eine spezifische Rechenschaftspflicht für Nachhaltigkeitsziele beinhalten. Siehe 6.5",
+      "B": "Die Struktur des Projektmanagement-Teams definiert „die am Projekt beteiligten Menschen, ihre Beziehung und die Art ihrer Zusammenarbeit zu definieren“. Es sind die Rollenbeschreibungen, die „die Rollen der Mitglieder des Projektmanagement-Teams und deren spezifischen Verantwortlichkeiten“ darstellen. Dies würde eine spezifische Rechenschaftspflicht für Nachhaltigkeitsziele beinhalten. Siehe 6.5",
+      "C": "Eine Produktbeschreibung wird verwendet um „den Zweck, der Zusammensetzung, wovon es abgeleitet ist und der Qualitätsspezifikationen eines Produkts“. Es sind die Rollenbeschreibungen, die „die Rollen der Mitglieder des Projektmanagement-Teams und deren spezifischen Verantwortlichkeiten“ darstellen. Dies würde eine spezifische Rechenschaftspflicht für Nachhaltigkeitsziele beinhalten. Siehe 8.5, 6.5",
+      "D": "Ein Business Case wird verwendet „um die geschäftliche Rechtfertigung für die Durchführung eines Projekts zu dokumentieren, basierend auf einem Vergleich der geschätzten Kosten und des erwarteten Nutzens, der erzielt werden sollen sowie unter Berücksichtigung damit verbundener Risiken“. Es sind die Rollenbeschreibungen, die „die Rollen der Mitglieder des Projektmanagement-Teams und deren spezifischen Verantwortlichkeiten“ darstellen. Dies würde eine spezifische Rechenschaftspflicht für Nachhaltigkeitsziele beinhalten. Siehe 5.5, 6.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.2.3",
+    "topic": "Practice: Organisation"
+  },
+  {
+    "n": 24,
+    "q": "Wer ist mit der Befugnis ausgestattet, das Projekt innerhalb des vom Business festgelegten Rahmens zu lenken?",
+    "scenario": "",
+    "question": "Wer ist mit der Befugnis ausgestattet, das Projekt innerhalb des vom Business festgelegten Rahmens zu lenken?",
+    "items": [],
+    "opts": {
+      "A": "Projektmanager",
+      "B": "Projektauftraggeber",
+      "C": "Projektmanagement-Team",
+      "D": "Lenkungsausschuss"
+    },
+    "answer": "D",
+    "expl": {
+      "A": "„Der Projektmanager ist befugt, die laufende Abwicklung eines Projekts im Auftrag des Lenkungsausschusses und innerhalb der vereinbarten Projekttoleranzen und Einschränkungen zu übernehmen“. Siehe 6.2.4.5",
+      "B": "„Der Projektauftraggeber wird vom Business als einziger Rechenschaftspflichtiger für das Projekt ernannt und ist letztendlich für den Erfolg des Projekts rechenschaftspflichtig.“ Siehe 6.2.4.1",
+      "C": "„Die Struktur des Projektmanagement-Teams besteht aus dem Lenkungsausschuss, dem Projektmanager, Teammanagern sowie Rollen für Projektsicherung und Projektunterstützung.“ Sie verfügt nicht über die Befugnis, das Projekt zu lenken. Siehe 6.2.3",
+      "D": "Der Lenkungsausschuss ist definiert als „rechenschaftspflichtig gegenüber dem Business für den Erfolg des Projekts und die Befugnis hat, das Projekt innerhalb des vom Business festgelegten Aufgabenbereichs zu lenken“. Siehe 6.2.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.2.4",
+    "topic": "Practice: Organisation"
+  },
+  {
+    "n": 25,
+    "q": "Wie sollte der Benutzervertreter seiner Verantwortung für die fortlaufende Realisierung des Nutzens nach dem Projekt gerecht werden?",
+    "scenario": "",
+    "question": "Wie sollte der Benutzervertreter seiner Verantwortung für die fortlaufende Realisierung des Nutzens nach dem Projekt gerecht werden?",
+    "items": [],
+    "opts": {
+      "A": "Durch die Darstellung der erforderlichen Arbeiten in einer Hierarchie, um zu helfen, das Projekt zu strukturieren",
+      "B": "Durch die Sicherstellung des Engagements der Menschen aus der Benutzer-Community für die Einführung der neuen Produkte",
+      "C": "Durch die Festlegung, wie die fortlaufende Rechtfertigung des Projekts zugesichert werden kann",
+      "D": "Durch die Sicherstellung der technischen Integrität der an die Benutzer gelieferten Projektprodukte"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Ein Projektstrukturplan ist „eine Hierarchie aller während eines Projekts zu leistenden Arbeiten, die ein Bindeglied zwischen dem Produktstrukturplan und den Arbeitspaketen bildet [...] und unterstützt den Projektmanager bei der Strukturierung von Projektteams und deren Abgrenzung“. Er unterstützt den Benutzervertreter nicht dabei, den Nutzen nach dem Projekt zu realisieren. Siehe. 6.2.5",
+      "B": "„Der Benutzervertreter muss sicherstellen, dass sich die Menschen in den Benutzer-Community fortlaufend ausreichend engagieren, um diese Aktivitäten zu unterstützen, insbesondere wenn ein langfristiges Engagement über die Lebensspanne des Projekts hinausgeht, z.B. die Realisierung von Nutzen.“ Siehe 6.2.4.2",
+      "C": "„Die Mitglieder des Lenkungsausschusses sind rechenschaftspflichtig für die Sicherung der von ihnen vertretenen Interessensgruppe (Business, Benutzer und Lieferant). Der Lenkungsausschuss ist dafür verantwortlich, festzulegen, wie die Projektsicherung durchgeführt wird, für Klarheit in den Rollen und Verantwortlichkeiten zu sorgen und wie die mit den Sicherungsrollen betrauten Personen miteinander interagieren“. Es liegt jedoch im Interesse des Business und nicht im Interesse des Benutzers, sicherzustellen, dass „Projekte werden geschaffen, um einer Business-Anforderung zu erfüllen, der während der gesamten Lebensdauer des Projekts kontinuierlich durch ein ausgewogenes Kosten-Nutzen-Verhältnis gerechtfertigt werden muss“. Siehe 6.2.4.7, Tabelle 6.1",
+      "D": "„Der Lieferantenvertreter ist rechenschaftspflichtig für die Qualität der Produkte, die von Lieferanten bereitgestellt werden, sowie für die technische Integrität des Projekts“. Siehe 6.2.4.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.2.5",
+    "topic": "Practice: Organisation"
+  },
+  {
+    "n": 26,
+    "q": "Ein neues Teammitglied ist gerade zum Projektteam gestoßen und wird einen Besuch vor Ort durchführen. In welchem Schritt des Verfahrens für „Organisationsdesign und -entwicklung“ sollte dies geschehen?",
+    "scenario": "Ein neues Teammitglied ist gerade zum Projektteam gestoßen und wird einen Besuch vor Ort durchführen.",
+    "question": "In welchem Schritt des Verfahrens für „Organisationsdesign und -entwicklung“ sollte dies geschehen?",
+    "items": [],
+    "opts": {
+      "A": "Das Projektökosystem entwickeln",
+      "B": "Das organisatorische Ökosystem verstehen",
+      "C": "Das Projektökosystem designen",
+      "D": "Überführung des Projekts in das organisatorische Ökosystem"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Während des Schrittes „das Projekt-Ökosystem entwickeln“: „das Projektökosystem muss als Reaktion auf sich ändernde Projektanforderungen, Teammitglieder und ihre entstehenden Beziehungen kontinuierlich weiterentwickelt werden, um sicherzustellen, dass das Projekt so aufgestellt ist, dass es seine Ziele erreicht und sich kontinuierlich verbessert. Die Entwicklungsaktivitäten können Folgendes umfassen: Einarbeitung von Menschen in das Projekt, z. B. ein Besuch vor Ort, eine Einweisung oder eine Zertifizierung“. Siehe 6.3.1.3.",
+      "B": "Im Schritt „Das organisatorische Ökosystem verstehen“ „Projekte vereinen Menschen aus Organisationen, die bereits definierte Organisationsstrukturen und Anforderungen an Corporate Governance haben. Ein Verständnis des organisatorischen Ökosystems ist erforderlich, um die Projektorganisation erfolgreich zu gestalten und festzulegen, wie sich das Projektökosystem als eigenständige Einheit aus dem organisatorischen Ökosystem heraus entwickeln wird“. Siehe 6.3.1.1",
+      "C": "Während des Schritts „Das Projektökosystem designen“, geht es beim „Projektorganisationsdesign darum, wie die Arbeit und Menschen organisiert werden, um die Ziele des Projekts zu erreichen. Dazu gehören: Bestimmung der effektiven Struktur des Teams; Ermittlung der benötigten Mitarbeitenden und Ressourcen, Implementieren integrierter Arbeitspraktiken, Entwicklung der Verhaltensweisen und der Kultur im Projekt“. Siehe 6.3.1.2",
+      "D": "Wie zu Beginn eines Projekts ist es auch zum Abschluss eines Projekts wichtig, das organisatorische Ökosystem zu verstehen, in das die Produkte des Projekts und möglicherweise noch aktive Projektteammitglieder überführt werden. Es gibt drei wichtige Aspekte, die der Lenkungsausschuss im Rahmen der Überführung berücksichtigen muss: Produkte: Sicherstellung, dass alle Produkte in das Unternehmen integriert wurden und alle laufenden Aktivitäten im Zusammenhang mit den Produkten(...) von den entsprechenden Bereichen des Business übernommen werden. • Mitarbeitende: Sicherstellung, dass alle verbleibenden Mitglieder des Projektteams erfolgreich in das Business zurückgeführt werden oder in Übereinstimmung mit den kommerziellen Absprachen für externe Lieferanten gemanagt werden. • Lernen: Sicherstellung, dass die effektivsten Methoden für den Austausch von Erfahrungen und die Nutzung des gewonnenen Wissens bei der Durchführung der Projektarbeit verwendet werden; die Mitglieder des Projektteams haben möglicherweise Kompetenzen und Fähigkeiten erworben, die wahrscheinlich dem gesamten Business und den beteiligten Organisationen zugutekommen.Siehe. 6.3.1.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.2.6",
+    "topic": "Practice: Organisation"
+  },
+  {
+    "n": 27,
+    "q": "Was ist der Zweck der Practice „Pläne“?",
+    "scenario": "",
+    "question": "Was ist der Zweck der Practice „Pläne“?",
+    "items": [],
+    "opts": {
+      "A": "Den Projektmanager in die Lage versetzen, das Projekt zu steuern, indem definiert wird, wer die Produkte liefert und wann sie geliefert werden sollen",
+      "B": "Den Projektauftraggeber in die Lage versetzen, zu überwachen, ob das Projekt wünschenswert, machbar und erreichbar ist und fortgeführt werden soll",
+      "C": "Dem Projektauftraggeber ermöglichen zu definieren, welche Rolle im Projektmanagement-Team für die Erstellung des Plans verantwortlich ist",
+      "D": "Dem Projektmanager ermöglichen zu planen, wie auf Unsicherheiten reagiert werden soll und wer vereinbarte Maßnahmen umsetzen soll"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Der Zweck der Practice „Pläne“ besteht darin, die Kommunikation und Steuerung zu erleichtern, indem die zu liefernden Produkte selbst (das „Was“) und die Art und Weise ihrer Lieferung definiert werden (das „Wer“, das „Wie“, das „Wo“ und die Schätzungen des „Wann“ und des „Wie viel“), um den Business Case des Projekts (das „Warum“) zu erfüllen“. Siehe 7.1",
+      "B": "„Der Zweck der Practice „Business Case“ ist die Etablierung geeigneter Mechanismen für die Beurteilung, ob ein Projekt wünschenswert, machbar und erreichbar ist (und bleibt), um auf dieser Grundlage über weitere Investitionen entscheiden zu können“. Siehe 5.1",
+      "C": "„Mit der Practice „Organisation“ soll die Projektstruktur der Rechenschaftspflicht und Verantwortlichkeiten (das Wer?) definiert und etabliert werden“. Dazu sollte auch das Definieren der Verantwortlichkeiten für die Planung gehören. Siehe 6.1",
+      "D": "Als Teil des Schritts „Planen“ im Rahmen des Risikomanagement-Verfahrens sollten die Risikomaßnahmen geplant werden. „In diesem Schritt wird eine geeignete Risikomaßnahme identifiziert und bewertet, damit Bedrohungen beseitigt oder reduziert und Chancen maximiert werden können“. Siehe 9.3.1.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.3.1",
+    "topic": "Practice: Pläne"
+  },
+  {
+    "n": 28,
+    "q": "Die Geschäftsstrategie hat sich geändert, sodass der Umfang des Projekts über die von der Business-Ebene zugestimmten Toleranzen hinaus erweitert werden muss. Welcher Plan sollte erstellt werden, um diese Änderung zu berücksichtigen?",
+    "scenario": "Die Geschäftsstrategie hat sich geändert, sodass der Umfang des Projekts über die von der Business-Ebene zugestimmten Toleranzen hinaus erweitert werden muss.",
+    "question": "Welcher Plan sollte erstellt werden, um diese Änderung zu berücksichtigen?",
+    "items": [],
+    "opts": {
+      "A": "Projektplan",
+      "B": "Phasenplan",
+      "C": "Teamplan",
+      "D": "Ausnahmeplan"
+    },
+    "answer": "D",
+    "expl": {
+      "A": "„Der Projektplan wird während des Prozesses „Initiieren eines Projekts“ erstellt und nach seiner Genehmigung durch den Lenkungsausschuss als Baseline festgelegt“, wohingegen ein Ausnahmeplan auf der Grundlage „wenn der Lenkungsausschuss beschließt, die Ausnahme innerhalb der Phase zu beheben“. Siehe 7.2.2.1, 7.2.2.4",
+      "B": "„Nachfolgende Phasenpläne werden gegen Ende der aktuellen Phase erstellt“, während ein Ausnahmeplan auf der Grundlage „der Lenkungsausschuss beschließt, die Ausnahme innerhalb der Phase zu beheben“. Siehe 7.2.2.2, 7.2.2.4",
+      "C": "„Ein Teamplan wird von einem Teammanager zur Unterstützung der Durchführung eines oder mehrerer Arbeitspakete erstellt“, während ein Ausnahmeplan auf der Grundlage „der Lenkungsausschuss beschließt, die Ausnahme innerhalb der Phase zu beheben“. Siehe 7.2.2.3, 7.2.2.4",
+      "D": "„Der Zweck des Plans ist es, einen Vorschlag bereitzustellen, der das „Was“, „Wo“, „Wann“, „Wie“ und „Wer“ des gesamten Projekts (oder einer Teilmenge seiner Aktivitäten) beschreibt“. Dies bezieht sich auf alle Arten von Plänen (Projekt-, Phasen-, Team- und Ausnahmepläne). „Wenn ein Projekt oder eine Phase eine vereinbarte Toleranz überschreitet (oder voraussichtlich überschreiten wird), wird ein Projektmanager dem Lenkungsausschuss einen Ausnahmebericht vorlegen“ und „wenn die Prognose eine Überschreitung der Projekttoleranzen vorsieht, hat der Lenkungsausschuss nicht mehr die Befugnis, das Projekt zu lenken, und muss die Angelegenheit zur Entscheidung an die Business-Ebene verweisen. Der Lenkungsausschuss kann den Projektmanager auffordern, einen Ausnahmeplan für das Projekt zu erstellen“. Siehe 7.5, 7.2.2.4, 11.2.6.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.3.3",
+    "topic": "Practice: Pläne"
+  },
+  {
+    "n": 29,
+    "q": "Identifizieren Sie das fehlende Wort/die fehlenden Wörter im folgenden Satz: Bei der Planung eines Projekts gibt es mindestens zwei relevante Arten von [?]: interne(n) und externe(n).",
+    "scenario": "",
+    "question": "Identifizieren Sie das fehlende Wort/die fehlenden Wörter im folgenden Satz: Bei der Planung eines Projekts gibt es mindestens zwei relevante Arten von [?]: interne(n) und externe(n).",
+    "items": [],
+    "opts": {
+      "A": "Abhängigkeit",
+      "B": "Plan",
+      "C": "Ausnahme",
+      "D": "Umfang"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Es ist eine Abhängigkeit. „Eine Abhängigkeit bedeutet, dass ein Produkt von einem anderen abhängt. Es gibt in einem Projekt mindestens zwei relevante Arten von Abhängigkeiten: interne und externe“. Siehe 7.3.1.2",
+      "B": "Es gibt keine internen und externen Pläne. „Eine Abhängigkeit bedeutet, dass ein Produkt von einem anderen abhängt. Es gibt in einem Projekt mindestens zwei relevante Arten von Abhängigkeiten: interne und externe“. In PRINCE2 Projektmanagement gibt es drei Planebenen. Siehe 7.3.1.2, Abbildung 7.1",
+      "C": "Es gibt mindestens zwei Arten von Abhängigkeiten, nicht Ausnahmen. Eine Ausnahme ist „eine Situation, die voraussichtlich zu einer Abweichung außerhalb der Toleranzgrenzen führt, die zwischen dem Projektmanager und dem Lenkungsausschuss vereinbart wurden“. Siehe 11.1",
+      "D": "Es gibt mindestens zwei Arten von Abhängigkeiten, nicht Umfang. Umfang ist „die Summe der Produkt-, Lieferund Managementaktivitäten, die durch einen genehmigten Plan und seine Produktbeschreibungen und Arbeitspaketbeschreibungen dargestellt werden“. Siehe 7.1.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.3.4",
+    "topic": "Practice: Pläne"
+  },
+  {
+    "n": 30,
+    "q": "Wie wird in einem Projektplan ein iterativ-inkrementelles Projekt am besten berücksichtigt?",
+    "scenario": "",
+    "question": "Wie wird in einem Projektplan ein iterativ-inkrementelles Projekt am besten berücksichtigt?",
+    "items": [],
+    "opts": {
+      "A": "Durch viele Lieferphasen, die es ermöglichen, Akzeptanzkriterien während der Produktentwicklung zu verfeinern",
+      "B": "Durch Sicherstellen, dass Produktbeschreibungen fertiggestellt sind, bevor das Projekt vom Lenkungsausschuss genehmigt wird",
+      "C": "Durch Herunterbrechen der für die Phase vorgesehenen Arbeiten auf das Detailniveau, das für die tägliche Steuerung durch den Projektmanager erforderlich ist.",
+      "D": "Durch die Aufteilung des Projekts in zwei Phasen, um eine iterative Lieferung von Produkten während des Projekts zu ermöglichen"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Als Teil der Definition der Anzahl der Phasen „könnte bei einem iterativ-inkrementellen Projekt der Projektplan mehrere Lieferphasen vorsehen, in denen die Qualitäts- und Abnahmekriterien parallel zur Entwicklung der benötigten Produkte durch die Verwendung eines Produkt-Backlogs verfeinert werden“. Siehe. 7.2.3.1",
+      "B": "Bei der Definition und Analyse von Produkten „sollten die Produktbeschreibungen, in einem linearsequenziellen Projekt, die Produktbeschreibungen ausreichend detailliert sein, um Kosten und Zeit mit einem angemessenen Maß an Zuverlässigkeit schätzen zu können“. Dies ist das Gegenteil von dem, was bei iterativ-inkrementellen Projekten der Fall ist. Siehe 7.3.1.1.3",
+      "C": "Ein Phasenplan ist „ein detaillierter Plan, der als Grundlage für die Projektmanagement-Steuerung während einer Phase verwendet wird“. Dies gilt unabhängig davon, ob es sich um ein iterativ-inkrementelles oder ein linearsequenzielles Projekt handelt. Siehe 7.2.2.2",
+      "D": "Beim Verwenden von Projektphasen „für ein einfaches Projekt mit einer kleinen Anzahl gut verstandener Produkte und einer reifen Liefermethode sind möglicherweise nur zwei Phasen erforderlich. Dies sind eine Initiierungsphase zur Erstellung der Projektleitdokumentation und eine einzige Lieferphase“. Ein iterativ-inkrementelles Projekt kann mehrere Lieferphasen umfassen, in denen die Akzeptanzkriterien verfeinert werden. Siehe. 7.2.3.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.3.5",
+    "topic": "Practice: Pläne"
+  },
+  {
+    "n": 31,
+    "q": "Der Projektmanager muss die Qualitätserwartungen der Benutzer erfassen. In welchem Schritt der Planungstechnik sollten die Erwartungen erfasst werden?",
+    "scenario": "Der Projektmanager muss die Qualitätserwartungen der Benutzer erfassen.",
+    "question": "In welchem Schritt der Planungstechnik sollten die Erwartungen erfasst werden?",
+    "items": [],
+    "opts": {
+      "A": "Produkte definieren und analysieren",
+      "B": "Arbeitspakete organisieren",
+      "C": "Schätzungen durchführen",
+      "D": "Zeitplan aufstellen"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Im Prozess „Vorbereiten eines Projekts“ werden die wichtigsten Produkte oder Ergebnisse zusammen mit den wichtigsten Qualitätsanforderungen in der Projektproduktbeschreibung dokumentiert“. Dies geschieht bei dem Verfassen der Projektproduktbeschreibung im Schritt „Definieren und Analysieren von Produkten“. Siehe. 7.3.1.1.1",
+      "B": "„Wenn die Liefermethode festgelegt ist, können die Lieferaktivitäten, die mit jedem Produkt verbunden sind, identifiziert und in Arbeitspakete organisiert werden“. Dies ist der Schritt „Arbeitspakete organisieren“. Siehe 7.3.1.2",
+      "C": "„Projektmanager und Teammanager planen immer mit Schätzungen“. Dies ist der Schritt „Schätzungen durchführen“. Siehe 7.3.1.3",
+      "D": "„Die Abfolge, die Wechselbeziehungen und die Dauer von Arbeitspaketen und den zugehörigen Aufgaben werden in einem Zeitplan erfasst. Alle Arbeitspakete einer Phase müssen in den Zeitplan für diese Phase aufgenommen werden“. Dies ist der Schritt „Zeitplan aufstellen“. Siehe 7.3.1.4"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.3.6",
+    "topic": "Practice: Pläne"
+  },
+  {
+    "n": 32,
+    "q": "Was ist der Zweck der Practice „Qualität“?",
+    "scenario": "",
+    "question": "Was ist der Zweck der Practice „Qualität“?",
+    "items": [],
+    "opts": {
+      "A": "Steuerung ermöglichen durch die Definition, wie das Projekt die Produkte liefern soll, um den Business Case zu erfüllen",
+      "B": "Dokumentieren der Benutzeranforderungen und Sicherstellen, dass sie während des Projekts unverändert bleiben",
+      "C": "Identifizieren, wie das Projekt sicherstellen wird, dass die Benutzeranforderungen an die Projektprodukte erfüllt werden",
+      "D": "Zustimmen, dass Produkte geliefert werden, die nicht Teil der geschäftlichen Rechtfertigung des Projekts waren"
+    },
+    "answer": "C",
+    "expl": {
+      "A": "„Der Zweck der Practice „Pläne“ besteht darin, die Kommunikation und Steuerung zu erleichtern, indem die zu liefernden Produkte selbst (das „Was“) und die Art und Weise ihrer Lieferung definiert werden (das „Wer“, das „Wie“, das „Wo“ und die Schätzungen des „Wann“ und des „Wie viel“), um den Business Case des Projekts (das „Warum“) zu erfüllen“. Siehe 7.1",
+      "B": "Es ist eine unrealistische Erwartung, dass Anforderungen während des gesamten Projekts unverändert bleiben sollten. „Unabhängig davon, wie gründlich und genau die Anforderungen der Stakeholder im Prozess „Initiieren eines Projekts“ in Produktbeschreibungen erfasst wurden, sollte das Projektmanagement-Team Anforderungsänderungen antizipieren und darauf vorbereitet sein, diese zu bewältigen“. Siehe 8.1.2",
+      "C": "„Der Zweck der Practice „Qualität“ besteht darin, die Anforderungen der Benutzer an die Projektprodukte zu dokumentieren und die Art und Weise zu etablieren, mit denen sie erfüllt werden“. Darüber hinaus beschreibt „Qualität, wie sichergestellt wird, dass die Projektprodukte die Erwartungen und Anforderungen der Benutzer erfüllen und die Realisierung des erwünschten Nutzens ermöglichen“. Siehe 8.1",
+      "D": "Als Teil der Practice „Qualität“ hilft eine produktorientierte Qualität „[...] zu vermeiden, dass Ressourcen für Arbeiten aufgewendet werden, die nicht auf die geschäftliche Rechtfertigung des Projekts zurückgeführt werden können“. Siehe 8.1.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.4.1",
+    "topic": "Practice: Qualität"
+  },
+  {
+    "n": 33,
+    "q": "Der Teammanager muss aufzeichnen, dass ein Produkt getestet werden muss, aber noch nicht genehmigt wurde. Wo sollten diese Informationen erfasst werden?",
+    "scenario": "Der Teammanager muss aufzeichnen, dass ein Produkt getestet werden muss, aber noch nicht genehmigt wurde.",
+    "question": "Wo sollten diese Informationen erfasst werden?",
+    "items": [],
+    "opts": {
+      "A": "Qualitätsregister",
+      "B": "Qualitätsspezifikationen",
+      "C": "Produktregister",
+      "D": "Projektproduktbeschreibung"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Das Qualitätsregister dient der „Zusammenfassung aller Qualitätsmanagement-Aktivitäten, die geplant oder eingetreten sind. Der Projektmanager und die Projektsicherung verwenden das Qualitätsregister zur Überprüfung der erzielten Fortschritte“. Siehe 8.5",
+      "B": "Qualitätsspezifikationen beschreiben „der Qualitätsmessgrößen, die bei der Qualitätssteuerung angewendet werden, und der Anforderungen, die das fertige Produkt erfüllen muss“. Als Teil der „produktbasierten Qualität“ „bietet PRINCE2 Projektmanagement einen produktbasierten Ansatz für Anforderungen, der darauf abzielt, Anforderungen in Akzeptanzkriterien und Qualitätsspezifikationen für Projektprodukte und in Folge entsprechende Lieferaktivitäten zu übersetzen“. Siehe 8.1.1, 8.1.2",
+      "C": "Das Produktregister dient dazu „eine Liste aller für einen Plan erforderlichen Produkte sowie deren Status zu erstellen“. Siehe 8.5",
+      "D": "Der Zweck der Projektproduktbeschreibung besteht darin, „die Hauptprodukte des Projekts und ihren beabsichtigten Zweck zu beschreiben, einschließlich der Qualitätserwartungen der Benutzer, der Abnahmekriterien und der Abnahmemethoden für das Projekt“. Siehe 7.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.4.3",
+    "topic": "Practice: Qualität"
+  },
+  {
+    "n": 34,
+    "q": "Durch welche Aussage wird eine Anforderung beschrieben?",
+    "scenario": "",
+    "question": "Durch welche Aussage wird eine Anforderung beschrieben?",
+    "items": [],
+    "opts": {
+      "A": "Ein Bedarf oder eine Erwartung, der/die in einem genehmigten Managementprodukt dokumentiert ist.",
+      "B": "Die Erfassung der Qualitätserwartungen an das Projektprodukt. Die Benutzer-Qualitätserwartungen sind Bestandteil der Projektproduktbeschreibung",
+      "C": "Eine priorisierte Liste von Kriterien, die das Projektprodukt erfüllen muss, bevor eine Abnahme durch den Benutzer erfolgt",
+      "D": "Eine Beschreibung der Qualitätsmessgrößen, die bei der Qualitätssteuerung angewendet werden"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Eine Anforderung wird definiert als „ein Bedarf oder eine Erwartung, der/die in einem genehmigten Managementprodukt dokumentiert ist“. Siehe 8.1.1",
+      "B": "Eine Qualitätserwartung des Benutzers ist definiert als „eine Aussage über die vom Projektprodukt erwartete Qualität, festgehalten in der Projektproduktbeschreibung“. Siehe 8.1.1",
+      "C": "Eine priorisierte Liste von Kriterien, die das Projektprodukt erfüllen muss, bevor eine Abnahme durch den Benutzer erfolgt. Siehe 8.1.1",
+      "D": "Qualitätsspezifikationen beschreiben „der Qualitätsmessgrößen, die bei der Qualitätssteuerung angewendet werden, und der Anforderungen, die das fertige Produkt erfüllen muss“. 8.1.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.4.4",
+    "topic": "Practice: Qualität"
+  },
+  {
+    "n": 35,
+    "q": "Eine neue Anforderung wird beim Erstellen eines untergeordneten Plans identifiziert. Wie sollte das gemanagt werden?",
+    "scenario": "Eine neue Anforderung wird beim Erstellen eines untergeordneten Plans identifiziert.",
+    "question": "Wie sollte das gemanagt werden?",
+    "items": [],
+    "opts": {
+      "A": "Durch Aktualisierung des Business Case",
+      "B": "Durch Verwendung des Issuemanagement-Ansatzes",
+      "C": "Durch Aktualisieren der Projektproduktbeschreibung",
+      "D": "Durch Aktualisieren des Qualitätsmanagement-Ansatzes"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "„Der Business Case kann weiter verfeinert werden und wird über die Phasen hinweg aktualisiert, sobald die Projektkosten, der Zeithorizonten, die Produkte und die Risiken besser bekannt sind“ und am Ende jeder Phase „aktualisiert der Projektmanager den Business Case mit den Fortschrittsdaten (z. B. gelieferte Produkte, Projektkosten, realisierte Nutzen) und den neuesten prognostizierten Nutzen und Leistungszielen“. Eine neue Anforderung kann sich jedoch auf die im Business Case beschriebenen Vorteile auswirken oder auch nicht. Darüber hinaus sollten „Änderungen an der Baseline-Projektleitdokumentation, die sich aus der Planung auf Detailebene ergeben, mithilfe des Issuemanagement-Ansatzes behandelt werden“. Siehe 5.3.1.2, 5.3.1.3, 8.2.1.6",
+      "B": "„Änderungen an der Baseline-Projektleitdokumentation, die sich aus der Planung auf Detailebene ergeben, sollten mit dem Issuemanagement-Ansatz behandelt werden“. Siehe 8.2.1.6",
+      "C": "Die Projektproduktbeschreibung sollte „alle wichtigen Produkte, die geliefert werden sollen“ identifizieren und „diese Abdeckung ist von entscheidender Bedeutung, um die Einführung von Anforderungen außerhalb des genehmigten Projektumfangs bei der Entwicklung von Produktbeschreibungen zu vermeiden“. Eine neue Anforderung kann sich auf die Projektproduktbeschreibung auswirken oder auch nicht. Darüber hinaus sollten „Änderungen an der Baseline-Projektleitdokumentation, die sich aus der Planung auf Detailebene ergeben, mithilfe des Issuemanagement-Ansatzes behandelt werden“. Siehe 8.2.1.1, 8.2.1.6,",
+      "D": "Der Qualitätsmanagement-Ansatz stellt die Beschreibung der „anzuwendenden Qualitätstechniken und - standards sowie der Rollen und Verantwortlichkeiten für das Erreichen der erforderlichen Qualitätsspezifikationen und Abnahmekriterien während eines Projekts“ bereit. Siehe 8.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.4.5",
+    "topic": "Practice: Qualität"
+  },
+  {
+    "n": 36,
+    "q": "Ein System wurde getestet und der Benutzer muss die Verantwortung für das System übernehmen. Wo im Qualitätsmanagement-Verfahren sollte dies geschehen?",
+    "scenario": "Ein System wurde getestet und der Benutzer muss die Verantwortung für das System übernehmen.",
+    "question": "Wo im Qualitätsmanagement-Verfahren sollte dies geschehen?",
+    "items": [],
+    "opts": {
+      "A": "Sammeln von Benutzer-Inputs",
+      "B": "Produktabnahme",
+      "C": "Den Qualitätsmanagement-Ansatz beschreiben",
+      "D": "Qualitätssteuerung"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "„Die Qualitätserwartungen des Benutzers und - Abnahmekriterien werden im Prozess „Vorbereiten eines Projekts“ in der Projektproduktbeschreibung dokumentiert, einem wichtigen Input des PRINCE2 Projektmanagement-Planungstechnik“. Siehe 8.3.1.1.1",
+      "B": "„Durch die Abnahme eines Projektprodukts wird in der Regel das Eigentum oder die Verantwortung für das Produkt vom Projekt oder Lieferanten auf den Lenkungsausschuss im Namen des Benutzers übertragen“. Siehe 8.3.1.3",
+      "C": "Der Qualitätsmanagement-Ansatz „sollte hauptsächlich darstellen, wie die Qualitätssteuerung organisiert, umgesetzt, überwacht und berichtet werden soll, und gleichzeitig eine Zusammenfassung bieten, wie die Qualitätsplanung erfolgt ist“. Siehe 8.3.1.1.3",
+      "D": "„Qualitätssteuerungsaktivitäten werden im Qualitätsregister erfasst, das Informationen für Phasenabschlussberichte und den Projektabschlussbericht bereitstellt. Das Qualitätsregister zeichnet lediglich die Qualitätssteuerungsaktivität und ihr Resultat auf (in der Regel als „bestanden“ oder „nicht bestanden“). Wenn ein Produkt eine Qualitätssteuerungsaktivität wie eine Inspektion oder einen Test nicht besteht, aber die Erwartung besteht, dass es beim nächsten Versuch bestehen wird, kann es sinnvoll sein, die Aktivität zu wiederholen“. Siehe. 8.3.1.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.4.6",
+    "topic": "Practice: Qualität"
+  },
+  {
+    "n": 37,
+    "q": "Was ist ein Zweck der Practice „Risiko“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck der Practice „Risiko“?",
+    "items": [],
+    "opts": {
+      "A": "Sich mit Anliegen befassen zu Standards, die auf Produkte angewendet werden sollen",
+      "B": "Identifizieren der Wahrscheinlichkeit des Auftretens einer Bedrohung und ihrer möglichen Auswirkungen auf das Projekt",
+      "C": "Garantieren der Lieferung des vereinbarten Umfangs zur richtigen Zeit, zu den entsprechenden Kosten und der entsprechenden Qualität",
+      "D": "Sicherstellen, dass Probleme gelöst werden, bevor sie sich negativ auf das Projekt auswirken können"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "„Der Zweck des Qualitätsmanagement-Ansatzes ist die Beschreibung der während eines Projekts anzuwendenden Qualitätstechniken und -standards sowie der Rollen und Verantwortlichkeiten für das Erreichen der erforderlichen Qualitätsspezifikationen und (Projekt-)Abnahmekriterien“. Siehe 8.5",
+      "B": "„Zweck der Practice „Risiko“ ist es, Unsicherheiten, die die Projektziele beeinträchtigen würden, zu identifizieren, zu bewerten und zu steuern und als Ergebnis die Erfolgschancen des Projekts zu erhöhen“. Darüber hinaus „wird ein Risiko an der Eintrittswahrscheinlichkeit der Bedrohung oder Chance, sowie der Höhe der Auswirkungen auf die Ziele gemessen“. Siehe 9.1",
+      "C": "„Zweck der Practice „Risiko“ ist es, Unsicherheiten, die die Projektziele beeinträchtigen würden, zu identifizieren, zu bewerten und zu steuern und als Ergebnis die Erfolgschancen des Projekts zu erhöhen“. Es gibt keine Garantie, dass die vereinbarten Ziele erreicht werden. Siehe 9.1",
+      "D": "„Ein Problem ist ein Issue mit unmittelbaren und negativen Auswirkungen“. Es handelt sich also eher um einen Aspekt der Practice „Issues“ als der Practice „Risiko“. Siehe 10.2.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.5.1",
+    "topic": "Practice: Risiko"
+  },
+  {
+    "n": 38,
+    "q": "Wo wird dem Projektmanagement-Team eine Anleitung bereitgestellt, wie Bedrohungen zu erfassen sind?",
+    "scenario": "",
+    "question": "Wo wird dem Projektmanagement-Team eine Anleitung bereitgestellt, wie Bedrohungen zu erfassen sind?",
+    "items": [],
+    "opts": {
+      "A": "Risikomanagement-Ansatz",
+      "B": "Risikoregister",
+      "C": "Digital- und Datenmanagement-Ansatz",
+      "D": "Arbeitspaketbeschreibung"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Der Risikomanagement-Ansatz beschreibt, „wie Risiken im Projekt gemanagt werden“. Dazu gehören die spezifischen Verfahren, Techniken, Standards und Verantwortlichkeiten, die zu berücksichtigen sind“. Siehe 9.5",
+      "B": "Risikoregister dient dazu, „eine Liste aller Risiken eines Vorhabens inklusive deren Status und ihrer Historie“. Es ist der Risikomanagement-Ansatz, der beschreibt, „[...] wie Risiken im Projekt gemanagt werden“. Dazu gehören spezielle Verfahren. Siehe 9.5",
+      "C": "Der Zweck des Digital- und Datenmanagement-Ansatzes ist es zu beschreiben, „wie Daten und Informationen im gesamten Projektökosystem und während des gesamten Projektlebenszyklus und danach verwaltet werden“. Es ist der Risikomanagement-Ansatz, der beschreibt, „[...] wie Risiken im Projekt gemanagt werden“. Dazu gehören spezielle Verfahren. Siehe 11.5, 9.5",
+      "D": "Eine Arbeitspaketbeschreibung dient dazu, „zu beschreiben, wie ein oder mehrere Produkte hergestellt und geliefert werden“. Es ist der Risikomanagement-Ansatz, der beschreibt, „[...] wie Risiken im Projekt gemanagt werden“. Dazu gehören spezielle Verfahren. Siehe 7.5, 9.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.5.3",
+    "topic": "Practice: Risiko"
+  },
+  {
+    "n": 39,
+    "q": "Welcher Begriff beschreibt die Person, die für das Management, die Überwachung und die Kontrolle eines bestimmten Risikos verantwortlich ist?",
+    "scenario": "",
+    "question": "Welcher Begriff beschreibt die Person, die für das Management, die Überwachung und die Kontrolle eines bestimmten Risikos verantwortlich ist?",
+    "items": [],
+    "opts": {
+      "A": "Risikoeigentümer",
+      "B": "Risikobearbeiter",
+      "C": "Projektunterstützung",
+      "D": "Projektsicherung"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Ein Risikoeigentümer ist die Person, die für das Management, die Überwachung und die Steuerung eines bestimmten Risikos verantwortlich ist“. Der Risikoeigentümer ist für das Management, die Überwachung und die Kontrolle eines bestimmten Risikos verantwortlich, einschließlich der Umsetzung der ausgewählten Maßnahmen, um Bedrohungen zu begegnen oder Chancen zu maximieren. Der Risikobearbeiter ist für eine bestimmte Risikomaßnahme verantwortlich“. Siehe 9.2, 9.2.3.2",
+      "B": "Es ist der Risikoeigentümer, nicht der Risikobearbeiter. Risikobearbeiter ist „die Person, die für die Umsetzung einer Risikomaßnahme verantwortlich ist. Diese Rolle wird auch als Risikobearbeiter bezeichnet“. Siehe 9.2",
+      "C": "Nicht die Projektunterstützung, sondern der Risikoeigentümer reagiert auf ein Risiko. Die Projektunterstützung „ist verantwortlich für die Bereitstellung von Dienstleistungen wie administrative Unterstützung, die Moderation von Besprechungen und Workshops, Beratung und Leitlinien zu den Projekttools, Planungsunterstützung, Risikomanagement, Issuemanagement und Change Management“. Siehe 6.2.4.8",
+      "D": "Es ist der Risikoeigentümer, nicht die Projektsicherung, die auf ein Risiko reagiert. Projektsicherung: „Die Mitglieder des Lenkungsausschusses sind rechenschaftspflichtig für die Sicherung der von ihnen vertretenen Interessensgruppe (Business, Benutzer und Lieferant). Der Lenkungsausschuss ist dafür verantwortlich, festzulegen, wie die Projektsicherung durchgeführt wird, für Klarheit in den Rollen und Verantwortlichkeiten zu sorgen und wie die mit den Sicherungsrollen betrauten Personen miteinander interagieren“. Siehe 6.2.4.7"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.5.4",
+    "topic": "Practice: Risiko"
+  },
+  {
+    "n": 40,
+    "q": "Inwiefern führt die Verlustaversion zu einer weniger effektiven Entscheidungsfindung in Bezug auf Risiken?",
+    "scenario": "",
+    "question": "Inwiefern führt die Verlustaversion zu einer weniger effektiven Entscheidungsfindung in Bezug auf Risiken?",
+    "items": [],
+    "opts": {
+      "A": "Dadurch, dass es einem wichtiger erscheint etwas beizubehalten, als sich auf etwas Neues einzulassen,",
+      "B": "Indem man das Risiko ignoriert, in dem Glauben, dass alles nach Plan läuft",
+      "C": "Indem man den Zusammenhalt in der Gruppe höher bewertet, als die richtige Entscheidung zu finden",
+      "D": "Indem man Risiken, die in zeitlich näher liegen als riskanter einschätzt"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Als Teil der Risikokultur „sind solche Entscheidungsverzerrungen natürlich und weitgehend positiv und ermöglichen es dem Gehirn, jeden Tag effizient schnelle Entscheidungen zu treffen. Manchmal kann eine Entscheidungsverzerrung jedoch zu einer weniger effektiven Entscheidungsfindung führen. Es gibt viele Arten von Verzerrungen, z.B.: [...] Verlustversion: eine Denkweise, die die Vermeidung von Verlusten höher bewertet als das Erzielen oder Gewinnen“. Siehe 9.2.4",
+      "B": "Als Teil der Risikokultur „sind solche Entscheidungsverzerrungen natürlich und weitgehend positiv und ermöglichen es dem Gehirn, jeden Tag effizient schnelle Entscheidungen zu treffen. Manchmal kann eine Entscheidungsverzerrung jedoch zu einer weniger effektiven Entscheidungsfindung führen. Es gibt viele Arten von Verzerrungen, z.B.: [...] Optimismus-Bias: eine Denkweise, die Menschen dazu bringt, nachteilige Risiken zu ignorieren, in der Annahme, dass die Dinge für sie wahrscheinlich erfolgreich sein werden“. Siehe 9.2.4",
+      "C": "Als Teil der Risikokultur „sind solche Entscheidungsverzerrungen natürlich und weitgehend positiv und ermöglichen es dem Gehirn, jeden Tag effizient schnelle Entscheidungen zu treffen. Manchmal kann eine Entscheidungsverzerrung jedoch zu einer weniger effektiven Entscheidungsfindung führen. Es gibt viele Arten von Verzerrungen, z.B.: [...] Gruppendenken: eine Denkweise, die Menschen dazu bringt, den sozialen Zusammenhalt in einer Gruppe höher zu bewerten, als einen alternativen Standpunkt zu äußern oder die richtige Entscheidung zu treffen“. Siehe 9.2.4",
+      "D": "Als Teil der Risikokultur „sind solche Entscheidungsverzerrungen natürlich und weitgehend positiv und ermöglichen es dem Gehirn, jeden Tag effizient schnelle Entscheidungen zu treffen. Manchmal kann eine Entscheidungsverzerrung jedoch zu einer weniger effektiven Entscheidungsfindung führen. Es gibt viele Arten von Verzerrungen, z.B: [...] Eintrittsnähe: eine Denkweise, bei der Situationen, die zeitlich näher liegen, als riskanter und wichtiger angesehen werden als solche in der Zukunft“. Siehe 9.2.4"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.5.5",
+    "topic": "Practice: Risiko"
+  },
+  {
+    "n": 41,
+    "q": "Der Projektmanager muss die Projektumgebung verstehen und definieren, wie er Risiken im Projekt managen wird. In welchem Schritt des Verfahrens für das Risikomanagement sollte dies definiert werden?",
+    "scenario": "Der Projektmanager muss die Projektumgebung verstehen und definieren, wie er Risiken im Projekt managen wird.",
+    "question": "In welchem Schritt des Verfahrens für das Risikomanagement sollte dies definiert werden?",
+    "items": [],
+    "opts": {
+      "A": "Identifizieren",
+      "B": "Bewerten",
+      "C": "Planen",
+      "D": "Implementieren"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Der Teilschritt „Identifizieren – Kontext und Ziele definieren“ „umfasst das Einholen von Informationen über das Projekt, um sicherzustellen, dass ein gemeinsames Verständnis der spezifischen Ziele besteht, die gefährdet sind, und um einen geeigneten Risikomanagement-Ansatz zu formulieren. Folgende Faktoren sind mitbestimmend für die Inhalte des Risikomanagement-Ansatzes eines Projekts: [...] das eigene Umfeld des Business (gesetzliche oder Governance-Anforderungen); Unternehmensrichtlinien, Standards, Prozesse und Verfahren“. Siehe 9.3.1.1.1",
+      "B": "Der Schritt „Bewerten – Priorisieren von Risiken“ befasst sich mit „die Eintrittswahrscheinlichkeit, dass das Risiko eintritt (oft geschätzt unter Berücksichtigung seiner Eintrittswahrscheinlichkeit oder Häufigkeit); die Auswirkungen jedes Risikos auf die Ziele des Projekts (wenn die Ziele z.B. in Zeit und Kosten gemessen werden, sollten die Auswirkungen ebenfalls in Zeit- und Kosteneinheiten gemessen werden); die Auswirkungen des Risikos auf den Phasenplan, den Projektplan und den Business Case“. Siehe 9.3.1.2.1",
+      "C": "Der Schritt „Planen“: „beinhaltet die Identifikation und Bewertung geeigneter Risikomaßnahme, damit Bedrohungen beseitigt oder reduziert und Chancen maximiert werden können“. Siehe 9.3.1.3",
+      "D": "Der Schritt „Implementieren“: „Geplante Risikomaßnahmen müssen umgesetzt, ihre Wirksamkeit überprüft und Korrekturmaßnahmen ergriffen werden, wenn die Maßnahmen nicht den Erwartungen entsprechen. Es muss unbedingt sichergestellt werden, dass die Verantwortlichkeiten für den Risikoeigentümer und den Risikobearbeiter für jedes Risiko identifiziert und vereinbart werden“. Siehe 9.3.1.4"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.5.6",
+    "topic": "Practice: Risiko"
+  },
+  {
+    "n": 42,
+    "q": "Wie trägt die Practice „Issues“ zu einem erfolgreichen Projekt bei?",
+    "scenario": "",
+    "question": "Wie trägt die Practice „Issues“ zu einem erfolgreichen Projekt bei?",
+    "items": [],
+    "opts": {
+      "A": "Durch Identifizieren von Ereignissen, die eine positive Auswirkung auf die Projektziele haben könnten",
+      "B": "Durch die Steuerung von Modifikationen an den aktuell genehmigten Versionen der Managementprodukte",
+      "C": "Durch Anpassung der Genehmigungsebene an die Erwartungen des Benutzers",
+      "D": "Dadurch, dass sie die unsichere Situation durch die Beseitigung ihrer Ursache zu einer sicheren macht"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "„Zweck der Practice „Risiko“ ist es, Unsicherheiten, die die Projektziele beeinträchtigen würden, zu identifizieren, zu bewerten und zu steuern und als Ergebnis die Erfolgschancen des Projekts zu erhöhen“. Der Begriff „Chance“ wird „für unsichere Ereignisse verwendet, die sich positiv auf die Ziele auswirken würden“. Siehe 9.1",
+      "B": "„Der Zweck der Practice „Issues“ besteht darin, Issues zu sammeln und zu bewerten und Änderungen an der Baseline des Projekts zu kontrollieren.“ Darüber hinaus ist die Projekt-Baseline definiert als „die aktuellen genehmigten Versionen der Managementprodukte und Spezialistenprodukte, die der Änderungssteuerung unterliegen“. Siehe 10.1",
+      "C": "Das Grundprinzip „Anpassen an das Projekt“ wird durch die Practice „Qualität“ erfordert „nur diejenigen Qualitätsaktivitäten, die für die Liefermethode und die Produktmerkmale angemessen sind“. Siehe Tabelle 8.3",
+      "D": "Eine Bedrohung zu vermeiden ist eine mögliche Risikomaßnahme, „bei dieser Option geht es darum, eine unsichere Situation sicher zu machen, indem das Risiko beseitigt wird. Dies kann häufig erreicht werden, indem die Ursache einer Bedrohung beseitigt oder ein Aspekt implementiert wird, der zu einer Chance führt“. Siehe Tabelle 9.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.6.1",
+    "topic": "Practice: Issues"
+  },
+  {
+    "n": 43,
+    "q": "Die Projektunterstützung muss verstehen, wie man Änderungen an genehmigten Versionen der Projektprodukte vornimmt. Welches Managementprodukt sollte die Projektunterstützung überprüfen?",
+    "scenario": "Die Projektunterstützung muss verstehen, wie man Änderungen an genehmigten Versionen der Projektprodukte vornimmt.",
+    "question": "Welches Managementprodukt sollte die Projektunterstützung überprüfen?",
+    "items": [],
+    "opts": {
+      "A": "Issuemanagement-Ansatz",
+      "B": "Risikomanagement-Ansatz",
+      "C": "Nutzenmanagement-Ansatz",
+      "D": "Qualitätsmanagement-Ansatz"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Der Issuemanagement-Ansatz sollte „beschreiben, wie Issues erfasst und gemeldet werden und wie Änderungen an der Projekt-Baseline bewertet und gesteuert werden“. Darüber hinaus ist die Projekt-Baseline definiert als „die aktuellen genehmigten Versionen der Managementprodukte und Spezialistenprodukte, die der Änderungssteuerung unterliegen“. Siehe 10.5, 10.1",
+      "B": "Der Risikomanagement-Ansatz: „Zweck des Risikomanagement-Ansatzes ist es zu beschreiben, wie Risiken im Projekt gemanagt werden. Dazu gehören die spezifischen Verfahren, Techniken, Standards und Verantwortlichkeiten, die zu berücksichtigen sind“. Siehe 9.5",
+      "C": "Der Nutzenmanagement-Ansatz definiert „die Maßnahmen zum Nutzenmanagement und die Nutzenrevisionen, die eingerichtet werden, um sicherzustellen, dass die Projektergebnisse erreicht und die Projektziele tatsächlich realisiert werden“. Siehe 5.5",
+      "D": "Der Qualitätsmanagement-Ansatz sollte „die anzuwendenden Qualitätstechniken und -standards sowie die Rollen und Verantwortlichkeiten für das Erreichen der erforderlichen Qualitätsspezifikationen und Abnahmekriterien während eines Projekts beschreiben“. Siehe 8.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.6.3",
+    "topic": "Practice: Issues"
+  },
+  {
+    "n": 44,
+    "q": "Was ist die Definition eines Issues?",
+    "scenario": "",
+    "question": "Was ist die Definition eines Issues?",
+    "items": [],
+    "opts": {
+      "A": "Ein ungeplantes Ereignis, das aufgetreten ist und Managementmaßnahmen erfordert.",
+      "B": "Ein unsicheres Ereignis, dessen Eintreten Auswirkungen auf das Projekt hat",
+      "C": "Eine Beschreibung der Auswirkungen, die ein unsicheres Ereignis auf die Ziele haben würde",
+      "D": "Ein messbarer Schwellenwert, der den tolerierbaren Bereich der Ergebnisse für jedes betroffene Ziel darstellt"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Ein Issue ist „ein ungeplantes Ereignis, das aufgetreten ist und Managementmaßnahmen erfordert“. Siehe 10.1",
+      "B": "Die Definition eines Risikos ist „ein unsicheres Ereignis bzw. eine Gruppe von Ereignissen mit Auswirkungen auf die Erreichung der Ziele für den Fall des Eintretens“. Siehe 9.1",
+      "C": "Die Definition von Risikoauswirkung ist „die geschätzte Auswirkung auf die Ziele, falls ein Risiko auftritt“. Siehe 9.2",
+      "D": "Die Definition von Risikotoleranz ist „ein messbarer Schwellenwert, der den tolerierbaren Ergebnisbereich für ein risikobehaftetes Ziel darstellt; die verwendeten Einheiten sind dieselben, die auch für das Messen dieses Ziels eingesetzt werden“. Siehe 9.2"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.6.4",
+    "topic": "Practice: Issues"
+  },
+  {
+    "n": 45,
+    "q": "Eine Änderung wurde genehmigt und muss nun umgesetzt werden. Welcher Teil der Anleitung für effektives Issuemanagement sollte es ermöglichen, die Änderung umzusetzen?",
+    "scenario": "Eine Änderung wurde genehmigt und muss nun umgesetzt werden.",
+    "question": "Welcher Teil der Anleitung für effektives Issuemanagement sollte es ermöglichen, die Änderung umzusetzen?",
+    "items": [],
+    "opts": {
+      "A": "Die Delegation der Befugnis, über Änderungen auf der geeigneten Ebene zu entscheiden, durch den Lenkungsausschuss",
+      "B": "Die Anwendung des Änderungsbudgets innerhalb der genehmigten Rahmenbedingungen, um Kompromisse einzugehen",
+      "C": "Das Audit, ob der tatsächliche Produktstatus mit dem im Produktregister aufgezeichneten Status übereinstimmt",
+      "D": "Die Definition einer angemessenen Detailebene, für die Produkt-Baselines erstellt werden sollen"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Als Teil des Elements „Delegieren von Befugnissen für Änderungen“ „ist der Lenkungsausschuss die höchste Instanz für die Prüfung und Genehmigung von Änderungsanträgen sowie Spezifikationsabweichungen. Der Lenkungsausschuss kann jedoch die Befugnis zur Genehmigung von Änderungen delegieren“. Dies ermöglicht die Genehmigung von Änderungen, nicht deren Umsetzung. Siehe 10.2.4",
+      "B": "Als Teil des Elements „Änderungsbudget“ im Rahmen der effektiven Leitlinie sollte „der Projektmanager sicherstellen, dass die delegierte Befugnis mit einem angemessenen Änderungsbudget ausgestattet ist, aus dem genehmigte Änderungen finanziert werden können. Das Änderungsbudget ist in der Regel ein Geldbetrag, der speziell für die Finanzierung von Änderungen vorgesehen ist. Es kann jedoch auch als eine Reihe von genehmigten Einschränkungen definiert werden, innerhalb derer Kompromisse eingegangen werden können“. Durch die Anwendung des Änderungsbudgets können genehmigte Änderungen finanziert und somit implementiert werden. Siehe 10.2.5",
+      "C": "Als Teil des Elements „Baselines“ „ist es Good Practice, regelmäßig zu verifizieren, ob der tatsächliche Status der Produkte dem vereinbarten Produktzustand entspricht und auf Unstimmigkeiten zu achten“. Damit können genehmigte Änderungen nicht implementiert werden, aber es wird ein Verständnis für den Produktstatus geschaffen. Siehe 10.2.1",
+      "D": "Als Teil des Elements „Baselines“ „muss das Projektmanagement-Team, unabhängig von Größe,Umfang und Komplexität, Folgendes festlegen: die geeignete Detailebene, für die Produkt-Baselines erstellt werden sollen“. Dadurch können genehmigte Änderungen nicht umgesetzt werden, aber es wird ein Verständnis dafür geschaffen, was in der Baseline festgelegt ist. Siehe 10.2.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.6.5",
+    "topic": "Practice: Issues"
+  },
+  {
+    "n": 46,
+    "q": "Ein Issue wurde identifiziert und seine Auswirkung auf den Projektumfang muss verstanden werden. In welchem Schritt des Verfahrens für das Issuemanagement sollte die Auswirkung verstanden werden?",
+    "scenario": "Ein Issue wurde identifiziert und seine Auswirkung auf den Projektumfang muss verstanden werden.",
+    "question": "In welchem Schritt des Verfahrens für das Issuemanagement sollte die Auswirkung verstanden werden?",
+    "items": [],
+    "opts": {
+      "A": "Bewerten von Issues",
+      "B": "Erfassen von Issues",
+      "C": "Entscheidung über Änderungen",
+      "D": "Implementieren von Änderungen"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Im Rahmen des Schritts „Bewerten von Issues“ ist es „das Ziel bei der Überprüfung von Issues,die Fragen zu beantworten: Welcher Art ist das Issue [...]? Wirkt sich dieses Issue auf das Projekt aus? Wenn ja, wie?“. Siehe 10.3.1.2",
+      "B": "Als Teil von „Erfassen von Issues“ können „Issues über jeden der formellen oder informellen Kommunikationskanäle erfasst werden, die während eines Projekts zur Verfügung stehen“. Siehe. 10.3.1.1",
+      "C": "„Entscheidung über Änderungen“ „zeigt die typischen Entscheidungsmöglichkeiten als Reaktion auf einen Vorschlag zur Änderung, unabhängig davon, ob er von einem Änderungsantrag oder einer Spezifikationsabweichung ausgeht“. Hier wird entschieden, ob der Antrag genehmigt, abgelehnt, ein Ausnahmeplan oder weitere Informationen angefordert werden. Dies geschieht nach der Bewertung des Issues. Siehe 10.3.1.4",
+      "D": "„Genehmigte Änderungsanträge und Spezifikationsabweichungen sollten im Projektlogbuch festgehalten und in den betroffenen Managementprodukten widergespiegelt werden. Die Baselines verschiedener Managementprodukte können mit unterschiedlichen Systemen gepflegt werden, aber jedes System sollte die Konfigurationssteuerung ermöglichen, indem es Änderungen aufzeichnet und ein Archiv der ersetzten Versionen bereitstellt“. Dies ist der Schritt „Implementieren von Änderungen“. Siehe 10.3.1.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.6.6",
+    "topic": "Practice: Issues"
+  },
+  {
+    "n": 47,
+    "q": "Was ist der Zweck der Practice „Fortschritt“?",
+    "scenario": "",
+    "question": "Was ist der Zweck der Practice „Fortschritt“?",
+    "items": [],
+    "opts": {
+      "A": "Prognose, ob die Phase Termin- und budgetgerecht geliefert werden kann",
+      "B": "Erfassen von Informationen, die ermöglichen, dass Fehler der Vergangenheit in diesem Projekt oder anderen Projekten vermieden werden",
+      "C": "Entscheidung, was mit einem Produkt zu tun ist, das die Qualitätsspezifikationen nicht erfüllt",
+      "D": "Sicherstellen, dass die Qualitätserwartungen des Benutzers bei der Lieferung der Outputs erfüllt werden"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Zweck der Practice „Fortschritt“ ist es, Mechanismen zu etablieren, mit denen die tatsächlich erbrachten Erzielungen überwacht und mit den Planzielen verglichen werden können; eine Prognose für die Projektziele und die weitere Wirtschaftlichkeit des Projekts bereitzustellen; jede Abweichung, die eine Ausnahme verursacht, zu steuern“. Siehe 11.1",
+      "B": "„Eine Erfahrung liefert Informationen, die für die Zukunft des Projekts oder anderer Projekte hilfreich sind und die aktiv das Lernen aus Erfahrung vorantreiben“. Dies ist jedoch kein Zweck der Practice „Fortschritt.“ Siehe 11.2.3",
+      "C": "Als Teil des Elements „Änderungssteuerung“ innerhalb der Practice „Issues“ „repräsentiert eine Spezifikationsabweichung eine Diskrepanz zwischen der genehmigten Projekt-Baseline und den gelieferten Produkten, und diese Diskrepanz muss durch das Änderungssteuerungsverfahren behandelt werden“. Siehe 10.2.3",
+      "D": "„Der Zweck der Practice „Qualität“ besteht darin, die Anforderungen der Benutzer an die Projektprodukte zu dokumentieren und die Art und Weise zu etablieren, mit denen sie erfüllt werden.“ Siehe 8.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.7.1",
+    "topic": "Practice: Fortschritt"
+  },
+  {
+    "n": 48,
+    "q": "Was sollte der Lenkungsausschuss überprüfen, wenn er über das weitere Vorgehen im Projekt entscheidet?",
+    "scenario": "",
+    "question": "Was sollte der Lenkungsausschuss überprüfen, wenn er über das weitere Vorgehen im Projekt entscheidet?",
+    "items": [],
+    "opts": {
+      "A": "Digital- und Datenmanagement-Ansatz",
+      "B": "Phasenabschlussbericht",
+      "C": "Projektstatusbericht",
+      "D": "Teamstatusbericht"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Der Zweck des Digital- und Datenmanagement-Ansatzes ist es zu beschreiben, „wie Daten und Informationen im gesamten Projektökosystem und während des gesamten Projektlebenszyklus und danach verwaltet werden“. Siehe 11.5",
+      "B": "Ein Phasenabschlussbericht dient dazu, „die bisherigen Fortschritte, den aktuellen Projektstatus sowie ausreichend Informationen zusammenzufassen, damit der Lenkungsausschuss über die nächsten Projektschritte entscheiden kann“. Siehe 11.5",
+      "C": "Der Projektmanager erstellt regelmäßig einen Projektstatusbericht, „der dem Lenkungsausschuss (und möglicherweise anderen Stakeholder) in vom ihm festgelegten Abständen eine Zusammenfassung des Phasenstatus bereitstellt“. Siehe 11.5",
+      "D": "Teamstatusberichte werden vom Teammanager herausgegeben, „um den Status der Arbeitspaketbeschreibung in einer in der Arbeitspaketbeschreibung festgelegten Häufigkeit an den Projektmanager zu melden“. Siehe 11.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.7.3",
+    "topic": "Practice: Fortschritt"
+  },
+  {
+    "n": 49,
+    "q": "Was ist die Definition einer Ausnahme?",
+    "scenario": "",
+    "question": "Was ist die Definition einer Ausnahme?",
+    "items": [],
+    "opts": {
+      "A": "Eine Prognose einer Abweichung, die über die vereinbarten Toleranzen hinausgeht",
+      "B": "Ein unsicheres Ereignis, dessen Eintreten Auswirkungen auf das Erreichen der Ziele hat",
+      "C": "Ein Produkt, das seine Qualitätsspezifikationen nicht erfüllt",
+      "D": "Ein Bericht an den Projektmanager über den Status des Arbeitspakets"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "Eine Ausnahme ist „eine Situation, die voraussichtlich zu einer Abweichung außerhalb der Toleranzgrenzen führt, die zwischen dem Projektmanager und dem Lenkungsausschuss (bzw. zwischen dem Lenkungsausschuss und der Business-Ebene) vereinbart wurden“. Siehe 11.1",
+      "B": "Die Definition eines Risikos ist „ein unsicheres Ereignis bzw. eine Gruppe von Ereignissen mit Auswirkungen auf die Erreichung der Ziele für den Fall des Eintretens“. Siehe 9.1",
+      "C": "Die Definition einer Spezifikationsabweichung ist dass „ein Produkt, das seine Qualitätsspezifikationen nicht erfüllen wird“. Siehe 10.2.3",
+      "D": "„Mit einem Teamstatusbericht wird der Status der Arbeitspaketbeschreibung in einer in der Arbeitspaketbeschreibung festgelegten Häufigkeit an den Projektmanager gemeldet“. Siehe 11.5"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.7.4",
+    "topic": "Practice: Fortschritt"
+  },
+  {
+    "n": 50,
+    "q": "Wie sollte die Nutzung von Daten und Systemen ein effektives Fortschrittsmanagement unterstützen?",
+    "scenario": "",
+    "question": "Wie sollte die Nutzung von Daten und Systemen ein effektives Fortschrittsmanagement unterstützen?",
+    "items": [],
+    "opts": {
+      "A": "Durch den Fokus des Projektmanagement-Teams darauf, insbesondere Daten darüber zu sammeln, was in der Vergangenheit passiert ist",
+      "B": "Durch Bereitstellen von genauen Daten, die bei der Prognose der zukünftigen Projektleistung helfen",
+      "C": "Durch den Fokus des Projektmanagement-Teams auf manuelle Datenerfassung",
+      "D": "Durch Definieren der Toleranzen gegenüber den sieben Leistungszielen für jede Managementebene"
+    },
+    "answer": "B",
+    "expl": {
+      "A": "Im Rahmen des „Einsatzes von Daten und Systemen im Fortschrittsmanagement“ beschränkt sich die Fortschrittsprüfung nicht nur auf den Rückblick. Nachdem die Daten durch Systeme gesichert und gespeichert wurden, kann die zukünftige Leistung anhand der vergangenen Leistung vorhergesagt werden. Um Klarheit zu schaffen, können diese Informationen dann im bevorzugten Format und Stil der Stakeholder präsentiert werden“. Siehe 11.2.7",
+      "B": "Als Teil der „Verwendung von Daten und Systemen im Fortschrittsmanagement“ „helfen Daten und Technologie bei der Fortschrittsverfolgung und Entscheidungsfindung, Projekte besser zu managen und steuern“. Darüber hinaus sind „Fortschrittsprüfungen nicht auf den Blick in die Vergangenheit beschränkt. Nachdem die Daten durch Systeme gesichert und gespeichert wurden, kann die zukünftige Leistung anhand der vergangenen Leistung vorhergesagt werden“. Siehe 11.2.7",
+      "C": "Als Teil der „Verwendung von Daten und Systemen im Fortschrittsmanagement“ „werden die Managementprodukte, die zur Überprüfung der Baselines, zur Fortschritts-Review, zur Erfassung und Berichterstattung von Erfahrungen, zur Fortschrittsberichterstattung oder für Prognosen verwendet werden, vom Projektmanager häufig als eine Kombination unterschiedlicher Quellen erkannt. Automatisierung, zum Beispiel der Einsatz von Künstlicher Intelligenz, reduziert den Bedarf an manuellen Verfahren und ermöglicht es Projektmitarbeitenden, sich auf deutlich stärker wertschöpfende Aufgaben zu konzentrieren, anstatt auf administrative Tätigkeiten“. Siehe 11.2.7",
+      "D": "Im PRINCE2 Projektmanagement wird „das Projekt nach dem Ausnahmeprinzip über vier Managementebenen hinweg gesteuert, anhand von Toleranzen für sieben Leistungsziele [...] Die Business-Ebene außerhalb des Projektteams legt die Gesamtanforderungen und Toleranzebene für das Projekt fest“. Es sind also nicht die Daten und Systeme, die die Toleranzen festlegen, sondern die Management-Ebenen. Siehe 11.2.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.7.5",
+    "topic": "Practice: Fortschritt"
+  },
+  {
+    "n": 51,
+    "q": "Auf welchen Ebenen werden in Projekten gemäß dem Verfahren für das Ausnahmemanagement AM EHESTEN Issues identifiziert, die die Toleranzen einer Phase überschreiten?",
+    "scenario": "",
+    "question": "Auf welchen Ebenen werden in Projekten gemäß dem Verfahren für das Ausnahmemanagement AM EHESTEN Issues identifiziert, die die Toleranzen einer Phase überschreiten?",
+    "items": [],
+    "opts": {
+      "A": "Beauftragen UND Lenken",
+      "B": "Lenken UND Managen",
+      "C": "Lenken UND Liefern",
+      "D": "Managen UND Liefern"
+    },
+    "answer": "D",
+    "expl": {
+      "A": "Die Ebene „Beauftragen“ ist verantwortlich für das „Definieren der Toleranzen auf Projektebene“. Auf der Ebene „Lenken“ werden die Entscheidungen getroffen: „Der Lenkungsausschuss ist dafür verantwortlich, zu entscheiden, ob eine Abweichung genehmigt wird, die gegen die vereinbarten Phasentoleranzen verstößt oder voraussichtlich verstoßen wird“. „Häufig treten Issues auf der Lieferebene des Projekts auf, die dazu führen können, dass eine der Phasentoleranzen überschritten werden“. Das kann auch auf der Management- und Lenkungsebene auftreten bei Issues, die nicht auf Probleme auf Lieferebene zurückzuführen sind“. Tabelle 6.2, Siehe 11.3.1",
+      "B": "Auf der Ebene „Lenken“ werden die Entscheidungen getroffen: „Der Lenkungsausschuss ist dafür verantwortlich, zu entscheiden, ob eine Abweichung genehmigt wird, die gegen die vereinbarten Phasentoleranzen verstößt oder voraussichtlich verstoßen wird“. Es stimmt jedoch, dass „häufig Issues auf der Lieferebene des Projekts auftreten, die dazu führen können, dass eine der Phasentoleranzen überschritten werden. Das kann auch auf der Management- und Lenkungsebene auftreten bei Issues, die nicht auf Probleme auf Lieferebene zurückzuführen sind“. Tabelle 6.2, Siehe 11.3.1",
+      "C": "Auf der Ebene „Lenken“ werden die Entscheidungen getroffen: „Der Lenkungsausschuss ist dafür verantwortlich, zu entscheiden, ob eine Abweichung genehmigt wird, die gegen die vereinbarten Phasentoleranzen verstößt oder voraussichtlich verstoßen wird“. Es stimmt jedoch, dass „häufig Issues auf der Lieferebene des Projekts auftreten, die dazu führen können, dass eine der Phasentoleranzen überschritten werden“. Tabelle 6.2, Siehe 11.3.1",
+      "D": "Als Teil des Ausnahmemanagement-Verfahrens „treten häufig Probleme auf der Lieferebene des Projekts auf, die dazu führen können, dass eine der Phasentoleranzen überschritten werden. Das kann auch auf der Management- und Lenkungsebene auftreten bei Issues, die nicht auf Probleme auf Lieferebene zurückzuführen sind“. Siehe 11.3.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_4.7.6",
+    "topic": "Practice: Fortschritt"
+  },
+  {
+    "n": 52,
+    "q": "Was ist ein Zweck des Prozesses „Vorbereiten eines Projekts“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck des Prozesses „Vorbereiten eines Projekts“?",
+    "items": [],
+    "opts": {
+      "A": "Bewerten, ob ein Projekt wertvoll für die Organisation sein kann",
+      "B": "Den Arbeitsaufwand analysieren, bevor die Umsetzung der Projektleitdokumentation beauftragt wird",
+      "C": "Den Benutzern die Möglichkeit geben zu bestätigen, dass sie das Projektprodukt abnehmen",
+      "D": "Delegieren des Projektmanagements auf kontrollierte Art"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Zweck des Prozesses „Vorbereiten eines Projekts“ ist es, durch Beantwortung der Frage „Handelt es sich um ein machbares und lohnendes Projekt?“ sicherzustellen, dass die Voraussetzungen für das Initiieren eines Projekts geschaffen werden“. Die Entscheidung, das Projekt zu starten, muss eindeutig und vor dem „Initiieren eines Projekts“ getroffen werden, und die Aktivitäten innerhalb des Prozesses „Vorbereiten eines Projekts“ führen zu dieser Entscheidung“. Siehe 13.1",
+      "B": "„Zweck des Prozesses „Initiieren eines Projektes“ ist es, eine solide Grundlage für das Projekt zu etablieren, die dem Business ein klares Bild davon vermittelt, was mit den geplanten Arbeiten zur Lieferung des Projektprodukts verbunden ist, bevor größere Ausgaben oder Ressourcen zugesagt werden“. Siehe 15.1",
+      "C": "„Der Zweck des Prozesses „Abschließen eines Projekts“ ist es, einen klar definierten Zeitpunkt zu setzen, an dem die Abnahme des Projektprodukts bestätigt wird. Zudem dient er dazu, die Erreichung der in der Projektleitdokumentation festgelegten Ziele oder deren genehmigte Änderungen offiziell anzuerkennen. Gibt es einen Grund für einen vorzeitigen Abschluss, stellt dieser Prozess sicher, dass das Projekt dennoch geordnet beendet wird“. Siehe 19.1",
+      "D": "„Der Zweck des Prozesses ‚Lenken eines Projekts‘ ist es, den Lenkungsausschuss in die Lage zu versetzen, rechenschaftspflichtig für den Projekterfolg zu sein. Dies geschieht, indem er wichtige Entscheidungen fällt und als oberste Kontrollinstanz agiert, aber die Abwicklung des Tagesgeschäfts dem Projektmanager überlässt“. Siehe 14.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_5.1",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 53,
+    "q": "Welcher Prozess sollte sicherstellen, dass eine Organisation nicht bereits solide Grundlagen etabliert für Projekte, die ungeeignet sind?",
+    "scenario": "",
+    "question": "Welcher Prozess sollte sicherstellen, dass eine Organisation nicht bereits solide Grundlagen etabliert für Projekte, die ungeeignet sind?",
+    "items": [],
+    "opts": {
+      "A": "Vorbereiten eines Projekts",
+      "B": "Abschließen eines Projekts",
+      "C": "Initiieren eines Projekts",
+      "D": "Managen eines Phasenübergangs"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Im Prozess „Vorbereiten eines Projekts“ geht es sowohl darum, schlecht durchdachte Ideen zu verhindern, als auch darum, die Genehmigung von wirtschaftlichen Projekten voranzutreiben. Somit ist „Vorbereiten eines Projekts“ im Verhältnis zum wesentlich detaillierteren und gründlicheren Prozess „Initiieren eines Projekts“ ein relativ einfacher Prozess. Das Ziel besteht darin, mit geringstmöglichem Aufwand eine Grundlage für die Entscheidung zu schaffen, ob es sich überhaupt lohnt, das Projekt zu initiieren“. Siehe 13.1",
+      "B": "„Der Zweck des Prozesses „Abschließen eines Projekts“ ist es, einen klar definierten Zeitpunkt zu setzen, an dem die Abnahme des Projektprodukts bestätigt wird. Zudem dient er dazu, die Erreichung der in der Projektleitdokumentation festgelegten Ziele oder deren genehmigte Änderungen offiziell anzuerkennen. Gibt es einen Grund für einen vorzeitigen Abschluss, stellt dieser Prozess sicher, dass das Projekt dennoch geordnet beendet wird“. Siehe 19.1",
+      "C": "„Zweck des Prozesses „Initiieren eines Projektes“ ist es, eine solide Grundlage für das Projekt zu etablieren, die dem Business ein klares Bild davon vermittelt, was mit den geplanten Arbeiten zur Lieferung des Projektprodukts verbunden ist, bevor größere Ausgaben oder Ressourcen zugesagt werden“. Siehe 15.1",
+      "D": "„Der Zweck des Prozesses „Managen eines Phasenübergangs“ besteht darin, dem Projektmanager die Bereitstellung ausreichender Informationen an den Lenkungsausschuss sicherzustellen, damit er: den Erfolg der aktuellen Phase überprüfen, den nächsten Phasenplan genehmigen, den aktualisierten Projektplan überprüfen und die fortlaufende geschäftliche Rechtfertigung und die Vertretbarkeit der Risiken bestätigen kann“. Siehe 18.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_5.1",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 54,
+    "q": "Was ist ein Zweck des Prozesses „Lenken eines Projekts“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck des Prozesses „Lenken eines Projekts“?",
+    "items": [],
+    "opts": {
+      "A": "Die Rechenschaftspflicht des Lenkungsausschusses aufrechterhalten und gleichzeitig das tägliche Management zu delegieren",
+      "B": "Verhindern, dass Projekte mit unzureichender Rechtfertigung von der Organisation durchgeführt werden",
+      "C": "Die Arbeit einer Phase durch die Umsetzung effektiver Korrekturmaßnahmen managen",
+      "D": "Informationen bereitstellen, damit sich die beauftragende Instanz zur Lieferung des Projekts verpflichten kann"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Der Zweck des Prozesses ‚Lenken eines Projekts‘ ist es, den Lenkungsausschuss in die Lage zu versetzen, rechenschaftspflichtig für den Projekterfolg zu sein. Dies geschieht, indem er wichtige Entscheidungen fällt und als oberste Kontrollinstanz agiert, aber die Abwicklung des Tagesgeschäfts dem Projektmanager überlässt“. Siehe 14.1",
+      "B": "„Zweck des Prozesses „Vorbereiten eines Projekts“ ist es, durch Beantwortung der Frage „Handelt es sich um ein machbares und lohnendes Projekt?“ sicherzustellen, dass die Voraussetzungen für das Initiieren eines Projekts geschaffen werden“. Siehe 13.1",
+      "C": "„Der Zweck des Prozesses „Steuern einer Phase“ ist, die anfallenden Arbeiten zuzuweisen und zu überwachen, Issues zu bearbeiten, erzielte Fortschritte an den Lenkungsausschuss zu melden und ggf. Korrekturmaßnahmen einzuleiten, um sicherzustellen, dass die Phase innerhalb der durch den Lenkungsausschuss vorgegebenen Toleranzen bleibt“. Siehe 16.1",
+      "D": "„Zweck des Prozesses „Initiieren eines Projektes“ ist es, eine solide Grundlage für das Projekt zu etablieren, die dem Business ein klares Bild davon vermittelt, was mit den geplanten Arbeiten zur Lieferung des Projektprodukts verbunden ist, bevor größere Ausgaben oder Ressourcen zugesagt werden“. Siehe 15.1"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_5.1",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 55,
+    "q": "Was sind ZWEI Ziele des Prozesses „Steuern einer Phase“?",
+    "scenario": "",
+    "question": "Was sind ZWEI Ziele des Prozesses „Steuern einer Phase“?",
+    "items": [
+      "Sicherstellen, dass es keine unkontrollierten Änderungen an den mit dem Lenkungsausschuss vereinbarten Produkten gibt",
+      "Sicherstellen, dass gegenüber dem Lenkungsausschuss gewährleistet ist, dass alle Produkte im aktuellen Phasenplan fertiggestellt wurden",
+      "Sicherstellen, dass die Projektleitdokumentation mit allen für die nächste Phase erforderlichen Qualitätsänderungen aktualisiert wird",
+      "Sicherstellen, dass die in der Phase gelieferten Produkte die vereinbarten Qualitätskriterien erfüllen"
+    ],
+    "opts": {
+      "A": "1 und 2",
+      "B": "2 und 3",
+      "C": "3 und 4",
+      "D": "1 und 4"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "D. Richtig. 1. „Die Ziele des Prozesses „Steuern einer Phase“ bestehen darin: dass sich die Aufmerksamkeit auf die Lieferung der Produkte der Phase richtet; jede Bewegung weg von den Produkten und der zu Beginn der Phase vereinbarten Liefermethode wird überwacht, um unkontrollierte Änderungen zu vermeiden“. Siehe 16.2 4. „Das Ziel des Prozesses „Steuern einer Phase“ besteht darin, sicherzustellen, dass: [...] die vereinbarten Produkte für die Phase den vereinbarten Qualitätserwartungen entsprechen und akzeptiert werden“. Siehe 16.2 A, B, C. Falsch. 2. „Die Ziele des Prozesses „Managen eines Phasenübergangs“ bestehen darin: gegenüber dem Lenkungsausschuss zu bestätigen, dass alle Produkte im aktuellen Phasenplan fertiggestellt und abgenommen wurden“. Siehe 18.2 3. „Die Ziele des Prozesses „Managen eines Phasenübergangs“ bestehen darin:[...] die Projektleitdokumentation zu prüfen und gegebenenfalls zu aktualisieren, insbesondere den Business Case, den Projektplan, die Qualitätserwartungen des Benutzers, die Management-Ansätze [...]“. Siehe 18.2",
+    "ref": "P2-7_FND_5.2",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 56,
+    "q": "Welche ZWEI Ziele verfolgt der Prozess „Lenken eines Projekts“?",
+    "scenario": "",
+    "question": "Welche ZWEI Ziele verfolgt der Prozess „Lenken eines Projekts“?",
+    "items": [
+      "Sicherstellen, dass das Projekt nur bei ordnungsgemäßer Freigabe abgeschlossen wird",
+      "Sicherstellen, dass Nutzenrevisionen nach dem Projekt geplant sind",
+      "Sicherstellen, dass das Business bereit ist für die Nutzung der Produkte nach Abschluss des Projekts",
+      "Sicherstellen, dass die Benutzer das Projektprodukt abgenommen haben"
+    ],
+    "opts": {
+      "A": "1 und 2",
+      "B": "2 und 3",
+      "C": "3 und 4",
+      "D": "1 und 4"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "A. Richtig. 1. „Die Ziele des Prozesses „Lenken eines Projekts“ bestehen darin sicherzustellen: [...] dass die Befugnis zum Abschluss des Projekts besteht“. Siehe 14.2 2. „Die Ziele des Prozesses „Lenken eines Projekts“ bestehen darin, sicherzustellen: [...] dass Pläne zur Realisierung des Nutzens nach dem Projekt gemanagt und überprüft werden“. Siehe 14.2 B, C, D Falsch. 3. „Die Ziele des Prozesses „Abschließen eines Projekts“ bestehen darin: [...], sicherzustellen, dass das Business die Produkte bei Abschluss des Projekts unterstützen kann“. Siehe 19.2 4. „Die Ziele des Prozesses „Abschließen eines Projekts“ bestehen darin: [...] die Benutzerabnahme des Projektprodukts zu prüfen“. Siehe 19.2",
+    "ref": "P2-7_FND_5.2",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 57,
+    "q": "Welche ZWEI Ziele verfolgt der Prozess „Initiieren eines Projekts“?",
+    "scenario": "",
+    "question": "Welche ZWEI Ziele verfolgt der Prozess „Initiieren eines Projekts“?",
+    "items": [
+      "Sicherstellen, dass sich das Projektteam auf die Lieferung der genehmigten Produkte im Phasenplan konzentriert",
+      "Sicherstellen, dass das Projektteam die Freigabe hat, mit der Initiierungsphase fortzufahren",
+      "Verstehen, wie Änderungen an den vereinbarten Projektprodukten genehmigt werden sollen",
+      "Die Kosten für die Arbeiten zur Lieferung der Produkte planen und schätzen"
+    ],
+    "opts": {
+      "A": "1 und 2",
+      "B": "2 und 3",
+      "C": "3 und 4",
+      "D": "1 und 4"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "C. Richtig. 3. „Die Ziele des Prozesses „Initiieren eines Projekts“ bestehen darin, sicherzustellen, dass alle Beteiligten das gleiche Verständnis davon haben: [...] wie Baselines überwacht und gesteuert werden“. Siehe 15.2 4. „Die Ziele des Prozesses „Initiieren eines Projekts“ bestehen darin sicherzustellen, dass alle Beteiligten das gleiche Verständnis davon haben: [...] wie und wann die Produkte geliefert werden und zu welchen Kosten“. Siehe 15.2 A, B, D. Falsch. 1. „Die Ziele des Prozesses „Steuern einer Phase“ bestehen darin: dass sich die Aufmerksamkeit auf die Lieferung der Produkte der Phase richtet; jede Bewegung weg von den Produkten und der zu Beginn der Phase vereinbarten Liefermethode wird überwacht, um unkontrollierte Änderungen zu vermeiden“. Siehe 16.2 2. „Die Ziele des Prozesses „Lenken eines Projekts“ bestehen darin, sicherzustellen: dass die Befugnis zur Initiierung des Projekts vorliegt“. Siehe 14.2",
+    "ref": "P2-7_FND_5.2",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 58,
+    "q": "Welche Aktivität wird NUR im Prozess „Managen eines Phasenübergangs“ durchgeführt?",
+    "scenario": "",
+    "question": "Welche Aktivität wird NUR im Prozess „Managen eines Phasenübergangs“ durchgeführt?",
+    "items": [],
+    "opts": {
+      "A": "Erstellen eines Ersatzplans für den aktuellen Phasenplan zur Genehmigung durch den Lenkungsausschuss",
+      "B": "Fortlaufende Überprüfung der geschäftlichen Rechtfertigung anhand des Business Case",
+      "C": "Regelmäßige Berichterstattung an den Lenkungsausschuss über den Fortschritt einer Phase",
+      "D": "Vorbereiten des Projektes auf einen vorzeitigen Abschluss infolge einer Anweisung des Lenkungsausschusses"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Der Prozess „Managen eines Phasenübergangs“ bietet die Möglichkeit, ein Ausnahmeverfahren einzuleiten“. „Bei Ausnahmen ähneln die Ziele des Prozesses „Managen eines Phasenübergangs“ den oben aufgeführten, umfassen jedoch die Erstellung eines Ausnahmeplans und die Einholung der Genehmigung, das Projekt oder den aktuellen Phasenplan durch den Ausnahmeplan zu ersetzen“. Siehe 18.3, 18.2",
+      "B": "„Der Business Case wird im Prozess „Steuern einer Phase“ sowie im Prozess „Managen eines Phasenübergangs“ wiederholt geprüft“. Siehe 16.2",
+      "C": "„Berichterstattung über Projektstatus an den Lenkungsausschuss in einer vereinbarten Häufigkeit“ erfolgt im Prozess „Steuern einer Phase“, nicht im Prozess „Managen eines Phasenübergangs“. Siehe 16.3",
+      "D": "Die Vorbereitung auf einen vorzeitigen Projektabschluss erfolgt im Prozess „Abschließen eines Projekts“ und nicht im Prozess „Managen eines Phasenübergangs“. Wenn das Projekt vorzeitig abgeschlossen wird, muss der Prozess „Abschließen eines Projekts“ „trotzdem durchgeführt werden“, aber möglicherweise an die Projektsituation angepasst werden. Siehe 19.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_5.3",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 59,
+    "q": "Was wird benötigt, um den Prozess „Managen eines Phasenübergangs“ durchzuführen?",
+    "scenario": "",
+    "question": "Was wird benötigt, um den Prozess „Managen eines Phasenübergangs“ durchzuführen?",
+    "items": [],
+    "opts": {
+      "A": "Die Arbeit des Projekts muss in Abschnitte unterteilt werden",
+      "B": "Jede Phase muss Projektnutzen inkrementell liefern",
+      "C": "Das Projekt muss ein verlässliches Enddatum haben",
+      "D": "Jede Phase muss sich in einer Ausnahme befinden"
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Der Prozess „Managen eines Phasenübergangs“ basiert auf der Unterteilung des Projekts in Managementphasen.“ Siehe 18.3",
+      "B": "Der Projektnutzen kann in jeder Phase erreicht werden, muss aber nicht. Der Prozess „Abschließen eines Projekts“, nicht der Prozess „Managen eines Phasenübergangs“, wird […] alle bereits realisierten Nutzen bewerten“. Die Lieferung von Projektnutzen über Phasen ist also nicht die Grundlage, auf der der Prozess „Managen eines Phasenübergangs“ aufbaut. Siehe 19.2",
+      "C": "„Eines der charakteristischen Merkmale eines Projekts ist, dass es zeitlich begrenzt ist – es hat einen eindeutigen Start und ein eindeutiges Ende.“ Aber dieses Projektmerkmal bildet die Grundlage für den Prozess „Abschließen eines Projekts“, nicht für „Managen eines Phasenübergangs“. Siehe 19.3",
+      "D": "In jeder Phase kann es eine Ausnahme geben, muss es aber nicht. „Der Prozess „Managen eines Phasenübergangs“ bietet die Möglichkeit, einen Ausnahmeprozess einzuleiten“, aber ist dies nicht die Grundlage, auf der der Prozess „Managen eines Phasenübergangs“ basiert. Siehe 18.3"
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_5.3",
+    "topic": "Prozesse"
+  },
+  {
+    "n": 60,
+    "q": "Welche Maßnahme ist zu ergreifen, wenn ein Projekt vorzeitig abgeschlossen wird?",
+    "scenario": "",
+    "question": "Welche Maßnahme ist zu ergreifen, wenn ein Projekt vorzeitig abgeschlossen wird?",
+    "items": [],
+    "opts": {
+      "A": "Der Projektmanager sollte den Prozess „Abschließen eines Projekts“ trotzdem nutzen, um die Situation zu bearbeiten",
+      "B": "Der Projektmanager sollte sicherstellen, dass keine zusätzlichen Arbeiten durchgeführt werden, bevor das Projekt endgültig abgeschlossen wird",
+      "C": "Der Projektmanager sollte einen vorzeitigen Abschluss auslösen, wenn der Business Case nicht mehr gültig ist",
+      "D": "Der Lenkungsausschuss sollte das verbleibende Projektbudget zur Finanzierung der betrieblichen Kosten freigeben Notizen Notizen Notizen ESG Commitment PeopleCert ist seit 2006 von Lloyd’s (UK) nach ISO 14001 für Umweltmanagement akkreditiert. Anerkannt durch zahlreiche Auszeichnungen bleiben wir unserem Engagement für ESG-Leadership und den Schutz unseres Planeten verpflichtet. Entdecken Sie mehr Vielen Dank, dass Sie den PRINCE2® Projektmanagement Foundation Kurs abgeschlossen haben Bitte nehmen Sie sich ein paar Minuten Zeit, um uns Ihr Feedback zu Ihren Erfahrungen aus dem Kurs zu geben, indem Sie hier die Online-Umfrage zur Kursbewertung ausfüllen."
+    },
+    "answer": "A",
+    "expl": {
+      "A": "„Unter bestimmten Umständen, wenn beispielsweise der Business Case nicht mehr gültig ist, kann der Lenkungsausschuss den vorzeitigen Abschluss eines Projekts auslösen. Wenn das Projekt vorzeitig beendet wird, muss dieser Prozess dennoch durchgeführt werden“. Siehe 19.3",
+      "B": "Die Ziele des Prozesses „Abschließen eines Projekts“ bestehen darin: „sicherzustellen, dass das Projekt geordnet abgeschlossen wird und nicht einfach aufgegeben wird (im Falle eines vorzeitigen Abschlusses)“. Dies könnte zusätzliche Arbeit erfordern, um einen geordneten Projektabschluss zu erreichen. Siehe 19.2",
+      "C": "„Unter bestimmten Umständen, wenn beispielsweise der Business Case nicht mehr gültig ist, kann der Lenkungsausschuss den vorzeitigen Abschluss eines Projekts auslösen“. Daher ist es der Lenkungsausschuss und nicht der Projektmanager, der den vorzeitigen Abschluss auslöst. Siehe 19.3",
+      "D": "„Ein klares Ende eines Projekts ist immer erfolgreicher als ein schleichender Übergang in die Nutzung, da alle Beteiligten damit anerkennen, dass keine Projektkosten mehr anfallen sollten“. Und das gilt auch dann, wenn das Projekt vorzeitig abgeschlossen wird. Siehe 19.3 Notizen ESG Commitment PeopleCert ist seit 2006 von Lloyd’s (UK) nach ISO 14001 für Umweltmanagement akkreditiert. Anerkannt durch zahlreiche Auszeichnungen bleiben wir unserem Engagement für ESG-Leadership und den Schutz unseres Planeten verpflichtet. Entdecken Sie mehr Vielen Dank, dass Sie den PRINCE2® Projektmanagement Foundation Kurs abgeschlossen haben Bitte nehmen Sie sich ein paar Minuten Zeit, um uns Ihr Feedback zu Ihren Erfahrungen aus dem Kurs zu geben, indem Sie hier die Online-Umfrage zur Kursbewertung ausfüllen."
+    },
+    "rationale": "",
+    "ref": "P2-7_FND_5.3",
+    "topic": "Prozesse"
+  }
+]

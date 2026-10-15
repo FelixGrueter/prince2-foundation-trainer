@@ -1,0 +1,1097 @@
+[
+  {
+    "n": 1,
+    "q": "Welches Merkmal eines Projekts bezieht sich darauf, dass jedes Projekt Aspekte aufweist, durch die es sich von anderen unterscheidet?",
+    "scenario": "",
+    "question": "Welches Merkmal eines Projekts bezieht sich darauf, dass jedes Projekt Aspekte aufweist, durch die es sich von anderen unterscheidet?",
+    "items": [],
+    "opts": {
+      "A": "Befristet",
+      "B": "Bereichsübergreifend",
+      "C": "Einzigartig",
+      "D": "Änderung"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 2,
+    "q": "Was ist ein Zweck des Prozesses „Steuern einer Phase“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck des Prozesses „Steuern einer Phase“?",
+    "items": [],
+    "opts": {
+      "A": "Einleiten von Korrekturmaßnahmen, um sicherzustellen, dass die Toleranzen der Phasen nicht überschritten werden",
+      "B": "Dem Teammanager zu ermöglichen, die Arbeiten zu steuern, die für die Erstellung eines oder mehrerer Produkte der Phase vorgesehen sind",
+      "C": "Bereitstellen eines festen Punkts, an dem die Abnahme des Projektprodukts bestätigt wird",
+      "D": "Erstellen der Informationen, die der Lenkungsausschuss benötigt, um den Erfolg der aktuellen Phase zu überprüfen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 3,
+    "q": "Welche ZWEI Ziele verfolgt der Prozess „Vorbereiten eines Projekts“?",
+    "scenario": "",
+    "question": "Welche ZWEI Ziele verfolgt der Prozess „Vorbereiten eines Projekts“?",
+    "items": [
+      "Erstellen einer gemeinsamen Vorstellung davon, wie die geforderte Qualität erreicht werden soll",
+      "Managen und Überprüfen der Pläne für den Nutzen nach Abschluss des Projekts",
+      "Ernennen von Personen für die wichtigsten Projektmanagement-Rollen",
+      "Sicherstellen, dass alle für die Initiierung eines Projekts erforderlichen Befugnisse vorhanden sind"
+    ],
+    "opts": {
+      "A": "1 und 2",
+      "B": "2 und 3",
+      "C": "3 und 4",
+      "D": "1 und 4"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 4,
+    "q": "Welches Grundprinzip wird von dem Element „Menschen“ angewendet, wenn der Versuchung widerstanden wird, die Menschen an die Methode anzupassen?",
+    "scenario": "",
+    "question": "Welches Grundprinzip wird von dem Element „Menschen“ angewendet, wenn der Versuchung widerstanden wird, die Menschen an die Methode anzupassen?",
+    "items": [],
+    "opts": {
+      "A": "Anpassen an das Projekt",
+      "B": "Rollen, Verantwortlichkeiten und Beziehungen definieren",
+      "C": "Fortlaufende geschäftliche Rechtfertigung sicherstellen",
+      "D": "Lernen aus Erfahrung"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 5,
+    "q": "Welcher Begriff wird verwendet, um unsichere Ereignisse zu beschreiben, die eine negative Auswirkung auf die Ziele haben würden?",
+    "scenario": "",
+    "question": "Welcher Begriff wird verwendet, um unsichere Ereignisse zu beschreiben, die eine negative Auswirkung auf die Ziele haben würden?",
+    "items": [],
+    "opts": {
+      "A": "Bedrohung",
+      "B": "Chance",
+      "C": "Änderungsantrag",
+      "D": "Problem/Anliegen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 6,
+    "q": "Welche Aussage über das Grundprinzip „Lernen aus Erfahrung“ ist RICHTIG?",
+    "scenario": "",
+    "question": "Welche Aussage über das Grundprinzip „Lernen aus Erfahrung“ ist RICHTIG?",
+    "items": [],
+    "opts": {
+      "A": "Der Projektmanager trägt die alleinige Verantwortung für die Identifizierung der Erfahrungen während des gesamten Projekts",
+      "B": "Der Projektmanager sollte warten, bis andere Projekte entsprechende Erfahrungen bereitstellen",
+      "C": "Erfahrungen, die während eines Projekts identifiziert werden, gelten in der Regel nur für dieses eine Projekt",
+      "D": "Während des gesamten Projekts sollte über Erfahrungen berichtet und Verbesserungen implementiert werden"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 7,
+    "q": "Was ist der „Auslöser“ für den Prozess „Vorbereiten eines Projekts“?",
+    "scenario": "",
+    "question": "Was ist der „Auslöser“ für den Prozess „Vorbereiten eines Projekts“?",
+    "items": [],
+    "opts": {
+      "A": "Projektmandat",
+      "B": "Business Case-Entwurf",
+      "C": "Projektkurzbeschreibung",
+      "D": "Ernennung des Projektauftraggebers"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 8,
+    "q": "Welcher Begriff wird als messbarer Rückgang definiert, der von der investierenden Organisation als negativ empfunden wird?",
+    "scenario": "",
+    "question": "Welcher Begriff wird als messbarer Rückgang definiert, der von der investierenden Organisation als negativ empfunden wird?",
+    "items": [],
+    "opts": {
+      "A": "Negativer Nebeneffekt",
+      "B": "Risiko",
+      "C": "Ergebnis",
+      "D": "Änderungsantrag"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 9,
+    "q": "Wodurch wird sichergestellt, dass die Qualitätserwartungen der Benutzer identifiziert und erfüllt werden?",
+    "scenario": "",
+    "question": "Wodurch wird sichergestellt, dass die Qualitätserwartungen der Benutzer identifiziert und erfüllt werden?",
+    "items": [],
+    "opts": {
+      "A": "Lösen von Spezifikationsabweichungen, die während des Projekts identifiziert werden, am Ende des Projekts",
+      "B": "Anwenden der Practice „Qualität“ mit den dazugehörigen Konzepten und Dokumentationen",
+      "C": "Zustimmen, dass Produkte geliefert werden, die nicht Teil der geschäftlichen Rechtfertigung des Projekts waren",
+      "D": "Steuern von Änderungen an der Projektproduktbeschreibung und detaillierte Beschreibungen der Produkte"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 10,
+    "q": "Welche Maßnahme sollte im Rahmen des Schrittes „Management der laufenden Änderungen im Projektökosystem“ der PRINCE2-Technik für Organisationsdesign und -entwicklung erfolgen?",
+    "scenario": "",
+    "question": "Welche Maßnahme sollte im Rahmen des Schrittes „Management der laufenden Änderungen im Projektökosystem“ der PRINCE2-Technik für Organisationsdesign und -entwicklung erfolgen?",
+    "items": [],
+    "opts": {
+      "A": "Überprüfung des kommerziellen Management-Ansatzes zur Unterstützung der sich ändernden Anforderungen an die Fähigkeiten",
+      "B": "Schulungen für Mitglieder des Projektteams zu neuen Methoden zur Behebung von Fähigkeitslücken",
+      "C": "Definieren, welche Entscheidungen an die Corporate Governance (Unternehmensführung) verwiesen werden müssen",
+      "D": "Überführung der verbleibenden Mitglieder des Projektteams zurück in das Business"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 11,
+    "q": "Welches Grundprinzip wird in der Practice Business Case angewendet, wenn klar ist, wer den Nutzenmanagement-Ansatz entwickeln und pflegen soll?",
+    "scenario": "",
+    "question": "Welches Grundprinzip wird in der Practice Business Case angewendet, wenn klar ist, wer den Nutzenmanagement-Ansatz entwickeln und pflegen soll?",
+    "items": [],
+    "opts": {
+      "A": "Anpassen an das Projekt",
+      "B": "Fortlaufende geschäftliche Rechtfertigung sicherstellen",
+      "C": "Steuern über Managementphasen",
+      "D": "Rollen, Verantwortlichkeiten und Beziehungen definieren"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 12,
+    "q": "Worauf sollte sich die Kommunikation in einem Projekt VOR ALLEM konzentrieren?",
+    "scenario": "",
+    "question": "Worauf sollte sich die Kommunikation in einem Projekt VOR ALLEM konzentrieren?",
+    "items": [],
+    "opts": {
+      "A": "Einsatz generischer Botschaften, soweit möglich, um Geld und Zeit zu sparen",
+      "B": "Erstellen regelmäßiger Fortschrittsberichte zum Nachweis der Fortschritte",
+      "C": "Zusammenarbeit mit der Projektunterstützung, um die wichtigsten Botschaften an die Einflussnehmer zu formulieren",
+      "D": "Gezielter Fokus der Kommunikation auf Bereiche, in denen es Widerstand gegen das Projekt gibt"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 13,
+    "q": "Welches Managementprodukt sollte aktualisiert werden, um informelle Maßnahmen oder Ereignisse zu erfassen?",
+    "scenario": "",
+    "question": "Welches Managementprodukt sollte aktualisiert werden, um informelle Maßnahmen oder Ereignisse zu erfassen?",
+    "items": [],
+    "opts": {
+      "A": "Projektstatusbericht",
+      "B": "Projektlogbuch",
+      "C": "Issuebericht",
+      "D": "Ausnahmebericht"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 14,
+    "q": "Welche Managementprodukte sollten beschreiben, wer an dem Projekt beteiligt ist und welche Verantwortlichkeiten er hat?",
+    "scenario": "",
+    "question": "Welche Managementprodukte sollten beschreiben, wer an dem Projekt beteiligt ist und welche Verantwortlichkeiten er hat?",
+    "items": [],
+    "opts": {
+      "A": "Projektlogbuch UND Rollenbeschreibungen",
+      "B": "Rollenbeschreibungen UND Business Case",
+      "C": "Projektplan UND Business Case",
+      "D": "Rollenbeschreibungen UND Struktur des Projektmanagement-Teams"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 15,
+    "q": "Wo sollte festgelegt werden, ob das PRINCE2 Verfahren für Risikomanagement angewendet werden soll?",
+    "scenario": "",
+    "question": "Wo sollte festgelegt werden, ob das PRINCE2 Verfahren für Risikomanagement angewendet werden soll?",
+    "items": [],
+    "opts": {
+      "A": "Projektkurzbeschreibung",
+      "B": "Risikomanagement-Ansatz",
+      "C": "Projektplan",
+      "D": "Risikoregister"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 16,
+    "q": "Was ist ein Zweck des Prozesses „Managen der Produktlieferung“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck des Prozesses „Managen der Produktlieferung“?",
+    "items": [],
+    "opts": {
+      "A": "Ermöglichen einer kontrollierten Delegation vom Projektmanager an einen Teammanager",
+      "B": "Korrekturmaßnahmen einleiten, um sicherzustellen, dass die Managementphase innerhalb der Toleranz bleibt",
+      "C": "Dem Lenkungsausschuss ermöglichen, die Kontrolle zu behalten und gleichzeitig das detaillierte Management des Projekts zu delegieren",
+      "D": "die Lieferung der Produkte der Phase auf Verlangen des Lenkungsausschusses neu planen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 17,
+    "q": "Was ist ein Zweck der Practice „Issues“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck der Practice „Issues“?",
+    "items": [],
+    "opts": {
+      "A": "Änderung der Projekt-Baseline, wenn ein Issue im Issueregister erfasst wird",
+      "B": "Modifikation der genehmigten Managementprodukte, die die Projekt-Baseline bilden",
+      "C": "Herausfiltern unwichtiger Issues, sobald sie auftauchen",
+      "D": "Bewerten von Issues und, falls genehmigt, Implementieren von Änderungen an der Baseline des Projekts"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 18,
+    "q": "Welches Grundprinzip wird nach Abschluss eines Projekts angewendet, um festzustellen, ob der Nutzen eingetreten ist?",
+    "scenario": "",
+    "question": "Welches Grundprinzip wird nach Abschluss eines Projekts angewendet, um festzustellen, ob der Nutzen eingetreten ist?",
+    "items": [],
+    "opts": {
+      "A": "Steuern nach dem Ausnahmeprinzip",
+      "B": "Steuern über Managementphasen",
+      "C": "Fortlaufende geschäftliche Rechtfertigung sicherstellen",
+      "D": "Produktorientierung"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 19,
+    "q": "In welchem Schritt des Planungsverfahrens sollten die Aktivitäten zur Lieferung von Produkten identifiziert werden?",
+    "scenario": "",
+    "question": "In welchem Schritt des Planungsverfahrens sollten die Aktivitäten zur Lieferung von Produkten identifiziert werden?",
+    "items": [],
+    "opts": {
+      "A": "Arbeitspakete organisieren",
+      "B": "Produkte definieren und analysieren",
+      "C": "Schätzungen durchführen",
+      "D": "Zeitplan aufstellen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 20,
+    "q": "Welche ZWEI Ziele verfolgt der Prozess „Managen der Produktlieferung“?",
+    "scenario": "",
+    "question": "Welche ZWEI Ziele verfolgt der Prozess „Managen der Produktlieferung“?",
+    "items": [
+      "Erfassen von Informationen, die später in diesem Projekt oder in anderen Projekten von Nutzen sein können",
+      "Steuern der Erwartungen durch genaue Berichterstattung an den Projektmanager",
+      "Sicherstellen, dass die Arbeit des Teams vereinbart und genehmigt wird, bevor sie beginnt",
+      "Definieren der Pläne und Kosten für die Arbeiten zur Lieferung des Projektprodukts"
+    ],
+    "opts": {
+      "A": "1 und 2",
+      "B": "2 und 3",
+      "C": "3 und 4",
+      "D": "1 und 4"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 21,
+    "q": "Welche Maßnahme wird empfohlen, wenn eine Spezifikationsabweichung akzeptiert wird?",
+    "scenario": "",
+    "question": "Welche Maßnahme wird empfohlen, wenn eine Spezifikationsabweichung akzeptiert wird?",
+    "items": [],
+    "opts": {
+      "A": "Issuemanagement-Ansatz erstellen",
+      "B": "Änderungsbudget verwenden, um die Situation zu lösen",
+      "C": "Projekt-Baseline für die betroffenen Spezifikationen aktualisieren",
+      "D": "Ausnahmebericht erstellen, um die Situation zu korrigieren"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 22,
+    "q": "Welche Rollen des Projektteams sollten gemäß den Leitlinien für eine effektive Organisation bei einem kleinen, einfachen Projekt typischerweise kombiniert werden?",
+    "scenario": "",
+    "question": "Welche Rollen des Projektteams sollten gemäß den Leitlinien für eine effektive Organisation bei einem kleinen, einfachen Projekt typischerweise kombiniert werden?",
+    "items": [],
+    "opts": {
+      "A": "Benutzervertreter und Lieferantenvertreter",
+      "B": "Projektsicherung und Projektunterstützung",
+      "C": "Projektmanager und Teammanager",
+      "D": "Projektmanager und Auftraggeber"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 23,
+    "q": "Wann sollte das Qualitätsregister gemäß den Leitlinien für ein effektives Qualitätsmanagement mit den geplanten Qualitätsaktivitäten aktualisiert werden?",
+    "scenario": "",
+    "question": "Wann sollte das Qualitätsregister gemäß den Leitlinien für ein effektives Qualitätsmanagement mit den geplanten Qualitätsaktivitäten aktualisiert werden?",
+    "items": [],
+    "opts": {
+      "A": "Wenn die Qualitätserwartungen der Benutzer erfasst werden",
+      "B": "Wenn die Gewissheit besteht, dass die Produkte ihre Qualitätsspezifikationen erfüllen werden",
+      "C": "Wenn die Produktbeschreibung im Rahmen der Qualitätssteuerung genehmigt wird",
+      "D": "Wenn die Qualitätstechniken des Projekts geplant werden"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 24,
+    "q": "Ergänzen Sie folgenden Satz: Eine Ausnahme ist eine Situation, in der [?] eine Abweichung über die vereinbarten Toleranzen hinaus vorliegt.",
+    "scenario": "",
+    "question": "Ergänzen Sie folgenden Satz: Eine Ausnahme ist eine Situation, in der [?] eine Abweichung über die vereinbarten Toleranzen hinaus vorliegt.",
+    "items": [],
+    "opts": {
+      "A": "prognostiziert werden kann, dass",
+      "B": "nachgewiesen werden kann, dass bereits",
+      "C": "eine Lösungsempfehlung ausgesprochen wird, weil",
+      "D": "es ungewiss ist, ob eine"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 25,
+    "q": "Welche Aussage beschreibt eine effektive Kommunikation innerhalb eines Projekts?",
+    "scenario": "",
+    "question": "Welche Aussage beschreibt eine effektive Kommunikation innerhalb eines Projekts?",
+    "items": [],
+    "opts": {
+      "A": "Remote arbeitende Teams benötigen einen weniger formellen Kommunikationsmanagement-Ansatz als Teams, die an einem Standort arbeiten",
+      "B": "Regelmäßige Berichterstattung ist ausreichend, um ein genaues Verständnis des Projektfortschritts sicherzustellen",
+      "C": "Widerständler gegen das Projekt wandeln sich in der Regel von selbst zu Befürwortern des Projekts",
+      "D": "Informationen sollten in unterschiedlichen Formaten bereitgestellt werden, damit sie unabhängig vom Medium leicht weitergegeben werden können"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 26,
+    "q": "Was wird durch die Anwendung des Grundprinzips „Fortlaufende geschäftliche Rechtfertigung sicherstellen“ gewährleistet?",
+    "scenario": "",
+    "question": "Was wird durch die Anwendung des Grundprinzips „Fortlaufende geschäftliche Rechtfertigung sicherstellen“ gewährleistet?",
+    "items": [],
+    "opts": {
+      "A": "Dass das Projekt einen Business-Sponsor hat, der sicherstellt, dass die Investition sich rechnet",
+      "B": "Dass die Rechtfertigung für das Projekt während seiner gesamten Laufzeit gültig bleibt",
+      "C": "Dass die im Rahmen des Projekts gelieferten Produkte die Anforderungen an die Qualität erfüllen",
+      "D": "Dass PRINCE2 an den Umfang der Investition angepasst wird"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 27,
+    "q": "Welche Practice bietet eine effektive Anleitung, um sicherzustellen, dass Änderungen der Betriebskosten nach dem Projekt berücksichtigt werden?",
+    "scenario": "",
+    "question": "Welche Practice bietet eine effektive Anleitung, um sicherzustellen, dass Änderungen der Betriebskosten nach dem Projekt berücksichtigt werden?",
+    "items": [],
+    "opts": {
+      "A": "Business Case",
+      "B": "Pläne",
+      "C": "Fortschritt",
+      "D": "Issues"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 28,
+    "q": "Was ist ein externer Faktor, der bei der Anpassung von PRINCE2 zu berücksichtigen ist?",
+    "scenario": "",
+    "question": "Was ist ein externer Faktor, der bei der Anpassung von PRINCE2 zu berücksichtigen ist?",
+    "items": [],
+    "opts": {
+      "A": "Die Handbücher der Organisation",
+      "B": "Die Branchenstandards",
+      "C": "Der Umfang des Projekts",
+      "D": "Der Risikograd des Projekts"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "Von den genannten Optionen sind nur die Branchenstandards ein externer Faktor für die Anpassung von PRINCE2. (Korrektur: Die Mock-Lösung markierte ursprünglich D.)",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 29,
+    "q": "Wie sollte ein quantitativer Ansatz für die Risikoanalyse verwendet werden, um die gesamte Risikobelastung zu verstehen?",
+    "scenario": "",
+    "question": "Wie sollte ein quantitativer Ansatz für die Risikoanalyse verwendet werden, um die gesamte Risikobelastung zu verstehen?",
+    "items": [],
+    "opts": {
+      "A": "Durch Bewerten der Auswirkungen der einzelnen Risiken auf die gesamte geschäftliche Rechtfertigung des Projekts",
+      "B": "Durch Verwenden statistischer Methoden zum Verständnis der Auswirkungen der Unsicherheit auf die Ziele",
+      "C": "Durch Etablieren eines Risikobudgets zur Finanzierung von Risikomaßnahmen",
+      "D": "Durch Einsatz von Gruppendenken, um die beste Entscheidung zu treffen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 30,
+    "q": "Welcher Lieferansatz wiederholt die Erfassung der Anforderungen, die Erstellung, das Coden und das Testing, um das Produkt über die gesamte Laufzeit des Projekts hinweg zu verbessern?",
+    "scenario": "",
+    "question": "Welcher Lieferansatz wiederholt die Erfassung der Anforderungen, die Erstellung, das Coden und das Testing, um das Produkt über die gesamte Laufzeit des Projekts hinweg zu verbessern?",
+    "items": [],
+    "opts": {
+      "A": "Iterativ-inkrementell",
+      "B": "Linear-sequenziell",
+      "C": "Hybrid",
+      "D": "Zeitbasiert"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 31,
+    "q": "Was ist ein Zweck des Change-Management-Ansatzes?",
+    "scenario": "",
+    "question": "Was ist ein Zweck des Change-Management-Ansatzes?",
+    "items": [],
+    "opts": {
+      "A": "Beschreiben der Verantwortlichkeiten für die Erzielung der erforderlichen Abnahmekriterien während eines Projekts",
+      "B": "Beschreiben der Management-Maßnahmen, die bestätigen, dass der Nutzen eines Projekts realisiert wird",
+      "C": "Beschreiben der erforderlichen organisatorischen Practices, sobald ein Projekt abgeschlossen ist",
+      "D": "Beschreiben, wie das Projekt auf bestehende Unternehmensrichtlinien ausgerichtet werden soll"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 32,
+    "q": "Welche Aussage beschreibt das Projektökosystem?",
+    "scenario": "",
+    "question": "Welche Aussage beschreibt das Projektökosystem?",
+    "items": [],
+    "opts": {
+      "A": "Es handelt sich um die Elemente des Business, die in das Projekt involviert sind oder von ihm direkt beeinflusst werden",
+      "B": "Es bezeichnet die Art und Weise, in der eine Organisation vom Istzustand in den Zielzustand übergeht",
+      "C": "Es arbeitet mit wichtigen Einflussnehmern zusammen, um sicherzustellen, dass die Produkte in allen Bereichen des Projektökosystems angenommen werden",
+      "D": "Es sind die gemeinsamen Einstellungen, Werte und Ziele, die eine Gruppe von Menschen kennzeichnen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 33,
+    "q": "In welchem Prozess erfolgt die Zuweisung der Arbeit zur Lieferung der Produkte einer Phase?",
+    "scenario": "",
+    "question": "In welchem Prozess erfolgt die Zuweisung der Arbeit zur Lieferung der Produkte einer Phase?",
+    "items": [],
+    "opts": {
+      "A": "Steuern einer Phase",
+      "B": "Managen der Produktlieferung",
+      "C": "Initiieren eines Projekts",
+      "D": "Managen eines Phasenübergangs"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 34,
+    "q": "Wo sollte beschrieben werden, wie die messbare Verbesserung nach Abschluss eines Projekts überprüft wird?",
+    "scenario": "",
+    "question": "Wo sollte beschrieben werden, wie die messbare Verbesserung nach Abschluss eines Projekts überprüft wird?",
+    "items": [],
+    "opts": {
+      "A": "Projektabschlussbericht",
+      "B": "Projektplan",
+      "C": "Business Case",
+      "D": "Nutzenmanagement-Ansatz"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 35,
+    "q": "Welches Grundprinzip wird angewendet, wenn Toleranzen für den Teammanager festgelegt werden?",
+    "scenario": "",
+    "question": "Welches Grundprinzip wird angewendet, wenn Toleranzen für den Teammanager festgelegt werden?",
+    "items": [],
+    "opts": {
+      "A": "Lernen aus Erfahrung",
+      "B": "Rollen, Verantwortlichkeiten und Beziehungen definieren",
+      "C": "Steuern nach dem Ausnahmeprinzip",
+      "D": "Produktorientierung"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 36,
+    "q": "In welchem Schritt des Issuemanagement-Verfahrens sollte ggf. ein Ausnahmeplan angefordert werden?",
+    "scenario": "",
+    "question": "In welchem Schritt des Issuemanagement-Verfahrens sollte ggf. ein Ausnahmeplan angefordert werden?",
+    "items": [],
+    "opts": {
+      "A": "Entscheidung über Änderungen",
+      "B": "Erfassen von Issues",
+      "C": "Bewerten von Issues",
+      "D": "Implementieren von Änderungen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 37,
+    "q": "Ergänzen Sie folgenden Satz: Ein Zeitplan ist nur ein Bestandteil eines [ ? ].",
+    "scenario": "",
+    "question": "Ergänzen Sie folgenden Satz: Ein Zeitplan ist nur ein Bestandteil eines [ ? ].",
+    "items": [],
+    "opts": {
+      "A": "Plans",
+      "B": "Risikos",
+      "C": "Anliegens",
+      "D": "Arbeitspakets"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 38,
+    "q": "Welcher Plan sollte genügend Details für die tägliche Steuerung durch den Projektmanager bereitstellen?",
+    "scenario": "",
+    "question": "Welcher Plan sollte genügend Details für die tägliche Steuerung durch den Projektmanager bereitstellen?",
+    "items": [],
+    "opts": {
+      "A": "Projektplan",
+      "B": "Phasenplan",
+      "C": "Teamplan",
+      "D": "Ausnahmeplan"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 39,
+    "q": "Wie sollten gemäß der Practice „Organisation“ die Rollen und Verantwortlichkeiten für Projekte zugeteilt werden?",
+    "scenario": "",
+    "question": "Wie sollten gemäß der Practice „Organisation“ die Rollen und Verantwortlichkeiten für Projekte zugeteilt werden?",
+    "items": [],
+    "opts": {
+      "A": "Durch Definieren des organisatorischen Ökosystems und seiner externen Beziehungen",
+      "B": "Durch Sicherstellen, dass jeder definierten PRINCE2-Rolle eine Person zugeteilt wird",
+      "C": "Durch Definieren, wer welche Produkte wann liefert und wie viel das kostet",
+      "D": "Durch Sicherstellen, dass die Verantwortlichkeiten immer zugeteilt sind, auch wenn Rollen geteilt oder kombiniert werden"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 40,
+    "q": "Was ist eine Definition von Management?",
+    "scenario": "",
+    "question": "Was ist eine Definition von Management?",
+    "items": [],
+    "opts": {
+      "A": "Anweisung zur Ausführung von Aufgaben im Einklang mit vereinbarten Arbeitsweisen",
+      "B": "Zusammenarbeit mit verschiedenen Stakeholdern zum Erreichen von Zielen",
+      "C": "Sicherstellen, dass die Produkte des Projekts den Anforderungen des Benutzers entsprechen",
+      "D": "Erläuterung, was, wo, wann, wie das Projekt durchgeführt werden wird"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 41,
+    "q": "Was beschreibt AM BESTEN, wie der Fortschritt überwacht werden sollte?",
+    "scenario": "",
+    "question": "Was beschreibt AM BESTEN, wie der Fortschritt überwacht werden sollte?",
+    "items": [],
+    "opts": {
+      "A": "Durch Messen, ob die Produkte ihre geplanten Qualitätsspezifikationen erreicht haben",
+      "B": "Durch Messen der wünschenswerten Ergebnisse anhand der im Business Case festgelegten Ziele",
+      "C": "Durch Messen der Erzielung des Nutzens anhand der Business-Ziele",
+      "D": "Durch Messen der erreichten Ergebnisse anhand der in der Projekt-Baseline enthaltenen Pläne"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 42,
+    "q": "Was wird definiert als Vorschlag zur Änderung einer Baseline?",
+    "scenario": "",
+    "question": "Was wird definiert als Vorschlag zur Änderung einer Baseline?",
+    "items": [],
+    "opts": {
+      "A": "Ein Änderungsantrag",
+      "B": "Eine Spezifikationsabweichung",
+      "C": "Ein Anliegen",
+      "D": "Eine Ausnahme"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 43,
+    "q": "Welches Managementprodukt sollte der Projektmanager prüfen, um den Fortschritt eines Arbeitspakets zu prüfen?",
+    "scenario": "",
+    "question": "Welches Managementprodukt sollte der Projektmanager prüfen, um den Fortschritt eines Arbeitspakets zu prüfen?",
+    "items": [],
+    "opts": {
+      "A": "Teamstatusbericht",
+      "B": "Projektstatusbericht",
+      "C": "Produktbeschreibung",
+      "D": "Phasenplan"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 44,
+    "q": "Wann sollte nach dem Ausnahmenmanagement-Verfahren ein Issue gemeldet werden, das im Rahmen von Phasentoleranzen gelöst werden kann?",
+    "scenario": "",
+    "question": "Wann sollte nach dem Ausnahmenmanagement-Verfahren ein Issue gemeldet werden, das im Rahmen von Phasentoleranzen gelöst werden kann?",
+    "items": [],
+    "opts": {
+      "A": "Im nächsten Teamstatusbericht",
+      "B": "Im nächsten Projektstatusbericht",
+      "C": "Unmittelbar in einem Ausnahmebericht",
+      "D": "Bei einer Beurteilung der Ausnahme"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 45,
+    "q": "Was sollte verwendet werden, um den Hauptumfang und die Benutzer-Qualitätserwartungen für das Projekt zu identifizieren?",
+    "scenario": "",
+    "question": "Was sollte verwendet werden, um den Hauptumfang und die Benutzer-Qualitätserwartungen für das Projekt zu identifizieren?",
+    "items": [],
+    "opts": {
+      "A": "Projektplan",
+      "B": "Projektproduktbeschreibung",
+      "C": "Produktbeschreibung",
+      "D": "Qualitätsregister"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 46,
+    "q": "Welche Aussage beschreibt Kultur?",
+    "scenario": "",
+    "question": "Welche Aussage beschreibt Kultur?",
+    "items": [],
+    "opts": {
+      "A": "Sie kann anfangs die Einstellungen, Werte und Ziele des Business widerspiegeln, wird sich aber wahrscheinlich im Laufe des Projekts weiterentwickeln",
+      "B": "Sie bezeichnet die Methode, mit der eine Organisation vom Istzustand in den Zielzustand übergeht",
+      "C": "Es handelt sich um die Elemente des Business, die in das Projekt involviert sind oder von ihm direkt beeinflusst werden",
+      "D": "Sie umfasst die internen Elemente einer Organisation sowie die externen Beziehungen der Organisation"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 47,
+    "q": "Was ist ein Zweck der Practice „Risiko“?",
+    "scenario": "",
+    "question": "Was ist ein Zweck der Practice „Risiko“?",
+    "items": [],
+    "opts": {
+      "A": "Die Erfolgschancen des Projekts durch die Steuerung von Unsicherheiten erhöhen",
+      "B": "Erfassen und Steuern möglicher Änderungen an der Projekt-Baseline",
+      "C": "Hilfe bei der Überwindung der Optimismus-Verzerrung, die Menschen dazu bringt, Verlustrisiken zu vernachlässigen",
+      "D": "Definieren der zu liefernden Produkte und der Art und Weise, wie sie zu liefern sind, um den Business Case zu erfüllen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 48,
+    "q": "In welchem Schritt Verfahrens für das Qualitätsmanagement werden qualitative Messgrößen identifiziert?",
+    "scenario": "",
+    "question": "In welchem Schritt Verfahrens für das Qualitätsmanagement werden qualitative Messgrößen identifiziert?",
+    "items": [],
+    "opts": {
+      "A": "Produktbeschreibungen erstellen",
+      "B": "Beschreiben des Qualitätsmanagement-Ansatzes",
+      "C": "Qualitätssteuerung durchführen",
+      "D": "Produktabnahme"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 49,
+    "q": "Welches Element einer effektiven Planung verringert das Risiko, dass wichtige Aspekte des Umfangs im Plan übersehen werden?",
+    "scenario": "",
+    "question": "Welches Element einer effektiven Planung verringert das Risiko, dass wichtige Aspekte des Umfangs im Plan übersehen werden?",
+    "items": [],
+    "opts": {
+      "A": "Projektphasen",
+      "B": "Der Planungshorizont",
+      "C": "Produktbasierte Planung",
+      "D": "Toleranzen in der Planung"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 50,
+    "q": "In welchem Schritt Verfahrens für das „Business Case Management\" sollte der Business Case am Ende jeder Phase mit den neuesten Prognosen zum Nutzen aktualisiert werden?",
+    "scenario": "",
+    "question": "In welchem Schritt Verfahrens für das „Business Case Management\" sollte der Business Case am Ende jeder Phase mit den neuesten Prognosen zum Nutzen aktualisiert werden?",
+    "items": [],
+    "opts": {
+      "A": "Entwickeln",
+      "B": "Prüfen",
+      "C": "Pflegen",
+      "D": "Bestätigen"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 51,
+    "q": "Wann sollte die Quelle eines Risikos identifiziert werden?",
+    "scenario": "",
+    "question": "Wann sollte die Quelle eines Risikos identifiziert werden?",
+    "items": [],
+    "opts": {
+      "A": "Wenn die „Ursache“ des Risikos dokumentiert ist",
+      "B": "Wenn das „Risikoereignis“ dokumentiert ist",
+      "C": "Wenn die „Wirkung“ des Risikos dokumentiert ist",
+      "D": "Wenn die „Auswirkung“ des Risikos identifiziert ist"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 52,
+    "q": "Welches ist aus organisatorischer Perspektive die „verantwortliche Instanz“, die das Projektmandat erteilt, um den Prozess „Vorbereiten eines Projekts“ auszulösen?",
+    "scenario": "",
+    "question": "Welches ist aus organisatorischer Perspektive die „verantwortliche Instanz“, die das Projektmandat erteilt, um den Prozess „Vorbereiten eines Projekts“ auszulösen?",
+    "items": [],
+    "opts": {
+      "A": "Business-Ebene",
+      "B": "Lenkungsausschuss",
+      "C": "Projektmanager",
+      "D": "Projektmanagement-Team"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 53,
+    "q": "Welche Aussage beschreibt die Projektsicherung, aber nicht die Qualitätssicherung?",
+    "scenario": "",
+    "question": "Welche Aussage beschreibt die Projektsicherung, aber nicht die Qualitätssicherung?",
+    "items": [],
+    "opts": {
+      "A": "Es handelt sich um eine Rolle, die in der Verantwortung des Lenkungsausschusses liegt, um zu bestätigen, dass das Projekt korrekt durchgeführt wird",
+      "B": "Sie überwacht die Maßnahmen zur Qualitätssteuerung des Projekts, mit denen die Produkte des Projekts bewertet werden",
+      "C": "Sie ist unabhängig vom Projekt und ist Teil des Qualitätsmanagement-Systems des Benutzers",
+      "D": "Es handelt sich um den Prozess der Erfassung der Qualitätsspezifikationen für die Projektprodukte in Form von Produktbeschreibungen"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 54,
+    "q": "Welche Aktivität sollte von Personen außerhalb des Projektteams und nicht innerhalb des Projektteams durchgeführt werden?",
+    "scenario": "",
+    "question": "Welche Aktivität sollte von Personen außerhalb des Projektteams und nicht innerhalb des Projektteams durchgeführt werden?",
+    "items": [],
+    "opts": {
+      "A": "Governance des Projekts in einer Art und Weise, die auf die Geschäftsstrategie ausgerichtet ist",
+      "B": "Integration neuer Produkte in den jeweiligen Bereich des Business",
+      "C": "Steuerung der Änderung von Anforderungen und Nutzen, die von den Benutzern identifiziert werden",
+      "D": "Festlegen der Toleranzen und Einschränkungen für die Teammitglieder, innerhalb derer gearbeitet werden soll"
+    },
+    "answer": "B",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 55,
+    "q": "Welche ZWEI Ziele verfolgt der Prozess „Initiieren eines Projekts“?",
+    "scenario": "",
+    "question": "Welche ZWEI Ziele verfolgt der Prozess „Initiieren eines Projekts“?",
+    "items": [
+      "Sicherstellen, dass die Business-Ebene eine Schnittstelle zum Projekt hat",
+      "Konzentration des Projektmanagement-Teams auf die Lieferung der Produkte der Phase",
+      "Definieren, wie der Fortschritt überwacht und kontrolliert wird",
+      "Vereinbaren des Ansatzes zur Kommunikation von Projektinformationen"
+    ],
+    "opts": {
+      "A": "1 und 2",
+      "B": "2 und 3",
+      "C": "3 und 4",
+      "D": "1 und 4"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 56,
+    "q": "Wo sollte beschrieben werden, wie Probleme oder Anliegen bewertet und gesteuert werden?",
+    "scenario": "",
+    "question": "Wo sollte beschrieben werden, wie Probleme oder Anliegen bewertet und gesteuert werden?",
+    "items": [],
+    "opts": {
+      "A": "Issuemanagement-Ansatz",
+      "B": "Risikomanagement-Ansatz",
+      "C": "Nutzenmanagement-Ansatz",
+      "D": "Qualitätsmanagement-Ansatz"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 57,
+    "q": "Wann muss der Lenkungsausschuss im Rahmen des Prozesses „Lenken eines Projekts“ zusammenkommen?",
+    "scenario": "",
+    "question": "Wann muss der Lenkungsausschuss im Rahmen des Prozesses „Lenken eines Projekts“ zusammenkommen?",
+    "items": [],
+    "opts": {
+      "A": "Bei Ausnahmen, die eine Anweisung erfordern, und bei wenigen, wichtigen Entscheidungspunkten",
+      "B": "Für Fortschrittsbesprechungen in der Häufigkeit, die in der Projektleitdokumentation definiert wurde",
+      "C": "Um bei Bedarf Anweisungen zu geben als Reaktion auf einen Projektstatusbericht",
+      "D": "Wenn der Lenkungsausschuss unterschiedliche Auffassungen über die Richtung des Projekts hat"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 58,
+    "q": "Was beschreibt die organisatorische Entwicklung des Projekts?",
+    "scenario": "",
+    "question": "Was beschreibt die organisatorische Entwicklung des Projekts?",
+    "items": [],
+    "opts": {
+      "A": "Sie ist der Prozess der Implementierung des Organisationsdesigns eines Projekts und dessen Weiterentwicklung im Verlaufe des Projekts",
+      "B": "Sie bestimmt, wie die Arbeit und die Menschen zu organisieren sind, um die Ziele eines Projekts zu erreichen",
+      "C": "Sie wird unabhängig vom Projekt durchgeführt und berichtet an das Qualitätsmanagement-System des Benutzers",
+      "D": "Sie beschreibt die Erwartungen der Projekt-Stakeholder an die Produkte des Projekts"
+    },
+    "answer": "A",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 59,
+    "q": "Welche Maßnahme sollte der Teammanager ergreifen, wenn prognostiziert wird, dass die in einem Arbeitspaket definierte Zeittoleranz überschritten wird?",
+    "scenario": "",
+    "question": "Welche Maßnahme sollte der Teammanager ergreifen, wenn prognostiziert wird, dass die in einem Arbeitspaket definierte Zeittoleranz überschritten wird?",
+    "items": [],
+    "opts": {
+      "A": "An den Projektmanager in einem Ausnahmebericht eskalieren",
+      "B": "Die Häufigkeit der Teamstatusberichte erhöhen, bis der Issue behoben ist",
+      "C": "Den Projektmanagers im nächsten geplanten Teamstatusbericht informieren",
+      "D": "Ein Issue melden, um eine Entscheidung des Projektmanagers zu erhalten"
+    },
+    "answer": "D",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  },
+  {
+    "n": 60,
+    "q": "Warum sollten Pläne laut der Practice “Planen“ drei verschiedene Perspektiven umfassen?",
+    "scenario": "",
+    "question": "Warum sollten Pläne laut der Practice “Planen“ drei verschiedene Perspektiven umfassen?",
+    "items": [],
+    "opts": {
+      "A": "Sicherstellen, dass die Interessen des Business, der Benutzer und der Lieferanten in dem Projekt angemessen vertreten sind",
+      "B": "Sicherstellen, dass die Grundprinzipien in den PRINCE2-Practices berücksichtigt und in den Prozessen implementiert werden",
+      "C": "Sicherstellen, dass das Projektteam davon überzeugt ist, dass die Erwartungen des Benutzers kosteneffizient erfüllt werden können und vom Business finanziert werden",
+      "D": "Definieren der Beziehung zwischen dem Output, den Ergebnissen und der Art und Weise, in der die Business-Ziele erreicht werden"
+    },
+    "answer": "C",
+    "expl": {},
+    "rationale": "",
+    "ref": "",
+    "topic": ""
+  }
+]

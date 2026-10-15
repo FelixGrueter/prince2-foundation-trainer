@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRINCE2 Foundation Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4f6e'/%3E%3Cpath d='M9 23V9h7a4.5 4.5 0 010 9h-4.5' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22' cy='22' r='2.2' fill='%23e3a33a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+  --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+  --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+  --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+  --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+  --radius:12px;--radius-sm:8px;
+  --font:'Figtree','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+:root{
+  --bg:oklch(97.5% .008 80);
+  --surface:oklch(100% 0 0);
+  --surface-2:oklch(95% .01 80);
+  --border:oklch(88% .012 80);
+  --text:oklch(22% .02 240);
+  --text-muted:oklch(48% .02 240);
+  --accent:oklch(42% .09 235);
+  --accent-soft:oklch(93% .03 235);
+  --accent-text:#fff;
+  --gold:oklch(72% .14 75);
+  --ok:oklch(52% .14 150);--ok-soft:oklch(94% .05 150);
+  --bad:oklch(53% .18 25);--bad-soft:oklch(95% .04 25);
+  --flag:oklch(70% .15 70);
+  --shadow:0 1px 2px oklch(0% 0 0/.04),0 8px 24px -12px oklch(0% 0 0/.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:oklch(17% .015 240);
+    --surface:oklch(22% .015 240);
+    --surface-2:oklch(26% .015 240);
+    --border:oklch(32% .015 240);
+    --text:oklch(93% .01 80);
+    --text-muted:oklch(68% .015 240);
+    --accent:oklch(72% .09 225);
+    --accent-soft:oklch(30% .05 230);
+    --accent-text:oklch(15% .02 240);
+    --gold:oklch(78% .13 75);
+    --ok:oklch(74% .14 150);--ok-soft:oklch(28% .05 150);
+    --bad:oklch(72% .16 25);--bad-soft:oklch(30% .06 25);
+    --flag:oklch(78% .14 70);
+    --shadow:0 1px 2px oklch(0% 0 0/.3),0 8px 24px -12px oklch(0% 0 0/.5);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:oklch(17% .015 240);
+  --surface:oklch(22% .015 240);
+  --surface-2:oklch(26% .015 240);
+  --border:oklch(32% .015 240);
+  --text:oklch(93% .01 80);
+  --text-muted:oklch(68% .015 240);
+  --accent:oklch(72% .09 225);
+  --accent-soft:oklch(30% .05 230);
+  --accent-text:oklch(15% .02 240);
+  --gold:oklch(78% .13 75);
+  --ok:oklch(74% .14 150);--ok-soft:oklch(28% .05 150);
+  --bad:oklch(72% .16 25);--bad-soft:oklch(30% .06 25);
+  --flag:oklch(78% .14 70);
+  --shadow:0 1px 2px oklch(0% 0 0/.3),0 8px 24px -12px oklch(0% 0 0/.5);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:var(--text-base);line-height:1.55;min-height:100vh;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklch,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.hwrap{max-width:1100px;margin:0 auto;padding:var(--space-3) var(--space-5);display:flex;align-items:center;gap:var(--space-4)}
+.logo{display:flex;align-items:center;gap:var(--space-3);font-weight:600;font-size:var(--text-sm);letter-spacing:.01em}
+.logo svg{width:32px;height:32px;flex:none}
+.logo span small{display:block;font-weight:500;color:var(--text-muted);font-size:var(--text-xs)}
+.hspacer{flex:1}
+.timer{font-variant-numeric:tabular-nums;font-weight:600;font-size:var(--text-sm);padding:var(--space-1) var(--space-3);border-radius:999px;background:var(--surface-2);border:1px solid var(--border)}
+.timer.warn{color:var(--bad);border-color:var(--bad)}
+.icon-btn{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;border:1px solid var(--border);background:var(--surface);transition:background .15s}
+.icon-btn:hover{background:var(--surface-2)}
+.icon-btn svg{width:18px;height:18px}
+
+main{max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-5) var(--space-16)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-5);border-radius:var(--radius-sm);font-weight:600;font-size:var(--text-sm);border:1px solid var(--border);background:var(--surface);transition:transform .12s,background .15s,border-color .15s}
+.btn:hover{background:var(--surface-2)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.flagged{border-color:var(--flag);color:var(--flag)}
+.mode-badge{font-size:var(--text-xs);font-weight:600;padding:1px var(--space-2);border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+
+/* Start */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-10);align-items:start}
+.eyebrow{font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:var(--space-3)}
+h1{font-size:var(--text-xl);line-height:1.15;font-weight:700;letter-spacing:-.015em;margin-bottom:var(--space-4)}
+.lead{color:var(--text-muted);max-width:52ch;margin-bottom:var(--space-6)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-bottom:var(--space-8)}
+.fact{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-4)}
+.fact b{display:block;font-size:var(--text-lg);font-weight:700;letter-spacing:-.01em}
+.fact span{font-size:var(--text-xs);color:var(--text-muted)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-6);box-shadow:var(--shadow)}
+.card h2{font-size:var(--text-lg);font-weight:600;margin-bottom:var(--space-4)}
+.opt-row{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3) 0;border-top:1px solid var(--border)}
+.opt-row:first-of-type{border-top:0}
+.opt-row label:not(.switch){flex:1;cursor:pointer}
+.opt-row label b{display:block;font-weight:600;font-size:var(--text-sm)}
+.opt-row label span{font-size:var(--text-xs);color:var(--text-muted)}
+.switch{position:relative;width:42px;height:24px;flex:0 0 42px;margin-top:2px;display:block}
+.switch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.switch i{position:absolute;inset:0;border-radius:999px;background:var(--border);transition:background .15s}
+.switch i::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:999px;background:var(--surface);transition:transform .15s;box-shadow:0 1px 2px oklch(0% 0 0/.2)}
+.switch input:checked + i{background:var(--accent)}
+.switch input:checked + i::after{transform:translateX(18px)}
+.switch input:focus-visible + i{outline:2px solid var(--accent);outline-offset:2px}
+.topics{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-6)}
+.chip{font-size:var(--text-xs);padding:var(--space-1) var(--space-3);border-radius:999px;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted)}
+.chip b{color:var(--text);font-weight:600}
+
+/* Exam picker */
+.picker{border:0;margin-bottom:var(--space-8)}
+.picker legend{font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-3)}
+.picker-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+.pick{position:relative;display:flex;gap:var(--space-3);align-items:flex-start;padding:var(--space-4);border:1.5px solid var(--border);border-radius:var(--radius);background:var(--surface);cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s,transform .12s}
+.pick:hover{border-color:var(--accent)}
+.pick:active{transform:scale(.99)}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick .dot{flex:none;width:20px;height:20px;margin-top:2px;border-radius:999px;border:2px solid var(--border);display:grid;place-items:center;transition:border-color .15s}
+.pick .dot::after{content:"";width:10px;height:10px;border-radius:999px;background:var(--accent);transform:scale(0);transition:transform .15s}
+.pick b{display:block;font-weight:600;font-size:var(--text-sm)}
+.pick small{display:block;font-size:var(--text-xs);color:var(--text-muted);margin-top:2px}
+.pick .badge{display:inline-block;margin-top:var(--space-2);font-size:var(--text-xs);font-weight:600;padding:1px var(--space-2);border-radius:999px;background:var(--surface-2);color:var(--text-muted)}
+.pick .badge.official{background:var(--accent-soft);color:var(--accent)}
+.pick:has(input:checked){border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px color-mix(in oklch,var(--accent) 18%,transparent)}
+.pick:has(input:checked) .dot{border-color:var(--accent)}
+.pick:has(input:checked) .badge{background:var(--surface)}
+.pick:has(input:checked) .dot::after{transform:scale(1)}
+.pick:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.load-note{font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-3);text-align:center}
+.load-note.err{color:var(--bad)}
+
+/* Exam layout */
+.exam{display:grid;grid-template-columns:1fr 260px;gap:var(--space-8);align-items:start}
+.progress{height:6px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin-bottom:var(--space-6)}
+.progress i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .3s}
+.qmeta{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);flex-wrap:wrap}
+.qnum{font-weight:700;font-size:var(--text-sm);color:var(--accent)}
+.qtopic{font-size:var(--text-xs);color:var(--text-muted)}
+.scenario{background:var(--surface-2);border-left:3px solid var(--accent);padding:var(--space-3) var(--space-4);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:var(--space-4);color:var(--text)}
+.qtext{font-size:var(--text-lg);font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-bottom:var(--space-5)}
+.items{list-style:none;margin:0 0 var(--space-5);display:grid;gap:var(--space-2)}
+.items li{display:flex;gap:var(--space-3);padding:var(--space-2) var(--space-3);background:var(--surface-2);border-radius:var(--radius-sm);font-size:var(--text-sm)}
+.items li b{color:var(--accent);flex:none;min-width:1.2em}
+.options{display:grid;gap:var(--space-3)}
+.opt{display:flex;align-items:flex-start;gap:var(--space-4);width:100%;text-align:left;padding:var(--space-4) var(--space-5);border:1.5px solid var(--border);border-radius:var(--radius);background:var(--surface);transition:border-color .15s,background .15s,transform .12s;line-height:1.45}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.opt:active:not(:disabled){transform:scale(.995)}
+.opt:disabled{cursor:default}
+.opt .letter{flex:none;width:32px;height:32px;border-radius:999px;display:grid;place-items:center;font-weight:700;font-size:var(--text-sm);background:var(--surface-2);border:1px solid var(--border)}
+.opt.correct{border-color:var(--ok);background:var(--ok-soft)}
+.opt.correct .letter{background:var(--ok);color:#fff;border-color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .letter{background:var(--bad);color:#fff;border-color:var(--bad)}
+.opt.selected{border-color:var(--accent);background:var(--accent-soft)}
+.opt.selected .letter{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+.opt.selected .tag{color:var(--accent)}
+.opt .tag{margin-left:auto;flex:none;font-size:var(--text-xs);font-weight:600;align-self:center}
+.opt.correct .tag{color:var(--ok)}.opt.wrong .tag{color:var(--bad)}
+
+/* Feedback */
+.feedback{margin-top:var(--space-6);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;animation:rise .3s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fb-head{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4) var(--space-5);font-weight:600}
+.fb-head.ok{background:var(--ok-soft);color:var(--ok)}
+.fb-head.bad{background:var(--bad-soft);color:var(--bad)}
+.fb-head svg{width:22px;height:22px;flex:none}
+.fb-body{padding:var(--space-5);background:var(--surface);display:grid;gap:var(--space-4)}
+.fb-body h3{font-size:var(--text-sm);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+.expl{display:flex;gap:var(--space-3);padding:var(--space-3) var(--space-4);border-radius:var(--radius-sm);background:var(--surface-2);font-size:var(--text-sm);line-height:1.55}
+.expl .letter{flex:none;width:26px;height:26px;border-radius:999px;display:grid;place-items:center;font-weight:700;font-size:var(--text-xs);background:var(--surface);border:1px solid var(--border)}
+.expl.right{background:var(--ok-soft);border:1px solid color-mix(in oklch,var(--ok) 40%,transparent)}
+.expl.right .letter{background:var(--ok);color:#fff;border-color:var(--ok)}
+.expl .verdict{font-weight:600;display:block;margin-bottom:2px}
+.expl.right .verdict{color:var(--ok)}
+.expl.other .verdict{color:var(--bad)}
+.expl p{color:var(--text)}
+.ref{font-size:var(--text-xs);color:var(--text-muted);display:flex;gap:var(--space-4);flex-wrap:wrap}
+.ref code{font-family:ui-monospace,Menlo,monospace;background:var(--surface-2);padding:1px 6px;border-radius:4px}
+.nav{display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap}
+.nav .spacer{flex:1}
+
+/* Sidebar grid */
+.side{position:sticky;top:76px}
+.side h2{font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-3);display:flex;justify-content:space-between}
+.side h2 span{color:var(--text-muted);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.cell{aspect-ratio:1;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-size:var(--text-xs);font-weight:600;display:grid;place-items:center;position:relative;transition:transform .1s}
+.cell:hover{transform:scale(1.08)}
+.cell.cur{outline:2px solid var(--accent);outline-offset:1px}
+.cell.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.cell.bad{background:var(--bad);color:#fff;border-color:var(--bad)}
+.cell.done{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+.cell.flag::after{content:"";position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:999px;background:var(--flag);border:1.5px solid var(--bg)}
+.legend{display:grid;gap:var(--space-1);margin-top:var(--space-4);font-size:var(--text-xs);color:var(--text-muted)}
+.legend span{display:flex;align-items:center;gap:var(--space-2)}
+.legend i{width:12px;height:12px;border-radius:3px;border:1px solid var(--border);display:inline-block}
+.side .btn{width:100%;justify-content:center;margin-top:var(--space-4)}
+
+/* Result */
+.result-head{display:grid;grid-template-columns:auto 1fr;gap:var(--space-8);align-items:center;margin-bottom:var(--space-8)}
+.ring{width:170px;height:170px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:12;stroke-linecap:round}
+.ring .track{stroke:var(--surface-2)}
+.ring .val{stroke:var(--ok);transition:stroke-dashoffset 1s ease-out}
+.ring.fail .val{stroke:var(--bad)}
+.ring .num{position:absolute;inset:0;display:grid;place-items:center;text-align:center;line-height:1.1}
+.ring .num b{font-size:var(--text-xl);font-weight:700;letter-spacing:-.02em}
+.ring .num span{font-size:var(--text-xs);color:var(--text-muted)}
+.verdict-big{font-size:var(--text-xl);font-weight:700;letter-spacing:-.015em;margin-bottom:var(--space-2)}
+.verdict-big.ok{color:var(--ok)}.verdict-big.bad{color:var(--bad)}
+.topic-list{display:grid;gap:var(--space-3)}
+.topic-row{display:grid;grid-template-columns:200px 1fr 60px;gap:var(--space-4);align-items:center;font-size:var(--text-sm)}
+.topic-row .bar{height:8px;background:var(--surface-2);border-radius:999px;overflow:hidden}
+.topic-row .bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.topic-row .pct{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.review{display:grid;gap:var(--space-3);margin-top:var(--space-6)}
+.rv{display:flex;gap:var(--space-4);align-items:flex-start;width:100%;text-align:left;padding:var(--space-4);border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);font-size:var(--text-sm)}
+.rv:hover{border-color:var(--accent)}
+.rv .n{flex:none;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-weight:700;color:#fff}
+.rv .n.bad{background:var(--bad)}.rv .n.ok{background:var(--ok)}.rv .n.skip{background:var(--text-muted)}
+.rv small{display:block;color:var(--text-muted);margin-top:2px}
+.section-title{font-size:var(--text-lg);font-weight:600;margin:var(--space-10) 0 var(--space-4)}
+footer{max-width:1100px;margin:0 auto;padding:var(--space-6) var(--space-5);font-size:var(--text-xs);color:var(--text-muted);border-top:1px solid var(--border)}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:oklch(0% 0 0/.5);display:grid;place-items:center;padding:var(--space-5);z-index:20}
+.modal .card{max-width:460px;width:100%}
+.modal p{color:var(--text-muted);margin-bottom:var(--space-5);font-size:var(--text-sm)}
+.modal .nav{margin-top:0}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .exam{grid-template-columns:1fr}
+  .side{position:static;padding-top:var(--space-6);border-top:1px solid var(--border)}
+  .grid{grid-template-columns:repeat(10,1fr)}
+  .result-head{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .topic-row{grid-template-columns:1fr 60px}.topic-row .bar{grid-column:1/-1}
+}
+@media (max-width:520px){
+  .facts{grid-template-columns:1fr 1fr}
+  .picker-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(10,1fr);gap:4px}
+  .cell{border-radius:4px}
+  .logo span small{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hwrap">
+    <div class="logo">
+      <svg viewBox="0 0 32 32" fill="none" aria-label="Prüfungstrainer Logo"><rect width="32" height="32" rx="7" fill="var(--accent)"/><path d="M9 23V9h7a4.5 4.5 0 010 9h-4.5" stroke="var(--accent-text)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="22" r="2.2" fill="var(--gold)"/></svg>
+      <span>PRINCE2 Foundation Trainer<small id="examLabel">Prüfungssimulation · Version 7 (DE)</small></span>
+    </div>
+    <div class="hspacer"></div>
+    <div id="timer" class="timer" hidden>60:00</div>
+    <button class="icon-btn" id="themeBtn" aria-label="Farbschema wechseln">
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="app" aria-live="polite"></main>
+
+<footer><span id="footSource"></span> PRINCE2® ist eine eingetragene Marke von PeopleCert. Diese interaktive Umsetzung dient ausschließlich dem persönlichen Lernen.</footer>
+
+<script>
+/* ---------- Prüfungskatalog ----------
+   Jede Prüfung liegt als eigene JSON-Datei in data/ und wird erst bei Auswahl geladen. */
+const EXAMS = [
+  { id: 'muster-1', title: 'Musterprüfung 1', sub: 'Offizielle PeopleCert-Musterprüfung, v7.2', official: true,
+    source: 'Fragen, Lösungen und Begründungen: PRINCE2® Musterprüfung 1 Foundation, Version 7.2 (PeopleCert, offizielle Schulungsunterlagen).' },
+  { id: 'muster-2', title: 'Musterprüfung 2', sub: 'Offizielle PeopleCert-Musterprüfung, v7.2', official: true,
+    source: 'Fragen, Lösungen und Begründungen: PRINCE2® Musterprüfung 2 Foundation, Version 7.2 (PeopleCert, offizielle Schulungsunterlagen).' },
+  { id: 'mock-a', title: 'Mock-Prüfung 1', sub: 'Mock Exam A', official: false,
+    source: 'Fragen und Lösungen: PRINCE2® Foundation Mock Exam A.' },
+  { id: 'mock-b', title: 'Mock-Prüfung 2', sub: 'Mock Exam B', official: false,
+    source: 'Fragen und Lösungen: PRINCE2® Foundation Mock Exam B.' },
+];
+const PASS = 36, EXAM_MIN = 60;
+let QUESTIONS = [], TOTAL = 60;
+const cache = {};
+
+function loadExam(id){
+  if(!cache[id]) cache[id] = fetch(`data/${id}.json`).then(r => {
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  }).catch(err => { delete cache[id]; throw err; });
+  return cache[id];
+}
+function currentExam(){ return EXAMS.find(e => e.id === state.examId); }
+function selectExam(id){
+  if(!EXAMS.some(e => e.id === id)) id = EXAMS[0].id;
+  state.examId = id; state.loading = true; state.loadError = null;
+  try { localStorage.setItem('p2-exam', id); } catch(e) {}
+  const ex = currentExam();
+  examLabel.textContent = `${ex.title} · ${ex.sub}`;
+  footSource.textContent = ex.source;
+  render();
+  loadExam(id).then(qs => {
+    if(state.examId !== id) return;
+    QUESTIONS = qs; TOTAL = qs.length; state.loading = false; render();
+  }).catch(err => {
+    if(state.examId !== id) return;
+    state.loading = false;
+    state.loadError = location.protocol === 'file:'
+      ? 'Die Fragen können nicht direkt aus dem Dateisystem geladen werden. Bitte die App über einen Webserver öffnen (siehe README).'
+      : `Fragenkatalog konnte nicht geladen werden (${err.message}).`;
+    render();
+  });
+}
+
+/* ---------- Theme ---------- */
+let theme = document.documentElement.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+function applyTheme(){
+  document.documentElement.dataset.theme = theme;
+  iconSun.hidden = theme === 'dark'; iconMoon.hidden = theme !== 'dark';
+}
+themeBtn.onclick = () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(); };
+applyTheme();
+
+/* ---------- State ---------- */
+const state = {
+  view: 'start',
+  examId: null,
+  loading: true,
+  loadError: null,
+  order: [],          // indices into QUESTIONS
+  pos: 0,
+  answers: {},        // n -> chosen letter
+  flags: new Set(),
+  useTimer: true,
+  shuffle: false,
+  realExam: false,    // Reale Prüfungssimulation: Feedback erst nach Abgabe
+  secondsLeft: EXAM_MIN * 60,
+  timerId: null,
+  modal: null,
+};
+
+const app = document.getElementById('app');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- Timer ---------- */
+function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0'); }
+function startTimer(){
+  stopTimer();
+  if(!state.useTimer){ timer.hidden = true; return; }
+  timer.hidden = false; timer.textContent = fmt(state.secondsLeft);
+  state.timerId = setInterval(() => {
+    state.secondsLeft--;
+    timer.textContent = fmt(state.secondsLeft);
+    timer.classList.toggle('warn', state.secondsLeft <= 300);
+    if(state.secondsLeft <= 0){ stopTimer(); finish(true); }
+  }, 1000);
+}
+function stopTimer(){ if(state.timerId){ clearInterval(state.timerId); state.timerId = null; } }
+
+/* ---------- Actions ---------- */
+function startExam(){
+  if(state.loading || state.loadError || !QUESTIONS.length) return;
+  state.order = QUESTIONS.map((_, i) => i);
+  if(state.shuffle){ for(let i = state.order.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [state.order[i], state.order[j]] = [state.order[j], state.order[i]]; } }
+  state.pos = 0; state.answers = {}; state.flags = new Set(); state.secondsLeft = EXAM_MIN * 60; state.reviewMode = false;
+  state.view = 'exam'; startTimer(); render(); window.scrollTo(0, 0);
+}
+function choose(n, letter){
+  if(state.reviewMode) return;
+  if(state.answers[n] && !state.realExam) return;   // im Übungsmodus bleibt die erste Antwort stehen
+  state.answers[n] = letter; render();
+}
+function go(pos){ state.pos = Math.max(0, Math.min(state.order.length - 1, pos)); render(); window.scrollTo({top: 0, behavior: 'smooth'}); }
+function toggleFlag(n){ state.flags.has(n) ? state.flags.delete(n) : state.flags.add(n); render(); }
+function askFinish(){
+  const open = TOTAL - Object.keys(state.answers).length;
+  if(open === 0) return finish(false);
+  state.modal = { open }; render();
+}
+function finish(timeout){
+  stopTimer(); timer.hidden = true; state.modal = null; state.timeout = timeout; state.view = 'result'; render(); window.scrollTo(0, 0);
+}
+function reviewQuestion(n){
+  state.view = 'exam'; state.reviewMode = true;
+  state.pos = state.order.findIndex(i => QUESTIONS[i].n === n); render(); window.scrollTo(0, 0);
+}
+/* answer ist ein Buchstabe ("A") oder – bei mehreren richtigen Antworten – eine Liste (["B","C"]) */
+const rightOf = q => Array.isArray(q.answer) ? q.answer : [q.answer];
+const isRight = (q, L) => rightOf(q).includes(L);
+const rightLabel = q => rightOf(q).join(' oder ');
+const rightText = q => rightOf(q).map(L => `${L} – ${esc(q.opts[L])}`).join(' / ');
+function score(){ return QUESTIONS.filter(q => isRight(q, state.answers[q.n])).length; }
+
+/* ---------- Views ---------- */
+function render(){
+  if(state.view === 'start') app.innerHTML = viewStart();
+  else if(state.view === 'exam') app.innerHTML = viewExam();
+  else app.innerHTML = viewResult();
+  if(state.modal) app.insertAdjacentHTML('beforeend', viewModal());
+  bind();
+}
+
+function viewStart(){
+  const ex = currentExam();
+  const topics = {}; QUESTIONS.forEach(q => { if(q.topic) topics[q.topic] = (topics[q.topic] || 0) + 1; });
+  const ready = !state.loading && !state.loadError;
+  const picker = EXAMS.map(e => `
+        <label class="pick">
+          <input type="radio" name="exam" value="${e.id}" ${e.id === state.examId ? 'checked' : ''}>
+          <span class="dot" aria-hidden="true"></span>
+          <span><b>${esc(e.title)}</b><small>${esc(e.sub)}</small>
+            <span class="badge ${e.official ? 'official' : ''}">${e.official ? 'mit Begründungen' : 'nur Lösungen'}</span></span>
+        </label>`).join('');
+  return `
+  <section class="hero">
+    <div>
+      <div class="eyebrow">PRINCE2® 7 · Foundation</div>
+      <h1>${esc(ex.title)} – interaktiv üben wie in der echten Prüfung</h1>
+      <fieldset class="picker">
+        <legend>Welche Prüfung möchtest du simulieren?</legend>
+        <div class="picker-grid">${picker}</div>
+      </fieldset>
+      <p class="lead">${TOTAL} Multiple-Choice-Fragen, eine richtige Antwort pro Frage. ${state.realExam
+        ? 'Wie in der echten Prüfung siehst du erst nach der Abgabe, welche Antworten richtig waren'
+        : 'Nach jedem Klick siehst du sofort, ob du richtig lagst'}${ex.official
+        ? ' – inklusive der offiziellen Begründung zu jeder Antwortoption und der Referenz ins PRINCE2-Handbuch.'
+        : '. Für diese Prüfung liegen nur die Lösungen vor, keine Begründungen.'}</p>
+      <div class="facts">
+        <div class="fact"><b>${TOTAL}</b><span>Fragen</span></div>
+        <div class="fact"><b>36</b><span>richtig zum Bestehen (60&nbsp;%)</span></div>
+        <div class="fact"><b>60 min</b><span>Prüfungszeit</span></div>
+      </div>
+      ${ready ? `<div class="topics">${Object.entries(topics).map(([t, c]) => `<span class="chip"><b>${c}</b> ${esc(t)}</span>`).join('')}</div>` : ''}
+    </div>
+    <div class="card">
+      <h2>Einstellungen</h2>
+      <div class="opt-row">
+        <label class="switch"><input type="checkbox" id="optTimer" ${state.useTimer ? 'checked' : ''}><i></i></label>
+        <label for="optTimer"><b>Zeitlimit 60 Minuten</b><span>Wie in der echten Prüfung. Bei Ablauf wird automatisch ausgewertet.</span></label>
+      </div>
+      <div class="opt-row">
+        <label class="switch"><input type="checkbox" id="optShuffle" ${state.shuffle ? 'checked' : ''}><i></i></label>
+        <label for="optShuffle"><b>Fragen mischen</b><span>Zufällige Reihenfolge statt Originalreihenfolge 1–60.</span></label>
+      </div>
+      <div class="opt-row">
+        <label class="switch"><input type="checkbox" id="optReal" ${state.realExam ? 'checked' : ''}><i></i></label>
+        <label for="optReal"><b>Reale Prüfungssimulation</b><span>Kein Feedback während der Prüfung. Rückmeldungen (korrekte Antworten und ggf. Begründungen) werden erst nach Abgabe der Prüfung angezeigt.</span></label>
+      </div>
+      <div class="nav" style="margin-top:var(--space-5)">
+        <button class="btn primary" id="startBtn" style="width:100%;justify-content:center" ${ready ? '' : 'disabled'}>${esc(ex.title)} starten</button>
+      </div>
+      ${state.loading ? '<p class="load-note">Fragen werden geladen …</p>' : ''}
+      ${state.loadError ? `<p class="load-note err">${esc(state.loadError)}</p>` : ''}
+    </div>
+  </section>`;
+}
+
+function viewExam(){
+  const q = QUESTIONS[state.order[state.pos]];
+  const chosen = state.answers[q.n];
+  const answered = Object.keys(state.answers).length;
+  const letters = ['A', 'B', 'C', 'D'];
+  // Simulation: während der Prüfung keine Lösung zeigen; in der Durchsicht nach Abgabe immer
+  const hidden = state.realExam && !state.reviewMode;
+  const reveal = !hidden && (chosen || state.reviewMode);
+  const locked = state.reviewMode || (chosen && !state.realExam);
+
+  const options = letters.map(L => {
+    let cls = 'opt', tag = '';
+    if(hidden){
+      if(L === chosen){ cls += ' selected'; tag = 'Deine Antwort'; }
+    } else if(reveal){
+      if(isRight(q, L)){ cls += ' correct'; tag = 'Richtige Antwort'; }
+      else if(L === chosen){ cls += ' wrong'; tag = 'Deine Antwort'; }
+    }
+    return `<button class="${cls}" data-choose="${L}" ${locked ? 'disabled' : ''} aria-pressed="${chosen === L}">
+      <span class="letter">${L}</span><span>${esc(q.opts[L])}</span>${tag ? `<span class="tag">${tag}</span>` : ''}
+    </button>`;
+  }).join('');
+
+  let feedback = '';
+  if(reveal){
+    const ok = isRight(q, chosen);
+    const sorted = [...rightOf(q), ...letters.filter(l => !isRight(q, l))];
+    const body = Object.keys(q.expl).length === 4
+      ? sorted.map(L => `<div class="expl ${isRight(q, L) ? 'right' : 'other'}"><span class="letter">${L}</span><div><span class="verdict">${isRight(q, L) ? 'Richtig' : 'Falsch'}${L === chosen && !ok ? ' – deine Auswahl' : ''}</span><p>${esc(q.expl[L])}</p></div></div>`).join('')
+      : rightOf(q).map((L, i, all) => `<div class="expl right"><span class="letter">${L}</span><div><span class="verdict">Richtig ist ${L} (${esc(q.opts[L])})</span>${q.rationale && i === all.length - 1 ? `<p>${esc(q.rationale)}</p>` : ''}</div></div>`).join('');
+    feedback = `
+    <div class="feedback">
+      <div class="fb-head ${ok ? 'ok' : 'bad'}">
+        ${ok ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Richtig – gut gemacht.</span>'
+             : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg><span>${chosen ? 'Leider falsch.' : 'Nicht beantwortet.'} Richtig ist <strong>${rightLabel(q)}</strong>.</span>`}
+      </div>
+      <div class="fb-body">
+        <h3>${Object.keys(q.expl).length === 4 || q.rationale ? 'Begründung' : 'Lösung'}</h3>
+        ${body}
+        ${q.ref ? `<div class="ref"><span>Lehrplan-Referenz: <code>${esc(q.ref)}</code></span><span>„Siehe x.y“ = Abschnitt im PRINCE2 7 Handbuch</span></div>` : ''}
+      </div>
+    </div>`;
+  }
+
+  const cells = state.order.map((qi, i) => {
+    const qq = QUESTIONS[qi]; const a = state.answers[qq.n];
+    let cls = 'cell';
+    if(a) cls += hidden ? ' done' : (isRight(qq, a) ? ' ok' : ' bad');
+    if(i === state.pos) cls += ' cur';
+    if(state.flags.has(qq.n)) cls += ' flag';
+    return `<button class="${cls}" data-go="${i}" aria-label="Frage ${i + 1}">${i + 1}</button>`;
+  }).join('');
+
+  return `
+  <div class="exam">
+    <section>
+      <div class="progress" role="progressbar" aria-valuenow="${answered}" aria-valuemax="${TOTAL}"><i style="width:${answered / TOTAL * 100}%"></i></div>
+      <div class="qmeta">
+        <span class="qnum">Frage ${state.pos + 1} von ${TOTAL}</span>
+        ${hidden ? '<span class="mode-badge">Prüfungssimulation</span>' : ''}
+        <span class="qtopic">${q.topic ? `· ${esc(q.topic)}` : ''}${state.shuffle ? ` · Original-Nr. ${q.n}` : ''}</span>
+      </div>
+      ${q.scenario ? `<div class="scenario">${esc(q.scenario)}</div>` : ''}
+      <p class="qtext">${esc(q.question)}</p>
+      ${q.items.length ? `<ol class="items">${q.items.map((it, i) => `<li><b>${i + 1}.</b><span>${esc(it)}</span></li>`).join('')}</ol>` : ''}
+      <div class="options">${options}</div>
+      ${feedback}
+      <div class="nav">
+        <button class="btn" data-nav="-1" ${state.pos === 0 ? 'disabled' : ''}>← Zurück</button>
+        <button class="btn ${state.flags.has(q.n) ? 'flagged' : ''}" data-flag="${q.n}">${state.flags.has(q.n) ? '⚑ Markiert' : '⚐ Markieren'}</button>
+        <span class="spacer"></span>
+        ${state.reviewMode ? `<button class="btn" id="backToResult">Zur Auswertung</button>` : ''}
+        ${state.pos < TOTAL - 1
+          ? `<button class="btn primary" data-nav="1">Weiter →</button>`
+          : (state.reviewMode ? '' : `<button class="btn primary" id="finishBtn">Prüfung abgeben</button>`)}
+      </div>
+    </section>
+    <aside class="side">
+      <h2>Übersicht <span>${answered}/${TOTAL} beantwortet</span></h2>
+      <div class="grid">${cells}</div>
+      <div class="legend">
+        ${hidden
+          ? `<span><i style="background:var(--accent);border-color:var(--accent)"></i> beantwortet</span>`
+          : `<span><i style="background:var(--ok);border-color:var(--ok)"></i> richtig</span>
+        <span><i style="background:var(--bad);border-color:var(--bad)"></i> falsch</span>`}
+        <span><i></i> offen</span>
+        <span><i style="background:var(--flag);border-color:var(--flag);border-radius:999px"></i> markiert</span>
+      </div>
+      ${state.reviewMode ? `<button class="btn" id="backToResult2">Zur Auswertung</button>` : `<button class="btn" id="finishBtn2">Prüfung abgeben</button>`}
+    </aside>
+  </div>`;
+}
+
+function viewResult(){
+  const s = score(); const passed = s >= PASS; const pct = Math.round(s / TOTAL * 100);
+  const r = 74, circ = 2 * Math.PI * r;
+  const topics = {};
+  QUESTIONS.forEach(q => { if(!q.topic) return; const t = topics[q.topic] ||= {c: 0, n: 0}; t.n++; if(isRight(q, state.answers[q.n])) t.c++; });
+  const wrong = QUESTIONS.filter(q => state.answers[q.n] && !isRight(q, state.answers[q.n]));
+  const open = QUESTIONS.filter(q => !state.answers[q.n]);
+  const used = EXAM_MIN * 60 - state.secondsLeft;
+  return `
+  <section class="result-head">
+    <div class="ring ${passed ? '' : 'fail'}">
+      <svg viewBox="0 0 170 170"><circle class="track" cx="85" cy="85" r="${r}"/><circle class="val" cx="85" cy="85" r="${r}" stroke-dasharray="${circ}" stroke-dashoffset="${circ * (1 - s / TOTAL)}"/></svg>
+      <div class="num"><div><b>${s}/${TOTAL}</b><br><span>${pct} % richtig</span></div></div>
+    </div>
+    <div>
+      <div class="eyebrow">Auswertung · ${esc(currentExam().title)}</div>
+      <div class="verdict-big ${passed ? 'ok' : 'bad'}">${passed ? 'Bestanden' : 'Nicht bestanden'}</div>
+      <p class="lead" style="margin-bottom:var(--space-4)">${passed
+        ? `Du hast ${s} von ${TOTAL} Fragen richtig beantwortet – die Bestehensgrenze liegt bei ${PASS} (60 %).`
+        : `Du hast ${s} von ${TOTAL} Fragen richtig beantwortet. Für das Bestehen fehlen dir noch ${PASS - s} richtige Antwort${PASS - s === 1 ? '' : 'en'} (Grenze: ${PASS}).`}
+        ${state.timeout ? ' Die Zeit ist abgelaufen – die Prüfung wurde automatisch abgegeben.' : ''}
+        ${state.useTimer ? ` Benötigte Zeit: ${fmt(used)} Minuten.` : ''}
+      </p>
+      <div class="nav" style="margin-top:0">
+        <button class="btn primary" id="restartBtn">Neue Prüfung starten</button>
+        <button class="btn" id="reviewAllBtn">Alle Fragen durchsehen</button>
+      </div>
+    </div>
+  </section>
+
+  ${Object.keys(topics).length ? `<h2 class="section-title">Ergebnis nach Themenbereich</h2>
+  <div class="topic-list">
+    ${Object.entries(topics).map(([t, v]) => `<div class="topic-row"><span>${esc(t)} <span style="color:var(--text-muted)">(${v.c}/${v.n})</span></span><div class="bar"><i style="width:${v.c / v.n * 100}%"></i></div><span class="pct">${Math.round(v.c / v.n * 100)} %</span></div>`).join('')}
+  </div>` : ''}
+
+  ${wrong.length ? `<h2 class="section-title">Falsch beantwortet (${wrong.length})</h2>
+  <div class="review">${wrong.map(q => `<button class="rv" data-review="${q.n}"><span class="n bad">${q.n}</span><span>${esc(q.question)}<small>Deine Antwort: ${state.answers[q.n]} · Richtig: ${rightText(q)}</small></span></button>`).join('')}</div>` : ''}
+
+  ${open.length ? `<h2 class="section-title">Nicht beantwortet (${open.length})</h2>
+  <div class="review">${open.map(q => `<button class="rv" data-review="${q.n}"><span class="n skip">${q.n}</span><span>${esc(q.question)}<small>Richtig: ${rightText(q)}</small></span></button>`).join('')}</div>` : ''}
+
+  ${!wrong.length && !open.length ? `<p class="lead" style="margin-top:var(--space-6)">Alle ${TOTAL} Fragen richtig – volle Punktzahl.</p>` : ''}`;
+}
+
+function viewModal(){
+  return `<div class="modal" id="modal"><div class="card">
+    <h2>Prüfung wirklich abgeben?</h2>
+    <p>Du hast noch <strong>${state.modal.open}</strong> ${state.modal.open === 1 ? 'Frage' : 'Fragen'} nicht beantwortet. Unbeantwortete Fragen zählen als falsch.</p>
+    <div class="nav"><button class="btn" id="modalCancel">Weiter bearbeiten</button><span class="spacer"></span><button class="btn primary" id="modalOk">Jetzt abgeben</button></div>
+  </div></div>`;
+}
+
+/* ---------- Bindings ---------- */
+function bind(){
+  const $ = id => document.getElementById(id);
+  $('startBtn') && ($('startBtn').onclick = startExam);
+  document.querySelectorAll('input[name="exam"]').forEach(r => r.onchange = () => selectExam(r.value));
+  $('optTimer') && ($('optTimer').onchange = e => state.useTimer = e.target.checked);
+  $('optShuffle') && ($('optShuffle').onchange = e => state.shuffle = e.target.checked);
+  $('optReal') && ($('optReal').onchange = e => {
+    state.realExam = e.target.checked;
+    try { localStorage.setItem('p2-real', state.realExam ? '1' : '0'); } catch(err) {}
+    render(); $('optReal') && $('optReal').focus();
+  });
+  document.querySelectorAll('[data-choose]').forEach(b => b.onclick = () => choose(QUESTIONS[state.order[state.pos]].n, b.dataset.choose));
+  document.querySelectorAll('[data-nav]').forEach(b => b.onclick = () => go(state.pos + Number(b.dataset.nav)));
+  document.querySelectorAll('[data-go]').forEach(b => b.onclick = () => go(Number(b.dataset.go)));
+  document.querySelectorAll('[data-flag]').forEach(b => b.onclick = () => toggleFlag(Number(b.dataset.flag)));
+  document.querySelectorAll('[data-review]').forEach(b => b.onclick = () => reviewQuestion(Number(b.dataset.review)));
+  ['finishBtn', 'finishBtn2'].forEach(id => $(id) && ($(id).onclick = askFinish));
+  ['backToResult', 'backToResult2'].forEach(id => $(id) && ($(id).onclick = () => { state.view = 'result'; render(); window.scrollTo(0, 0); }));
+  $('restartBtn') && ($('restartBtn').onclick = () => { state.reviewMode = false; state.timeout = false; state.view = 'start'; render(); });
+  $('reviewAllBtn') && ($('reviewAllBtn').onclick = () => { state.reviewMode = true; state.view = 'exam'; state.pos = 0; render(); window.scrollTo(0, 0); });
+  $('modalCancel') && ($('modalCancel').onclick = () => { state.modal = null; render(); });
+  $('modalOk') && ($('modalOk').onclick = () => finish(false));
+}
+
+/* Keyboard: A–D wählen, Pfeile navigieren */
+document.addEventListener('keydown', e => {
+  if(state.view !== 'exam' || state.modal) return;
+  const k = e.key.toUpperCase();
+  if(['A', 'B', 'C', 'D'].includes(k)) choose(QUESTIONS[state.order[state.pos]].n, k);
+  else if(e.key === 'ArrowRight') go(state.pos + 1);
+  else if(e.key === 'ArrowLeft') go(state.pos - 1);
+});
+
+try { state.realExam = localStorage.getItem('p2-real') === '1'; } catch(e) {}
+let savedExam = null;
+try { savedExam = localStorage.getItem('p2-exam'); } catch(e) {}
+selectExam(savedExam);
+</script>
+</body>
+</html>
