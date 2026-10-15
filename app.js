@@ -21,7 +21,7 @@ const DEFAULT_SETTINGS = {
   exam: 'MU1',
   count: 20,
   examOpts: { sim: true, shuffle: false },   // Reale Prüfung: Simulation standardmäßig an, Mischen aus
-  trainingOpts: { sim: false },              // Trainieren: Fragen und Antworten werden immer gemischt
+  trainingOpts: { sim: false, errorsOnly: false },  // Trainieren: immer gemischt; optional nur Fehlerfragen
 };
 function loadSettings(){
   try {
@@ -34,8 +34,20 @@ function loadSettings(){
 function saveSettings(){ try { localStorage.setItem('p2-settings', JSON.stringify(settings)); } catch(e) {} }
 const settings = loadSettings();
 
+/* ---------- Verlauf: Speicherschicht ----------
+   Gekapselt, damit sie später (Roadmap Schritt 4: Konten/Server) ausgetauscht werden kann.
+   Ein Durchlauf („run“) speichert je Frage nur ID, angezeigte Optionsreihenfolge, Antwort-Schlüssel und Markierung;
+   Fragetexte kommen beim Ansehen wieder aus dem Katalog. */
+const store = {
+  key: 'p2-history',
+  load(){ try { const h = JSON.parse(localStorage.getItem(this.key) || '[]'); return Array.isArray(h) ? h : []; } catch(e) { return []; } },
+  save(history){ try { localStorage.setItem(this.key, JSON.stringify(history)); return true; } catch(e) { return false; } },
+};
+let HISTORY = store.load();
+
 /* ---------- Zustand ---------- */
 let CATALOG = [];
+let BY_ID = {};
 const state = {
   view: 'start',        // 'start' | 'exam' | 'result'
   loading: true, loadError: null,
@@ -65,7 +77,7 @@ const originNo = (q, code) => { const o = q.origin.find(o => o.startsWith(code +
 /* ---------- Laden ---------- */
 function loadCatalog(){
   fetch('data/katalog.json').then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-    .then(data => { CATALOG = data; state.loading = false; render(); })
+    .then(data => { CATALOG = data; BY_ID = Object.fromEntries(data.map(q => [q.id, q])); state.loading = false; render(); })
     .catch(err => {
       state.loading = false;
       state.loadError = location.protocol === 'file:'
@@ -93,8 +105,9 @@ function newSession(){
     title = examOf(code).title;
   } else {
     sim = settings.trainingOpts.sim; shuffle = true;
-    items = shuffled(CATALOG).slice(0, settings.count).map(q => ({ q, perm: shuffled(LETTERS) }));
-    title = `Training · ${items.length} Fragen`;
+    const pool = settings.trainingOpts.errorsOnly ? errorPool() : CATALOG;
+    items = shuffled(pool).slice(0, settings.count).map(q => ({ q, perm: shuffled(LETTERS) }));
+    title = `${settings.trainingOpts.errorsOnly ? 'Fehlertraining' : 'Training'} · ${items.length} Fragen`;
   }
   return { mode: settings.mode, exam: settings.mode === 'exam' ? settings.exam : null, title, sim, shuffle, items,
            answers: {}, flags: new Set(), elapsed: 0,
@@ -140,18 +153,155 @@ function toggleFlag(){ const f = state.session.flags, id = current().q.id; f.has
 function askFinish(){
   const s = state.session; const open = s.items.length - Object.keys(s.answers).length;
   if(open === 0) return finish();
-  state.modal = { open }; render();
+  state.modal = { type: 'finish', open }; render();
 }
 function finish(){
-  stopTimer(); timer.hidden = true; state.modal = null; state.view = 'result'; render(); window.scrollTo(0, 0);
+  stopTimer(); timer.hidden = true; state.modal = null;
+  if(!state.session.past) recordRun();
+  state.view = 'result'; render(); window.scrollTo(0, 0);
 }
+
+/* ---------- Verlauf: aufzeichnen, wiederherstellen, auswerten ---------- */
+function recordRun(){
+  const s = state.session;
+  if(s.runId) return;
+  const run = {
+    v: 1,
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    date: new Date().toISOString(),
+    mode: s.mode, exam: s.exam, title: s.title, sim: s.sim, shuffle: s.shuffle,
+    limit: s.limit, elapsed: s.elapsed, timeout: s.timeout,
+    total: s.items.length, score: score(),
+    items: s.items.map(it => ({ id: it.q.id, perm: it.perm.join(''), a: s.answers[it.q.id] || null, f: s.flags.has(it.q.id) ? 1 : 0 })),
+  };
+  HISTORY.push(run);
+  s.runId = run.id; s.date = run.date;
+  s.saved = store.save(HISTORY);
+}
+function sessionFromRun(run){
+  const known = run.items.filter(x => BY_ID[x.id]);
+  return {
+    mode: run.mode, exam: run.exam, title: run.title, sim: run.sim, shuffle: run.shuffle,
+    items: known.map(x => ({ q: BY_ID[x.id], perm: x.perm.split(''), origNo: run.exam ? originNo(BY_ID[x.id], run.exam) : 0 })),
+    answers: Object.fromEntries(known.filter(x => x.a).map(x => [x.id, x.a])),
+    flags: new Set(known.filter(x => x.f).map(x => x.id)),
+    elapsed: run.elapsed, limit: run.limit, timeout: run.timeout,
+    runId: run.id, date: run.date, saved: true, past: true,
+  };
+}
+const byDate = (a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+/* Letztes Ergebnis je Frage über alle Durchläufe: true = richtig, false = falsch oder offen */
+function lastResults(){
+  const m = {};
+  [...HISTORY].sort(byDate).forEach(run => run.items.forEach(x => { const q = BY_ID[x.id]; if(q) m[x.id] = isRight(q, x.a); }));
+  return m;
+}
+function errorPool(){ const last = lastResults(); return CATALOG.filter(q => last[q.id] === false); }
 function review(pos){ state.view = 'exam'; state.reviewMode = true; state.pos = pos; render(); window.scrollTo(0, 0); }
 function score(){ const s = state.session; return s.items.filter(it => isRight(it.q, s.answers[it.q.id])).length; }
+
+/* ---------- Bericht zum Herunterladen (offline lesbar) ----------
+   Eine einzelne HTML-Datei ohne externe Abhängigkeiten: öffnet in jedem Browser, druckbar / als PDF speicherbar.
+   Reihenfolge: zuerst falsch und nicht beantwortete Fragen (aufgeklappt), dann richtige (zugeklappt). */
+const fmtDate = iso => new Date(iso).toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' });
+function download(name, content, type){
+  const url = URL.createObjectURL(new Blob([content], { type }));
+  const a = document.createElement('a'); a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+function reportFileName(s){
+  const d = new Date(s.date || Date.now());
+  const stamp = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}_${String(d.getHours()).padStart(2, '0')}${String(d.getMinutes()).padStart(2, '0')}`;
+  const what = (s.mode === 'exam' ? examOf(s.exam).title : s.title).replace(/[^\wäöüÄÖÜß]+/g, '-').replace(/-+$/, '');
+  return `PRINCE2-Bericht_${what}_${stamp}.html`;
+}
+function reportQuestion(s, it, i){
+  const q = it.q, chosen = s.answers[q.id], ok = isRight(q, chosen);
+  const hasExpl = Object.keys(q.expl).length === 4;
+  const opts = it.perm.map((key, k) => {
+    const right = isRight(q, key), mine = key === chosen;
+    const cls = right ? 'right' : mine ? 'wrong' : '';
+    const tag = right && mine ? 'richtig · deine Antwort' : right ? 'richtige Antwort' : mine ? 'deine Antwort' : '';
+    return `<li class="${cls}"><b>${LETTERS[k]}</b><span>${esc(q.opts[key])}${hasExpl ? `<em>${esc(q.expl[key])}</em>` : ''}</span>${tag ? `<i>${tag}</i>` : ''}</li>`;
+  }).join('');
+  const status = ok ? 'Richtig' : chosen ? 'Falsch' : 'Nicht beantwortet';
+  return `<details class="q ${ok ? 'ok' : 'bad'}" ${ok ? '' : 'open'}>
+  <summary><span class="nr">${i + 1}</span><span class="st">${status}</span><span class="qt">${esc(q.question)}</span></summary>
+  ${q.scenario ? `<p class="sc">${esc(q.scenario)}</p>` : ''}
+  <p class="qq">${esc(q.question)}</p>
+  ${q.items.length ? `<ol class="it">${q.items.map(t => `<li>${esc(t)}</li>`).join('')}</ol>` : ''}
+  <ul class="op">${opts}</ul>
+  ${!hasExpl && q.rationale ? `<div class="ra"><b>Begründung</b><p>${esc(q.rationale)}</p></div>` : ''}
+  ${!hasExpl && !q.rationale ? `<div class="ra"><b>Lösung</b><p>Richtig ist ${rightLabel(it)}. Für diese Frage liegt keine Begründung vor.</p></div>` : ''}
+  <p class="meta">Frage-ID ${q.id} · Herkunft ${esc(q.origin.join(', '))}${q.ref ? ` · Lehrplan ${esc(q.ref)}` : ''}${q.topic ? ` · ${esc(q.topic)}` : ''}</p>
+</details>`;
+}
+function buildReport(s){
+  const total = s.items.length, sc = s.items.filter(it => isRight(it.q, s.answers[it.q.id])).length, pass = passMark(total);
+  const rows = s.items.map((it, i) => ({ it, i }));
+  const notOk = rows.filter(({it}) => !isRight(it.q, s.answers[it.q.id]));
+  const okRows = rows.filter(({it}) => isRight(it.q, s.answers[it.q.id]));
+  const topics = {};
+  s.items.forEach(it => { if(!it.q.topic) return; const t = topics[it.q.topic] ||= {c: 0, n: 0}; t.n++; if(isRight(it.q, s.answers[it.q.id])) t.c++; });
+  const time = s.limit ? `${fmt(s.elapsed)} von ${fmt(s.limit)} min${s.timeout ? ' (Zeit abgelaufen)' : ''}` : `${fmt(s.elapsed)} min (Stoppuhr)`;
+  return `<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRINCE2 Bericht · ${esc(s.title)}</title>
+<style>
+:root{--ink:#1d2733;--muted:#5b6672;--line:#d9dde2;--ok:#1f7a45;--okbg:#e8f5ec;--bad:#b42d2d;--badbg:#fbeaea;--acc:#1d4f6e}
+*{box-sizing:border-box}body{font:15px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);max-width:860px;margin:0 auto;padding:24px 16px 48px;background:#fff}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--muted);margin:0 0 16px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.kpi{border:1px solid var(--line);border-radius:8px;padding:10px 12px}.kpi b{display:block;font-size:20px}.kpi span{color:var(--muted);font-size:13px}
+.pass{color:var(--ok)}.fail{color:var(--bad)}
+table{width:100%;border-collapse:collapse;font-size:14px}td{padding:6px 4px;border-bottom:1px solid var(--line)}td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+details.q{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;padding:0 14px;break-inside:avoid}
+details.q.bad{border-left:4px solid var(--bad)}details.q.ok{border-left:4px solid var(--ok)}
+summary{display:flex;gap:10px;align-items:baseline;padding:10px 0;cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+.nr{font-weight:700;min-width:2em}.st{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;min-width:9em}
+.bad .st{color:var(--bad)}.ok .st{color:var(--ok)}.qt{flex:1}
+details[open] .qt{display:none}
+.sc{background:#f3f5f7;border-left:3px solid var(--acc);padding:8px 12px;margin:0 0 8px}
+.qq{font-weight:600;margin:4px 0 8px}
+ol.it{margin:0 0 10px;padding-left:22px}
+ul.op{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:6px}
+ul.op li{display:flex;gap:10px;border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+ul.op li b{min-width:1.2em}ul.op li span{flex:1}ul.op li i{font-style:normal;font-size:12px;font-weight:700;white-space:nowrap}
+ul.op li.right{background:var(--okbg);border-color:var(--ok)}ul.op li.right i{color:var(--ok)}
+ul.op li.wrong{background:var(--badbg);border-color:var(--bad)}ul.op li.wrong i{color:var(--bad)}
+ul.op li em{display:block;font-style:normal;color:var(--muted);font-size:13px;margin-top:4px}
+.ra{background:#f3f5f7;border-radius:6px;padding:8px 12px;margin:0 0 10px}.ra p{margin:4px 0 0;white-space:pre-line}
+.meta{font-size:12px;color:var(--muted);margin:0 0 12px}
+.foot{margin-top:32px;font-size:12px;color:var(--muted)}
+@media print{details.q{page-break-inside:avoid}}
+</style>
+<script>addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>d.open=true))<\/script>
+</head><body>
+<h1>PRINCE2® Foundation · ${esc(s.title)}</h1>
+<p class="sub">${fmtDate(s.date || new Date().toISOString())} · ${s.mode === 'exam' ? 'Reale Prüfung' : 'Training'}${s.sim ? ' · Prüfungssimulation' : ''}${s.shuffle ? ' · gemischt' : ''}</p>
+<div class="kpis">
+  <div class="kpi"><b class="${sc >= pass ? 'pass' : 'fail'}">${sc >= pass ? 'Bestanden' : 'Nicht bestanden'}</b><span>Grenze ${pass} von ${total} (60 %)</span></div>
+  <div class="kpi"><b>${sc} / ${total}</b><span>${Math.round(sc / total * 100)} % richtig</span></div>
+  <div class="kpi"><b>${notOk.length}</b><span>falsch oder offen</span></div>
+  <div class="kpi"><b>${time.split(' ')[0]}</b><span>${time.split(' ').slice(1).join(' ')}</span></div>
+</div>
+${Object.keys(topics).length ? `<h2>Ergebnis nach Themenbereich</h2><table>${Object.entries(topics).map(([t, v]) => `<tr><td>${esc(t)}</td><td>${v.c} / ${v.n} · ${Math.round(v.c / v.n * 100)} %</td></tr>`).join('')}</table>` : ''}
+<h2>Falsch oder nicht beantwortet (${notOk.length})</h2>
+${notOk.length ? notOk.map(({it, i}) => reportQuestion(s, it, i)).join('') : '<p>Keine – alle Fragen richtig.</p>'}
+<h2>Richtig beantwortet (${okRows.length})</h2>
+${okRows.map(({it, i}) => reportQuestion(s, it, i)).join('')}
+<p class="foot">Erstellt mit dem PRINCE2 Foundation Trainer (felixgrueter.github.io/prince2-foundation-trainer). ${esc(SOURCE_NOTE)} PRINCE2® ist eine eingetragene Marke von PeopleCert. Nur für das persönliche Lernen.</p>
+</body></html>`;
+}
+function downloadReport(s){ download(reportFileName(s), buildReport(s), 'text/html;charset=utf-8'); }
 
 /* ---------- Ansichten ---------- */
 function render(){
   if(state.view === 'start') app.innerHTML = viewStart();
   else if(state.view === 'exam') app.innerHTML = viewExam();
+  else if(state.view === 'progress') app.innerHTML = viewProgress();
   else app.innerHTML = viewResult();
   if(state.modal) app.insertAdjacentHTML('beforeend', viewModal());
   updateChrome();
@@ -161,7 +311,12 @@ function updateChrome(){
   const s = state.session;
   examLabel.textContent = state.view !== 'start' && s ? s.title
     : settings.mode === 'exam' ? `Reale Prüfung · ${examOf(settings.exam).title}` : `Trainieren · ${settings.count} Fragen`;
+  if(state.view === 'progress') examLabel.textContent = 'Lernfortschritt';
   footSource.textContent = SOURCE_NOTE;
+  // Während einer laufenden Bearbeitung kein Wechsel in den Lernfortschritt (sonst ginge die Sitzung verloren)
+  progressBtn.hidden = state.view === 'exam' && !state.reviewMode;
+  if(state.view !== 'exam' || state.reviewMode){ if(!state.reviewMode) stopTimer(); timer.hidden = true; }
+  progressBtn.classList.toggle('active', state.view === 'progress');
 }
 
 function switchRow(id, checked, title, text){
@@ -175,7 +330,10 @@ function viewStart(){
   const ready = !state.loading && !state.loadError;
   const isExam = settings.mode === 'exam';
   const opts = isExam ? settings.examOpts : settings.trainingOpts;
-  const n = isExam ? 60 : settings.count;
+  const errCount = ready ? errorPool().length : 0;
+  const errorsOnly = !isExam && settings.trainingOpts.errorsOnly;
+  const n = isExam ? 60 : errorsOnly ? Math.min(settings.count, errCount) : settings.count;
+  const canStart = ready && n > 0;
   const ex = examOf(settings.exam);
 
   const modeCards = [
@@ -208,6 +366,7 @@ function viewStart(){
     ? `${ex.title}: 60 Fragen in Originalreihenfolge${settings.examOpts.shuffle ? ' (Fragen und Antworten gemischt)' : ''}. ${ex.official
         ? 'Mit offizieller Begründung zu jeder Antwortoption und Referenz ins PRINCE2-Handbuch.'
         : 'Für diese Prüfung liegen nur die Lösungen vor, keine Begründungen.'}`
+    : errorsOnly ? `${n} zufällige Fragen aus deinen ${errCount} Fehlerfragen. Fragen und Antwortoptionen werden jedes Mal neu gemischt.`
     : `${settings.count} zufällige Fragen aus allen vier Prüfungen, ohne Wiederholung. Fragen und Antwortoptionen werden jedes Mal neu gemischt. Begründungen gibt es, wo die Quelle sie liefert.`;
 
   return `
@@ -242,6 +401,9 @@ function viewStart(){
         `Kein Feedback während der ${isExam ? 'Prüfung' : 'Übung'}. Rückmeldungen (korrekte Antworten und ggf. Begründungen) werden erst nach Abgabe der ${isExam ? 'Prüfung' : 'Übung'} angezeigt. Zeitlimit: 1 Minute pro Frage (${n} Minuten).`)}
       ${isExam ? switchRow('optShuffle', settings.examOpts.shuffle, 'Fragen mischen',
         'Zufällige Reihenfolge der Fragen und der Antwortoptionen statt Originalreihenfolge.') : `
+      ${switchRow('optErrors', settings.trainingOpts.errorsOnly, `Nur Fehlerfragen (${errCount})`,
+        errCount ? `Nur Fragen, die du zuletzt falsch oder gar nicht beantwortet hast.${errCount < settings.count ? ` Es gibt nur ${errCount} solcher Fragen – die Übung wird entsprechend kürzer.` : ''}`
+                 : 'Noch keine Fehlerfragen vorhanden – sie entstehen aus deinen bisherigen Durchläufen.')}
       <div class="opt-row info"><span class="info-icon" aria-hidden="true">↻</span>
         <span><b>Immer gemischt</b><span>Fragen und Antwortoptionen werden bei jedem Training neu gemischt.</span></span>
       </div>`}
@@ -249,7 +411,7 @@ function viewStart(){
         ? `Zeit: Countdown ${n} Minuten, danach wird automatisch abgegeben.`
         : 'Zeit: Stoppuhr läuft mit, kein Zeitlimit.'}</p>
       <div class="nav" style="margin-top:var(--space-5)">
-        <button class="btn primary" id="startBtn" style="width:100%;justify-content:center" ${ready ? '' : 'disabled'}>${isExam ? `${esc(ex.title)} starten` : `Training mit ${settings.count} Fragen starten`}</button>
+        <button class="btn primary" id="startBtn" style="width:100%;justify-content:center" ${canStart ? '' : 'disabled'}>${isExam ? `${esc(ex.title)} starten` : `${errorsOnly ? 'Fehlertraining' : 'Training'} mit ${n} Fragen starten`}</button>
       </div>
       ${state.loading ? '<p class="load-note">Fragenkatalog wird geladen …</p>' : ''}
       ${state.loadError ? `<p class="load-note err">${esc(state.loadError)}</p>` : ''}
@@ -386,9 +548,14 @@ function viewResult(){
         ${time}
       </p>
       <div class="nav" style="margin-top:0">
+        ${s.past ? '<button class="btn" id="backToProgress">← Lernfortschritt</button>' : ''}
         <button class="btn primary" id="restartBtn">Neue ${s.mode === 'exam' ? 'Prüfung' : 'Übung'} starten</button>
         <button class="btn" id="reviewAllBtn">Alle Fragen durchsehen</button>
+        <button class="btn" id="reportBtn">⤓ Bericht herunterladen</button>
       </div>
+      <p class="time-note">${s.past ? `Durchlauf vom ${fmtDate(s.date)}.` : s.saved
+        ? 'Dieser Durchlauf ist im Lernfortschritt gespeichert. Der Bericht enthält alle Fragen mit Lösungen und Begründungen zum Offline-Lernen.'
+        : 'Achtung: Dieser Durchlauf konnte nicht gespeichert werden (Browser-Speicher nicht verfügbar). Lade den Bericht herunter, um ihn zu behalten.'}</p>
     </div>
   </section>
 
@@ -407,12 +574,154 @@ function viewResult(){
 }
 
 function viewModal(){
+  if(state.modal.type === 'clear') return `<div class="modal" id="modal"><div class="card">
+    <h2>Gesamten Verlauf löschen?</h2>
+    <p>Alle ${HISTORY.length} gespeicherten Durchläufe werden aus diesem Browser entfernt. Das lässt sich nicht rückgängig machen – exportiere den Verlauf vorher, wenn du ihn behalten willst.</p>
+    <div class="nav"><button class="btn" id="modalCancel">Abbrechen</button><span class="spacer"></span><button class="btn primary danger" id="modalClear">Verlauf löschen</button></div>
+  </div></div>`;
   const noun = state.session.mode === 'exam' ? 'Prüfung' : 'Übung';
   return `<div class="modal" id="modal"><div class="card">
     <h2>${noun} wirklich abgeben?</h2>
     <p>Du hast noch <strong>${state.modal.open}</strong> ${state.modal.open === 1 ? 'Frage' : 'Fragen'} nicht beantwortet. Unbeantwortete Fragen zählen als falsch.</p>
     <div class="nav"><button class="btn" id="modalCancel">Weiter bearbeiten</button><span class="spacer"></span><button class="btn primary" id="modalOk">Jetzt abgeben</button></div>
   </div></div>`;
+}
+
+/* ---------- Lernfortschritt ---------- */
+const progressFilter = { pmode: 'all', psim: 'all' };
+function showProgress(){ stopTimer(); timer.hidden = true; state.reviewMode = false; state.view = 'progress'; render(); window.scrollTo(0, 0); }
+function openRun(id){
+  const run = HISTORY.find(r => r.id === id); if(!run) return;
+  state.session = sessionFromRun(run); state.reviewMode = false; state.view = 'result'; render(); window.scrollTo(0, 0);
+}
+const runPct = run => Math.round(run.score / run.total * 100);
+const runPassed = run => run.score >= passMark(run.total);
+
+function progressChart(runs){
+  if(runs.length < 2) return `<p class="time-note">Das Diagramm erscheint ab zwei Durchläufen.</p>`;
+  // Breite an den verfügbaren Platz anpassen, damit die Beschriftung auf dem Handy lesbar bleibt (1:1 statt verkleinert)
+  const W = Math.max(300, Math.min(900, (app.clientWidth || 680) - 40)), H = 230, L = 40, R = 14, T = 14, B = 30;
+  const x = i => L + i / (runs.length - 1) * (W - L - R);
+  const y = p => T + (1 - p / 100) * (H - T - B);
+  const grid = [0, 20, 40, 60, 80, 100].map(p => `<line x1="${L}" x2="${W - R}" y1="${y(p)}" y2="${y(p)}" class="grid"/><text x="${L - 8}" y="${y(p) + 4}" text-anchor="end" class="axis">${p} %</text>`).join('');
+  const pts = runs.map((r, i) => `${x(i).toFixed(1)},${y(runPct(r)).toFixed(1)}`).join(' ');
+  const step = Math.ceil(runs.length / 10);
+  const xl = runs.map((r, i) => (i % step === 0 || i === runs.length - 1) ? `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" class="axis">${i + 1}</text>` : '').join('');
+  const dots = runs.map((r, i) => `<circle cx="${x(i)}" cy="${y(runPct(r))}" r="5" class="${runPassed(r) ? 'dot-ok' : 'dot-bad'}"><title>${fmtDate(r.date)} · ${esc(r.title)} · ${r.score}/${r.total} (${runPct(r)} %)</title></circle>`).join('');
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Ergebnis in Prozent je Durchlauf">
+    ${grid}
+    <line x1="${L}" x2="${W - R}" y1="${y(60)}" y2="${y(60)}" class="passline"/>
+    <polyline points="${pts}" class="line"/>${dots}${xl}
+  </svg>
+  <div class="legend chart-legend">
+    <span><i class="lg-pass"></i> Bestehensgrenze 60 %</span>
+    <span><i style="background:var(--ok);border-color:var(--ok);border-radius:999px"></i> bestanden</span>
+    <span><i style="background:var(--bad);border-color:var(--bad);border-radius:999px"></i> nicht bestanden</span>
+    <span>Waagerecht: Durchläufe in zeitlicher Reihenfolge</span>
+  </div>`;
+}
+
+function viewProgress(){
+  const notice = state.notice; state.notice = null;
+  const backup = `<div class="card backup">
+      <h2>Datensicherung</h2>
+      <p class="time-note">Der Verlauf liegt nur in diesem Browser auf diesem Gerät. Exportiere ihn als Datei, um ihn zu sichern oder auf ein anderes Gerät mitzunehmen.</p>
+      <div class="nav">
+        <button class="btn" id="exportBtn" ${HISTORY.length ? '' : 'disabled'}>⤓ Verlauf exportieren</button>
+        <button class="btn" id="importBtn">⤒ Verlauf importieren</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden>
+        <span class="spacer"></span>
+        <button class="btn danger" id="clearBtn" ${HISTORY.length ? '' : 'disabled'}>Verlauf löschen</button>
+      </div>
+    </div>`;
+  const head = `<div class="eyebrow">Lernfortschritt</div><h1>Dein Lernfortschritt</h1>
+    ${notice ? `<p class="notice">${esc(notice)}</p>` : ''}`;
+  if(!HISTORY.length) return `${head}
+    <div class="card empty">
+      <h2>Noch keine Durchläufe gespeichert</h2>
+      <p class="lead">Starte eine Prüfung oder ein Training. Jeder abgegebene Durchlauf erscheint hier mit Ergebnis, Dauer und allen Antworten – und lässt sich jederzeit erneut ansehen oder als Bericht herunterladen.</p>
+      <button class="btn primary" id="homeBtn">Zur Startseite</button>
+    </div>${backup}`;
+
+  const runs = [...HISTORY].sort(byDate).filter(r =>
+    (progressFilter.pmode === 'all' || r.mode === progressFilter.pmode) && (progressFilter.psim === 'all' || r.sim));
+  const avg = runs.length ? Math.round(runs.reduce((a, r) => a + runPct(r), 0) / runs.length) : 0;
+  const passedN = runs.filter(runPassed).length;
+  const seen = new Set(HISTORY.flatMap(r => r.items.filter(x => x.a).map(x => x.id)));
+  const errN = errorPool().length;
+
+  // Statistik je Frage und Thema (über die gefilterten Durchläufe)
+  const stat = {}, topics = {};
+  runs.forEach(r => r.items.forEach(x => {
+    const q = BY_ID[x.id]; if(!q) return;
+    const ok = isRight(q, x.a), st = stat[x.id] ||= { n: 0, wrong: 0 };
+    st.n++; if(!ok) st.wrong++;
+    if(q.topic){ const t = topics[q.topic] ||= { c: 0, n: 0 }; t.n++; if(ok) t.c++; }
+  }));
+  const hard = Object.entries(stat).filter(([, v]) => v.wrong > 0)
+    .sort((a, b) => b[1].wrong - a[1].wrong || b[1].wrong / b[1].n - a[1].wrong / a[1].n).slice(0, 10);
+
+  const seg = (name, val, opts) => `<div class="seg small" role="radiogroup">${opts.map(([v, t]) =>
+    `<label class="seg-opt"><input type="radio" name="${name}" value="${v}" data-pfilter ${val === v ? 'checked' : ''}><span>${t}</span></label>`).join('')}</div>`;
+
+  return `${head}
+  <div class="filters">
+    ${seg('pmode', progressFilter.pmode, [['all', 'Alle'], ['exam', 'Reale Prüfung'], ['training', 'Training']])}
+    ${seg('psim', progressFilter.psim, [['all', 'Mit und ohne Simulation'], ['sim', 'Nur Simulation']])}
+  </div>
+  <div class="facts four">
+    <div class="fact"><b>${runs.length}</b><span>Durchläufe</span></div>
+    <div class="fact"><b>${runs.length ? avg + ' %' : '–'}</b><span>Ø richtig</span></div>
+    <div class="fact"><b>${passedN} / ${runs.length}</b><span>bestanden</span></div>
+    <div class="fact"><b>${seen.size} / ${CATALOG.length}</b><span>Katalogfragen bearbeitet</span></div>
+  </div>
+
+  <h2 class="section-title">Ergebnis je Durchlauf</h2>
+  ${runs.length ? progressChart(runs) : '<p class="time-note">Keine Durchläufe für diesen Filter.</p>'}
+
+  <div class="card errcard">
+    <div><b>${errN} Fehlerfragen</b><span>Fragen, die du zuletzt falsch oder gar nicht beantwortet hast.</span></div>
+    <button class="btn primary" id="errTrainBtn" ${errN ? '' : 'disabled'}>Fehlertraining starten</button>
+  </div>
+
+  <h2 class="section-title">Alle Durchläufe (${runs.length})</h2>
+  <div class="runs">${[...runs].reverse().map(r => `
+    <div class="run">
+      <span class="n ${runPassed(r) ? 'ok' : 'bad'}">${runPct(r)}%</span>
+      <span class="run-main"><b>${esc(r.title)}</b>
+        <small>${fmtDate(r.date)} · ${r.score}/${r.total} richtig · ${runPassed(r) ? 'bestanden' : 'nicht bestanden'} · ${fmt(r.elapsed)} min${r.sim ? ' · Simulation' : ''}${r.timeout ? ' · Zeit abgelaufen' : ''}</small></span>
+      <span class="run-actions"><button class="btn" data-run="${r.id}">Ansehen</button><button class="btn" data-run-report="${r.id}" aria-label="Bericht herunterladen">⤓ Bericht</button></span>
+    </div>`).join('')}</div>
+
+  ${Object.keys(topics).length ? `<h2 class="section-title">Ergebnis nach Themenbereich</h2>
+  <div class="topic-list">${Object.entries(topics).sort((a, b) => a[1].c / a[1].n - b[1].c / b[1].n).map(([t, v]) => `<div class="topic-row"><span>${esc(t)} <span style="color:var(--text-muted)">(${v.c}/${v.n})</span></span><div class="bar"><i style="width:${v.c / v.n * 100}%"></i></div><span class="pct">${Math.round(v.c / v.n * 100)} %</span></div>`).join('')}</div>
+  <p class="time-note">Sortiert vom schwächsten zum stärksten Bereich. Mock-Fragen haben keine Themenzuordnung.</p>` : ''}
+
+  ${hard.length ? `<h2 class="section-title">Am häufigsten falsch</h2>
+  <div class="review">${hard.map(([id, v]) => { const q = BY_ID[id]; return `<div class="rv static"><span class="n bad">${v.wrong}×</span><span>${esc(q.question)}<small>${v.wrong} von ${v.n} Mal falsch oder offen · ${id} · ${esc(q.origin.join(', '))}</small></span></div>`; }).join('')}</div>` : ''}
+
+  ${backup}`;
+}
+
+function exportHistory(){
+  const d = new Date(), stamp = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  download(`PRINCE2-Lernfortschritt_${stamp}.json`,
+    JSON.stringify({ app: 'prince2-foundation-trainer', version: 1, exported: d.toISOString(), runs: HISTORY }, null, 1), 'application/json');
+}
+function importHistory(file){
+  if(!file) return;
+  file.text().then(text => {
+    const data = JSON.parse(text);
+    const runs = Array.isArray(data) ? data : data.runs;
+    if(!Array.isArray(runs)) throw new Error('keine Durchläufe gefunden');
+    const valid = runs.filter(r => r && typeof r.id === 'string' && typeof r.date === 'string' && Array.isArray(r.items) && r.total > 0);
+    const known = new Set(HISTORY.map(r => r.id));
+    const fresh = valid.filter(r => !known.has(r.id));
+    HISTORY = [...HISTORY, ...fresh];
+    const ok = store.save(HISTORY);
+    state.notice = `${fresh.length} Durchläufe importiert${valid.length - fresh.length ? `, ${valid.length - fresh.length} waren schon vorhanden` : ''}${runs.length - valid.length ? `, ${runs.length - valid.length} ungültig übersprungen` : ''}.${ok ? '' : ' Achtung: Speichern im Browser nicht möglich.'}`;
+  }).catch(err => { state.notice = `Import fehlgeschlagen: Die Datei ist kein gültiger Lernfortschritts-Export (${err.message}).`; })
+    .finally(() => render());
 }
 
 /* ---------- Bindings ---------- */
@@ -424,6 +733,18 @@ function bind(){
   document.querySelectorAll('input[name="count"]').forEach(r => r.onchange = change(() => settings.count = Number(r.value), `input[name="count"][value="${r.value}"]`));
   $('optSim') && ($('optSim').onchange = change(e => (settings.mode === 'exam' ? settings.examOpts : settings.trainingOpts).sim = e.target.checked, '#optSim'));
   $('optShuffle') && ($('optShuffle').onchange = change(e => settings.examOpts.shuffle = e.target.checked, '#optShuffle'));
+  $('optErrors') && ($('optErrors').onchange = change(e => settings.trainingOpts.errorsOnly = e.target.checked, '#optErrors'));
+  $('reportBtn') && ($('reportBtn').onclick = () => downloadReport(state.session));
+  $('backToProgress') && ($('backToProgress').onclick = showProgress);
+  document.querySelectorAll('[data-run]').forEach(b => b.onclick = () => openRun(b.dataset.run));
+  document.querySelectorAll('[data-run-report]').forEach(b => b.onclick = () => { const run = HISTORY.find(r => r.id === b.dataset.runReport); run && downloadReport(sessionFromRun(run)); });
+  document.querySelectorAll('[data-pfilter]').forEach(b => b.onchange = () => { progressFilter[b.name] = b.value; render(); });
+  $('errTrainBtn') && ($('errTrainBtn').onclick = () => { settings.mode = 'training'; settings.trainingOpts.errorsOnly = true; saveSettings(); state.view = 'start'; render(); window.scrollTo(0, 0); });
+  $('exportBtn') && ($('exportBtn').onclick = exportHistory);
+  $('importBtn') && ($('importBtn').onclick = () => $('importFile').click());
+  $('importFile') && ($('importFile').onchange = e => importHistory(e.target.files[0]));
+  $('clearBtn') && ($('clearBtn').onclick = () => { state.modal = { type: 'clear' }; render(); });
+  $('modalClear') && ($('modalClear').onclick = () => { HISTORY = []; store.save(HISTORY); state.modal = null; state.notice = 'Verlauf gelöscht.'; render(); });
   $('startBtn') && ($('startBtn').onclick = start);
   document.querySelectorAll('[data-choose]').forEach(b => b.onclick = () => choose(b.dataset.choose));
   document.querySelectorAll('[data-nav]').forEach(b => b.onclick = () => go(state.pos + Number(b.dataset.nav)));
@@ -433,6 +754,7 @@ function bind(){
   ['finishBtn', 'finishBtn2'].forEach(id => $(id) && ($(id).onclick = askFinish));
   ['backToResult', 'backToResult2'].forEach(id => $(id) && ($(id).onclick = () => { state.view = 'result'; render(); window.scrollTo(0, 0); }));
   $('restartBtn') && ($('restartBtn').onclick = () => { state.reviewMode = false; state.view = 'start'; render(); window.scrollTo(0, 0); });
+  $('homeBtn') && ($('homeBtn').onclick = () => { state.view = 'start'; render(); window.scrollTo(0, 0); });
   $('reviewAllBtn') && ($('reviewAllBtn').onclick = () => review(0));
   $('modalCancel') && ($('modalCancel').onclick = () => { state.modal = null; render(); });
   $('modalOk') && ($('modalOk').onclick = finish);
@@ -456,6 +778,7 @@ function applyTheme(){
 }
 themeBtn.onclick = () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(); };
 applyTheme();
+progressBtn.onclick = () => state.view === 'progress' ? (state.view = 'start', render()) : showProgress();
 
 render();
 loadCatalog();
