@@ -21,14 +21,24 @@ const DEFAULT_SETTINGS = {
   exam: 'MU1',
   count: 20,
   examOpts: { sim: true, shuffle: false },   // Reale Prüfung: Simulation standardmäßig an, Mischen aus
-  trainingOpts: { sim: false, errorsOnly: false },  // Trainieren: immer gemischt; optional nur Fehlerfragen
+  trainingOpts: { sim: false, source: 'all' },  // Trainieren: immer gemischt; Fragenquelle siehe SOURCES
 };
+/* Fragenquellen im Training (Fehler = zuletzt falsch beantwortet, Markiert = beim letzten Vorkommen markiert) */
+const SOURCES = [
+  { id: 'all',     label: 'Alle Fragen',       title: 'Training' },
+  { id: 'errors',  label: 'Fehlerfragen',      title: 'Fehlertraining' },
+  { id: 'flagged', label: 'Markierte Fragen',  title: 'Markierte Fragen' },
+  { id: 'both',    label: 'Fehler + markierte', title: 'Fehler + markierte Fragen' },
+];
 function loadSettings(){
   try {
     const s = JSON.parse(localStorage.getItem('p2-settings') || '{}');
-    return { ...DEFAULT_SETTINGS, ...s,
-      examOpts: { ...DEFAULT_SETTINGS.examOpts, ...(s.examOpts || {}) },
-      trainingOpts: { ...DEFAULT_SETTINGS.trainingOpts, ...(s.trainingOpts || {}) } };
+    const t = { ...DEFAULT_SETTINGS.trainingOpts, ...(s.trainingOpts || {}) };
+    // Abwärtskompatibel: bis 15.10.2026 gab es nur den Schalter „errorsOnly“
+    if(!(s.trainingOpts && s.trainingOpts.source)) t.source = s.trainingOpts && s.trainingOpts.errorsOnly ? 'errors' : 'all';
+    if(!SOURCES.some(x => x.id === t.source)) t.source = 'all';
+    delete t.errorsOnly;
+    return { ...DEFAULT_SETTINGS, ...s, examOpts: { ...DEFAULT_SETTINGS.examOpts, ...(s.examOpts || {}) }, trainingOpts: t };
   } catch(e) { return structuredClone(DEFAULT_SETTINGS); }
 }
 function saveSettings(){ try { localStorage.setItem('p2-settings', JSON.stringify(settings)); } catch(e) {} }
@@ -105,9 +115,9 @@ function newSession(){
     title = examOf(code).title;
   } else {
     sim = settings.trainingOpts.sim; shuffle = true;
-    const pool = settings.trainingOpts.errorsOnly ? errorPool() : CATALOG;
-    items = shuffled(pool).slice(0, settings.count).map(q => ({ q, perm: shuffled(LETTERS) }));
-    title = `${settings.trainingOpts.errorsOnly ? 'Fehlertraining' : 'Training'} · ${items.length} Fragen`;
+    const src = SOURCES.find(x => x.id === settings.trainingOpts.source) || SOURCES[0];
+    items = shuffled(sourcePool(src.id)).slice(0, settings.count).map(q => ({ q, perm: shuffled(LETTERS) }));
+    title = `${src.title} · ${items.length} Frage${items.length === 1 ? '' : 'n'}`;
   }
   return { mode: settings.mode, exam: settings.mode === 'exam' ? settings.exam : null, title, sim, shuffle, items,
            answers: {}, flags: new Set(), elapsed: 0,
@@ -190,13 +200,26 @@ function sessionFromRun(run){
   };
 }
 const byDate = (a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
-/* Letztes Ergebnis je Frage über alle Durchläufe: true = richtig, false = falsch oder offen */
-function lastResults(){
-  const m = {};
-  [...HISTORY].sort(byDate).forEach(run => run.items.forEach(x => { const q = BY_ID[x.id]; if(q) m[x.id] = isRight(q, x.a); }));
-  return m;
+/* Status je Frage über alle Durchläufe (chronologisch):
+   - wrong:   Ergebnis der letzten *beantworteten* Vorlage (true = falsch). Unbeantwortete Vorlagen ändern nichts –
+              so landen bei einem Abbruch die offenen Fragen nicht im Fehlertraining (für die Bewertung zählen sie weiter als falsch).
+   - flagged: Markierung bei der letzten Vorlage (wer eine Frage später nicht mehr markiert, nimmt sie wieder heraus). */
+function questionStatus(){
+  const wrong = {}, flagged = {};
+  [...HISTORY].sort(byDate).forEach(run => run.items.forEach(x => {
+    const q = BY_ID[x.id]; if(!q) return;
+    if(x.a) wrong[x.id] = !isRight(q, x.a);
+    flagged[x.id] = !!x.f;
+  }));
+  return { wrong, flagged };
 }
-function errorPool(){ const last = lastResults(); return CATALOG.filter(q => last[q.id] === false); }
+function sourcePool(source, st = questionStatus()){
+  if(source === 'errors')  return CATALOG.filter(q => st.wrong[q.id]);
+  if(source === 'flagged') return CATALOG.filter(q => st.flagged[q.id]);
+  if(source === 'both')    return CATALOG.filter(q => st.wrong[q.id] || st.flagged[q.id]);
+  return CATALOG;
+}
+function errorPool(){ return sourcePool('errors'); }
 function review(pos){ state.view = 'exam'; state.reviewMode = true; state.pos = pos; render(); window.scrollTo(0, 0); }
 function score(){ const s = state.session; return s.items.filter(it => isRight(it.q, s.answers[it.q.id])).length; }
 
@@ -330,9 +353,10 @@ function viewStart(){
   const ready = !state.loading && !state.loadError;
   const isExam = settings.mode === 'exam';
   const opts = isExam ? settings.examOpts : settings.trainingOpts;
-  const errCount = ready ? errorPool().length : 0;
-  const errorsOnly = !isExam && settings.trainingOpts.errorsOnly;
-  const n = isExam ? 60 : errorsOnly ? Math.min(settings.count, errCount) : settings.count;
+  const st = ready ? questionStatus() : { wrong: {}, flagged: {} };
+  const poolSize = Object.fromEntries(SOURCES.map(x => [x.id, ready ? sourcePool(x.id, st).length : 0]));
+  const src = SOURCES.find(x => x.id === settings.trainingOpts.source) || SOURCES[0];
+  const n = isExam ? 60 : Math.min(settings.count, poolSize[src.id]);
   const canStart = ready && n > 0;
   const ex = examOf(settings.exam);
 
@@ -366,7 +390,9 @@ function viewStart(){
     ? `${ex.title}: 60 Fragen in Originalreihenfolge${settings.examOpts.shuffle ? ' (Fragen und Antworten gemischt)' : ''}. ${ex.official
         ? 'Mit offizieller Begründung zu jeder Antwortoption und Referenz ins PRINCE2-Handbuch.'
         : 'Für diese Prüfung liegen nur die Lösungen vor, keine Begründungen.'}`
-    : errorsOnly ? `${n} zufällige Fragen aus deinen ${errCount} Fehlerfragen. Fragen und Antwortoptionen werden jedes Mal neu gemischt.`
+    : src.id === 'errors' ? `${n} zufällige Fragen aus deinen ${poolSize.errors} Fehlerfragen (zuletzt falsch beantwortet). Fragen und Antwortoptionen werden jedes Mal neu gemischt.`
+    : src.id === 'flagged' ? `${n} zufällige Fragen aus deinen ${poolSize.flagged} markierten Fragen. Fragen und Antwortoptionen werden jedes Mal neu gemischt.`
+    : src.id === 'both' ? `${n} zufällige Fragen aus ${poolSize.both} Fehler- und markierten Fragen. Fragen und Antwortoptionen werden jedes Mal neu gemischt.`
     : `${settings.count} zufällige Fragen aus allen vier Prüfungen, ohne Wiederholung. Fragen und Antwortoptionen werden jedes Mal neu gemischt. Begründungen gibt es, wo die Quelle sie liefert.`;
 
   return `
@@ -386,6 +412,13 @@ function viewStart(){
       <fieldset class="picker">
         <legend>2 · Mit wie vielen Fragen möchtest du üben?</legend>
         <div class="seg" role="radiogroup">${countButtons}</div>
+      </fieldset>
+      <fieldset class="picker">
+        <legend>Aus welchen Fragen?</legend>
+        <div class="seg src" role="radiogroup">${SOURCES.map(x => `
+          <label class="seg-opt"><input type="radio" name="source" value="${x.id}" ${x.id === src.id ? 'checked' : ''} ${x.id !== 'all' && !poolSize[x.id] && x.id !== src.id ? 'disabled' : ''}><span>${x.label}<small>${poolSize[x.id]}</small></span></label>`).join('')}
+        </div>
+        ${src.id !== 'all' && poolSize[src.id] < settings.count ? `<p class="time-note">${poolSize[src.id] ? `Es gibt nur ${poolSize[src.id]} passende Fragen – die Übung wird entsprechend kürzer.` : 'Dafür gibt es noch keine Fragen. Fehlerfragen entstehen aus falsch beantworteten Fragen, markierte über „Markieren“ während einer Prüfung oder Übung.'}</p>` : ''}
       </fieldset>`}
       <p class="lead">${lead}</p>
       <div class="facts">
@@ -401,9 +434,6 @@ function viewStart(){
         `Kein Feedback während der ${isExam ? 'Prüfung' : 'Übung'}. Rückmeldungen (korrekte Antworten und ggf. Begründungen) werden erst nach Abgabe der ${isExam ? 'Prüfung' : 'Übung'} angezeigt. Zeitlimit: 1 Minute pro Frage (${n} Minuten).`)}
       ${isExam ? switchRow('optShuffle', settings.examOpts.shuffle, 'Fragen mischen',
         'Zufällige Reihenfolge der Fragen und der Antwortoptionen statt Originalreihenfolge.') : `
-      ${switchRow('optErrors', settings.trainingOpts.errorsOnly, `Nur Fehlerfragen (${errCount})`,
-        errCount ? `Nur Fragen, die du zuletzt falsch oder gar nicht beantwortet hast.${errCount < settings.count ? ` Es gibt nur ${errCount} solcher Fragen – die Übung wird entsprechend kürzer.` : ''}`
-                 : 'Noch keine Fehlerfragen vorhanden – sie entstehen aus deinen bisherigen Durchläufen.')}
       <div class="opt-row info"><span class="info-icon" aria-hidden="true">↻</span>
         <span><b>Immer gemischt</b><span>Fragen und Antwortoptionen werden bei jedem Training neu gemischt.</span></span>
       </div>`}
@@ -411,7 +441,7 @@ function viewStart(){
         ? `Zeit: Countdown ${n} Minuten, danach wird automatisch abgegeben.`
         : 'Zeit: Stoppuhr läuft mit, kein Zeitlimit.'}</p>
       <div class="nav" style="margin-top:var(--space-5)">
-        <button class="btn primary" id="startBtn" style="width:100%;justify-content:center" ${canStart ? '' : 'disabled'}>${isExam ? `${esc(ex.title)} starten` : `${errorsOnly ? 'Fehlertraining' : 'Training'} mit ${n} Fragen starten`}</button>
+        <button class="btn primary" id="startBtn" style="width:100%;justify-content:center" ${canStart ? '' : 'disabled'}>${isExam ? `${esc(ex.title)} starten` : `${src.title} · ${n} Frage${n === 1 ? '' : 'n'} starten`}</button>
       </div>
       ${state.loading ? '<p class="load-note">Fragenkatalog wird geladen …</p>' : ''}
       ${state.loadError ? `<p class="load-note err">${esc(state.loadError)}</p>` : ''}
@@ -454,7 +484,7 @@ function viewExam(){
     const hasExpl = Object.keys(q.expl).length === 4;
     const sorted = [...item.perm].sort((a, b) => (isRight(q, b) - isRight(q, a)) || (item.perm.indexOf(a) - item.perm.indexOf(b)));
     const body = hasExpl
-      ? sorted.map(key => `<div class="expl ${isRight(q, key) ? 'right' : 'other'}"><span class="letter">${shown(item, key)}</span><div><span class="verdict">${isRight(q, key) ? 'Richtig' : 'Falsch'}${key === chosen && !ok ? ' – deine Auswahl' : ''}</span><p>${esc(q.expl[key])}</p></div></div>`).join('')
+      ? sorted.map(key => `<div class="expl ${isRight(q, key) ? 'right' : 'other'}${key === chosen && !ok ? ' mine' : ''}"><span class="letter">${shown(item, key)}</span><div><span class="verdict">${isRight(q, key) ? 'Richtig' : 'Falsch'}${key === chosen && !ok ? ' – deine Auswahl' : ''}</span><p>${esc(q.expl[key])}</p></div></div>`).join('')
       : rightKeys(q).map((key, i, all) => `<div class="expl right"><span class="letter">${shown(item, key)}</span><div><span class="verdict">Richtig ist ${shown(item, key)} (${esc(q.opts[key])})</span>${q.rationale && i === all.length - 1 ? `<p>${esc(q.rationale)}</p>` : ''}</div></div>`).join('');
     feedback = `
     <div class="feedback">
@@ -479,6 +509,16 @@ function viewExam(){
     return `<button class="${cls}" data-go="${i}" aria-label="Frage ${i + 1}">${i + 1}</button>`;
   }).join('');
   const flagged = s.flags.has(q.id);
+  // Navigationsleiste – identisch über der Frage und unter den Antworten (daher data-Attribute statt IDs)
+  const navBar = where => `<div class="nav ${where}">
+        <button class="btn" data-nav="-1" ${state.pos === 0 ? 'disabled' : ''}>← Zurück</button>
+        <button class="btn ${flagged ? 'flagged' : ''}" data-flag>${flagged ? '⚑ Markiert' : '⚐ Markieren'}</button>
+        <span class="spacer"></span>
+        ${state.reviewMode ? `<button class="btn" data-back>Zur Auswertung</button>` : ''}
+        ${state.pos < total - 1
+          ? `<button class="btn primary" data-nav="1">Weiter →</button>`
+          : (state.reviewMode ? '' : `<button class="btn primary" data-finish>${noun} abgeben</button>`)}
+      </div>`;
 
   return `
   <div class="exam">
@@ -489,20 +529,13 @@ function viewExam(){
         ${hidden ? '<span class="mode-badge">Prüfungssimulation</span>' : ''}
         <span class="qtopic">${q.topic ? `· ${esc(q.topic)}` : ''}${originHint(item)}</span>
       </div>
+      ${navBar('top')}
       ${q.scenario ? `<div class="scenario">${esc(q.scenario)}</div>` : ''}
       <p class="qtext">${esc(q.question)}</p>
       ${q.items.length ? `<ol class="items">${q.items.map((it, i) => `<li><b>${i + 1}.</b><span>${esc(it)}</span></li>`).join('')}</ol>` : ''}
       <div class="options">${options}</div>
       ${feedback}
-      <div class="nav">
-        <button class="btn" data-nav="-1" ${state.pos === 0 ? 'disabled' : ''}>← Zurück</button>
-        <button class="btn ${flagged ? 'flagged' : ''}" id="flagBtn">${flagged ? '⚑ Markiert' : '⚐ Markieren'}</button>
-        <span class="spacer"></span>
-        ${state.reviewMode ? `<button class="btn" id="backToResult">Zur Auswertung</button>` : ''}
-        ${state.pos < total - 1
-          ? `<button class="btn primary" data-nav="1">Weiter →</button>`
-          : (state.reviewMode ? '' : `<button class="btn primary" id="finishBtn">${noun} abgeben</button>`)}
-      </div>
+      ${navBar('bottom')}
     </section>
     <aside class="side">
       <h2>Übersicht <span>${answered}/${total} beantwortet</span></h2>
@@ -648,14 +681,15 @@ function viewProgress(){
   const avg = runs.length ? Math.round(runs.reduce((a, r) => a + runPct(r), 0) / runs.length) : 0;
   const passedN = runs.filter(runPassed).length;
   const seen = new Set(HISTORY.flatMap(r => r.items.filter(x => x.a).map(x => x.id)));
-  const errN = errorPool().length;
+  const qst = questionStatus();
+  const errN = sourcePool('errors', qst).length, flagN = sourcePool('flagged', qst).length;
 
   // Statistik je Frage und Thema (über die gefilterten Durchläufe)
   const stat = {}, topics = {};
   runs.forEach(r => r.items.forEach(x => {
     const q = BY_ID[x.id]; if(!q) return;
     const ok = isRight(q, x.a), st = stat[x.id] ||= { n: 0, wrong: 0 };
-    st.n++; if(!ok) st.wrong++;
+    if(x.a){ st.n++; if(!ok) st.wrong++; }   // „Am häufigsten falsch“: nur beantwortete Vorlagen
     if(q.topic){ const t = topics[q.topic] ||= { c: 0, n: 0 }; t.n++; if(ok) t.c++; }
   }));
   const hard = Object.entries(stat).filter(([, v]) => v.wrong > 0)
@@ -680,8 +714,8 @@ function viewProgress(){
   ${runs.length ? progressChart(runs) : '<p class="time-note">Keine Durchläufe für diesen Filter.</p>'}
 
   <div class="card errcard">
-    <div><b>${errN} Fehlerfragen</b><span>Fragen, die du zuletzt falsch oder gar nicht beantwortet hast.</span></div>
-    <button class="btn primary" id="errTrainBtn" ${errN ? '' : 'disabled'}>Fehlertraining starten</button>
+    <div><b>${errN} Fehlerfrage${errN === 1 ? '' : 'n'} · ${flagN} markierte Frage${flagN === 1 ? '' : 'n'}</b><span>Fehlerfragen: zuletzt falsch beantwortet (offen gelassene zählen nicht). Markiert: beim letzten Vorkommen markiert.</span></div>
+    <span class="run-actions"><button class="btn primary" data-train="errors" ${errN ? '' : 'disabled'}>Fehlertraining</button><button class="btn" data-train="flagged" ${flagN ? '' : 'disabled'}>Markierte üben</button></span>
   </div>
 
   <h2 class="section-title">Alle Durchläufe (${runs.length})</h2>
@@ -698,7 +732,7 @@ function viewProgress(){
   <p class="time-note">Sortiert vom schwächsten zum stärksten Bereich. Mock-Fragen haben keine Themenzuordnung.</p>` : ''}
 
   ${hard.length ? `<h2 class="section-title">Am häufigsten falsch</h2>
-  <div class="review">${hard.map(([id, v]) => { const q = BY_ID[id]; return `<div class="rv static"><span class="n bad">${v.wrong}×</span><span>${esc(q.question)}<small>${v.wrong} von ${v.n} Mal falsch oder offen · ${id} · ${esc(q.origin.join(', '))}</small></span></div>`; }).join('')}</div>` : ''}
+  <div class="review">${hard.map(([id, v]) => { const q = BY_ID[id]; return `<div class="rv static"><span class="n bad">${v.wrong}×</span><span>${esc(q.question)}<small>${v.wrong} von ${v.n} Mal falsch beantwortet · ${id} · ${esc(q.origin.join(', '))}</small></span></div>`; }).join('')}</div>` : ''}
 
   ${backup}`;
 }
@@ -733,13 +767,13 @@ function bind(){
   document.querySelectorAll('input[name="count"]').forEach(r => r.onchange = change(() => settings.count = Number(r.value), `input[name="count"][value="${r.value}"]`));
   $('optSim') && ($('optSim').onchange = change(e => (settings.mode === 'exam' ? settings.examOpts : settings.trainingOpts).sim = e.target.checked, '#optSim'));
   $('optShuffle') && ($('optShuffle').onchange = change(e => settings.examOpts.shuffle = e.target.checked, '#optShuffle'));
-  $('optErrors') && ($('optErrors').onchange = change(e => settings.trainingOpts.errorsOnly = e.target.checked, '#optErrors'));
+  document.querySelectorAll('input[name="source"]').forEach(r => r.onchange = change(() => settings.trainingOpts.source = r.value, `input[name="source"][value="${r.value}"]`));
   $('reportBtn') && ($('reportBtn').onclick = () => downloadReport(state.session));
   $('backToProgress') && ($('backToProgress').onclick = showProgress);
   document.querySelectorAll('[data-run]').forEach(b => b.onclick = () => openRun(b.dataset.run));
   document.querySelectorAll('[data-run-report]').forEach(b => b.onclick = () => { const run = HISTORY.find(r => r.id === b.dataset.runReport); run && downloadReport(sessionFromRun(run)); });
   document.querySelectorAll('[data-pfilter]').forEach(b => b.onchange = () => { progressFilter[b.name] = b.value; render(); });
-  $('errTrainBtn') && ($('errTrainBtn').onclick = () => { settings.mode = 'training'; settings.trainingOpts.errorsOnly = true; saveSettings(); state.view = 'start'; render(); window.scrollTo(0, 0); });
+  document.querySelectorAll('[data-train]').forEach(b => b.onclick = () => { settings.mode = 'training'; settings.trainingOpts.source = b.dataset.train; saveSettings(); state.view = 'start'; render(); window.scrollTo(0, 0); });
   $('exportBtn') && ($('exportBtn').onclick = exportHistory);
   $('importBtn') && ($('importBtn').onclick = () => $('importFile').click());
   $('importFile') && ($('importFile').onchange = e => importHistory(e.target.files[0]));
@@ -749,7 +783,9 @@ function bind(){
   document.querySelectorAll('[data-choose]').forEach(b => b.onclick = () => choose(b.dataset.choose));
   document.querySelectorAll('[data-nav]').forEach(b => b.onclick = () => go(state.pos + Number(b.dataset.nav)));
   document.querySelectorAll('[data-go]').forEach(b => b.onclick = () => go(Number(b.dataset.go)));
-  $('flagBtn') && ($('flagBtn').onclick = toggleFlag);
+  document.querySelectorAll('[data-flag]').forEach(b => b.onclick = toggleFlag);
+  document.querySelectorAll('[data-finish]').forEach(b => b.onclick = askFinish);
+  document.querySelectorAll('[data-back]').forEach(b => b.onclick = () => { state.view = 'result'; render(); window.scrollTo(0, 0); });
   document.querySelectorAll('[data-review]').forEach(b => b.onclick = () => review(Number(b.dataset.review)));
   ['finishBtn', 'finishBtn2'].forEach(id => $(id) && ($(id).onclick = askFinish));
   ['backToResult', 'backToResult2'].forEach(id => $(id) && ($(id).onclick = () => { state.view = 'result'; render(); window.scrollTo(0, 0); }));
