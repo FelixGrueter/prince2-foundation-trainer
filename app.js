@@ -86,7 +86,8 @@ const originNo = (q, code) => { const o = q.origin.find(o => o.startsWith(code +
 
 /* ---------- Laden ---------- */
 function loadCatalog(){
-  fetch('data/katalog.json').then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+  // cache: 'no-cache' = beim Server nachfragen (ETag); Katalog-Korrekturen kommen sofort an, unverändert kostet es kaum etwas
+  fetch('data/katalog.json', { cache: 'no-cache' }).then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
     .then(data => { CATALOG = data; BY_ID = Object.fromEntries(data.map(q => [q.id, q])); state.loading = false; render(); })
     .catch(err => {
       state.loading = false;
